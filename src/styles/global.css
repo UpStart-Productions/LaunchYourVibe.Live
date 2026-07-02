@@ -15,8 +15,13 @@
     scroll-behavior: smooth;
   }
 
+  html,
   body {
     background-color: var(--color-cosmic);
+    min-height: 100%;
+  }
+
+  body {
     color: var(--color-text);
     font-family: var(--font-primary);
   }

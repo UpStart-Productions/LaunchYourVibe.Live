@@ -1,0 +1,302 @@
+---
+import { Search, ChevronDown } from "lucide-astro";
+
+interface CategoryItem {
+  label: string;
+  href: string;
+  icon: any;
+}
+
+interface Props {
+  categories: CategoryItem[];
+}
+
+const { categories } = Astro.props;
+---
+
+<div
+  class="site-search-panel sticky top-[57px] z-40 py-4 md:top-[65px] md:py-5"
+  data-search-bar
+>
+  <div class="container mx-auto px-4">
+    <div class="search-bar-shell mx-auto max-w-3xl">
+      <label class="search-input-wrap" for="card-search">
+        <Search size={20} class="search-icon" aria-hidden="true" />
+        <input
+          id="card-search"
+          type="search"
+          class="search-input"
+          placeholder="Search cards"
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </label>
+
+      <div class="search-divider" aria-hidden="true"></div>
+
+      <div class="category-menu" data-category-menu>
+        <button
+          type="button"
+          class="category-trigger"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-controls="category-popover"
+          data-category-trigger
+        >
+          <span class="category-trigger-label">Categories</span>
+          <ChevronDown size={18} class="category-chevron" aria-hidden="true" />
+        </button>
+
+        <div
+          id="category-popover"
+          class="category-popover"
+          role="listbox"
+          aria-label="Browse by category"
+          hidden
+          data-category-popover
+        >
+          {
+            categories.map((item) => (
+              <a href={item.href} class="category-option" role="option">
+                <item.icon size={16} aria-hidden="true" />
+                {item.label}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <p class="search-empty mx-auto mt-3 hidden max-w-3xl text-center text-sm text-muted-cosmic" data-search-empty>
+      No cards match your search.
+    </p>
+  </div>
+</div>
+
+<style>
+  .search-bar-shell {
+    display: flex;
+    align-items: stretch;
+    min-height: 3.75rem;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow:
+      0 1px 2px rgba(18, 16, 31, 0.06),
+      0 8px 24px rgba(18, 16, 31, 0.1);
+    overflow: visible;
+  }
+
+  .search-input-wrap {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 0.875rem;
+    min-width: 0;
+    padding: 0 1.125rem;
+    cursor: text;
+  }
+
+  .search-icon {
+    flex-shrink: 0;
+    color: #8b8799;
+  }
+
+  .search-input {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    color: #12101f;
+    font-size: 1.0625rem;
+    line-height: 1.4;
+    outline: none;
+  }
+
+  .search-input::placeholder {
+    color: #a8a3b3;
+  }
+
+  .search-input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+  }
+
+  .search-divider {
+    width: 1px;
+    align-self: stretch;
+    margin: 0.875rem 0;
+    background: #e8e4ef;
+    flex-shrink: 0;
+  }
+
+  .category-menu {
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .category-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 100%;
+    min-width: 9.5rem;
+    padding: 0 1.125rem;
+    border: 0;
+    border-radius: 0 1rem 1rem 0;
+    background: transparent;
+    color: #12101f;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .category-trigger:hover,
+  .category-trigger[aria-expanded="true"] {
+    background: #f7f5fb;
+  }
+
+  .category-chevron {
+    color: #6f6a7d;
+    transition: transform 0.15s ease;
+  }
+
+  .category-trigger[aria-expanded="true"] .category-chevron {
+    transform: rotate(180deg);
+  }
+
+  .category-popover {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    z-index: 50;
+    min-width: 15rem;
+    padding: 0.375rem;
+    background: #fff;
+    border: 1px solid #ece8f2;
+    border-radius: 0.875rem;
+    box-shadow:
+      0 4px 12px rgba(18, 16, 31, 0.08),
+      0 16px 40px rgba(18, 16, 31, 0.12);
+  }
+
+  .category-popover:not([hidden]) {
+    display: block;
+  }
+
+  .category-option {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.625rem 0.75rem;
+    border-radius: 0.5rem;
+    color: #2b2738;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+  }
+
+  .category-option:hover,
+  .category-option:focus-visible {
+    background: #f3f0f8;
+    outline: none;
+  }
+
+  @media (max-width: 640px) {
+    .search-bar-shell {
+      min-height: 3.25rem;
+    }
+
+    .search-input-wrap {
+      padding-left: 0.875rem;
+    }
+
+    .category-trigger {
+      min-width: 7.5rem;
+      padding: 0 0.875rem;
+      font-size: 0.9375rem;
+    }
+
+    .search-input {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<script>
+  function initSearchBar() {
+    const root = document.querySelector("[data-search-bar]");
+    if (!root) return;
+
+    const input = root.querySelector<HTMLInputElement>("#card-search");
+    const emptyState = root.querySelector<HTMLElement>("[data-search-empty]");
+    const menu = root.querySelector<HTMLElement>("[data-category-menu]");
+    const trigger = root.querySelector<HTMLButtonElement>("[data-category-trigger]");
+    const popover = root.querySelector<HTMLElement>("[data-category-popover]");
+    const cards = Array.from(document.querySelectorAll<HTMLElement>(".card-wrap"));
+    const sections = Array.from(
+      document.querySelectorAll<HTMLElement>(".ux-domain-section"),
+    );
+
+    if (!input || !emptyState || !menu || !trigger || !popover) return;
+
+    let debounceTimer: ReturnType<typeof setTimeout> | undefined;
+
+    function setPopoverOpen(open: boolean) {
+      trigger.setAttribute("aria-expanded", String(open));
+      popover.hidden = !open;
+    }
+
+    function closePopover() {
+      setPopoverOpen(false);
+    }
+
+    function togglePopover() {
+      setPopoverOpen(trigger.getAttribute("aria-expanded") !== "true");
+    }
+
+    trigger.addEventListener("click", (event) => {
+      event.stopPropagation();
+      togglePopover();
+    });
+
+    popover.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closePopover);
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!menu.contains(event.target as Node)) closePopover();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closePopover();
+    });
+
+    function applySearch() {
+      const query = input.value.trim().toLowerCase();
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const haystack = card.dataset.search ?? "";
+        const matches = !query || haystack.includes(query);
+        card.classList.toggle("card-wrap--hidden", !matches);
+        if (matches) visibleCount += 1;
+      });
+
+      sections.forEach((section) => {
+        const hasVisibleCard = section.querySelector(".card-wrap:not(.card-wrap--hidden)");
+        section.classList.toggle("ux-domain-section--hidden", !hasVisibleCard);
+      });
+
+      emptyState.classList.toggle("hidden", visibleCount > 0 || !query);
+    }
+
+    input.addEventListener("input", () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(applySearch, 120);
+    });
+
+    input.addEventListener("search", applySearch);
+  }
+
+  initSearchBar();
+  document.addEventListener("astro:page-load", initSearchBar);
+</script>

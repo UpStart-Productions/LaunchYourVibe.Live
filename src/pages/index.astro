@@ -3,7 +3,7 @@ import "../styles/ux-deck.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import QuickNav from "../components/QuickNav.astro";
+import SearchBar from "../components/SearchBar.astro";
 import TypewriterHeadline from "../components/TypewriterHeadline.astro";
 import { SITE } from "../config/site";
 import {
@@ -122,7 +122,7 @@ const sectionNavItems = [
   <Header />
 
   <main>
-    <section class="border-b border-cosmic bg-cosmic-light py-10 md:py-12">
+    <section class="py-10 md:py-12">
       <div class="container mx-auto px-4">
         <div class="mx-auto max-w-4xl">
           <div class="flex flex-col items-center gap-6 md:flex-row md:items-center md:justify-center md:gap-10">
@@ -143,9 +143,9 @@ const sectionNavItems = [
       </div>
     </section>
 
-    <QuickNav items={sectionNavItems} />
+    <SearchBar categories={sectionNavItems} />
 
-    <section class="bg-cosmic py-16">
+    <section class="py-16">
       <div class="container mx-auto px-4">
         <div id="spacing-typography" class="ux-domain-section scroll-mt-[148px] md:scroll-mt-[156px]">
           <div class="ux-domain-heading">
@@ -228,6 +228,14 @@ const sectionNavItems = [
 <style is:global>
   .ux-domain-label {
     color: #8b86a0;
+  }
+
+  .card-wrap--hidden {
+    display: none !important;
+  }
+
+  .ux-domain-section--hidden {
+    display: none !important;
   }
 </style>
 

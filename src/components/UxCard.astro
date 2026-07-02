@@ -8,9 +8,30 @@ interface Props {
 }
 
 const { id, domain, domainClass, title, rule } = Astro.props;
+
+const sectionByDomain: Record<string, string> = {
+  "Spacing & Typography": "spacing-typography",
+  Interaction: "interaction",
+  Components: "components",
+  Navigation: "navigation",
+  Accessibility: "accessibility",
+  Data: "data",
+};
+
+const stripHtml = (html: string) => html.replace(/<[^>]*>/g, " ");
+const searchText = [id, domain, stripHtml(title), stripHtml(rule)]
+  .join(" ")
+  .toLowerCase();
+const sectionId = sectionByDomain[domain] ?? "";
 ---
 
-<div class="card-wrap" data-card-id={id} onclick="this.classList.toggle('flipped')">
+<div
+  class="card-wrap"
+  data-card-id={id}
+  data-section={sectionId}
+  data-search={searchText}
+  onclick="this.classList.toggle('flipped')"
+>
   <div class="card-inner">
     <div class="card-front">
       <div class={`card-header ${domainClass}`}>
