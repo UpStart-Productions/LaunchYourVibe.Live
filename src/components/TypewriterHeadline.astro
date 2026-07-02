@@ -1,0 +1,81 @@
+---
+const words = ["accessible", "secure", "usable", "beautiful"];
+---
+
+<h1 class="whitespace-nowrap text-center text-3xl font-semibold text-white md:text-left md:text-4xl lg:text-5xl">
+  Launch your{" "}
+  <span
+    id="hero-typewriter"
+    class="typewriter-word text-[#59D4E6]"
+    aria-live="polite"
+  >{words[0]}</span>{" "}
+  vibe.
+</h1>
+
+<style>
+  .typewriter-word::after {
+    content: "|";
+    margin-left: 1px;
+    color: rgba(255, 255, 255, 0.45);
+    animation: typewriter-cursor 1s step-end infinite;
+  }
+
+  @keyframes typewriter-cursor {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .typewriter-word::after {
+      animation: none;
+      opacity: 0;
+    }
+  }
+</style>
+
+<script define:vars={{ words }}>
+  const el = document.getElementById("hero-typewriter");
+  if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    // Static first word for reduced motion
+  } else {
+    let wordIndex = 0;
+    let charIndex = words[0].length;
+    let deleting = true;
+
+    const TYPE_MS = 85;
+    const DELETE_MS = 45;
+    const PAUSE_MS = 2200;
+    const BETWEEN_MS = 350;
+
+    function tick() {
+      const word = words[wordIndex];
+
+      if (!deleting) {
+        if (charIndex < word.length) {
+          charIndex += 1;
+          el.textContent = word.slice(0, charIndex);
+          setTimeout(tick, TYPE_MS);
+          return;
+        }
+
+        deleting = true;
+        setTimeout(tick, PAUSE_MS);
+        return;
+      }
+
+      if (charIndex > 0) {
+        charIndex -= 1;
+        el.textContent = word.slice(0, charIndex);
+        setTimeout(tick, DELETE_MS);
+        return;
+      }
+
+      deleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      setTimeout(tick, BETWEEN_MS);
+    }
+
+    setTimeout(tick, PAUSE_MS);
+  }
+</script>
