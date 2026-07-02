@@ -46,6 +46,15 @@ const imageURL = new URL(image, Astro.site || SITE.url);
 
     <link rel="icon" type="image/svg+xml" href="/images/logo.svg" />
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GNL26RQDM"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8GNL26RQDM');
+    </script>
+
     <link
       href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&display=swap"
       rel="stylesheet"
