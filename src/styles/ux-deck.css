@@ -1395,13 +1395,7 @@
 .ux-domain-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
 .ux-domain-swatch  { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
 .ux-domain-label   { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #888; }
-.ux-card-grid      { display: grid; grid-template-columns: repeat(auto-fill, 245px); gap: 24px; }
-
-@media (max-width: 767px) {
-  .ux-card-grid {
-    justify-content: center;
-  }
-}
+.ux-card-grid      { display: grid; grid-template-columns: repeat(auto-fill, 245px); gap: 24px; justify-content: center; }
 
 /* ======= UTILITY CLASSES =======
    All scoped under .card-visual to prevent conflicts with global styles (e.g. Tailwind).
