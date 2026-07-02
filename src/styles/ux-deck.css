@@ -1397,6 +1397,19 @@
 .ux-domain-label   { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #888; }
 .ux-card-grid      { display: grid; grid-template-columns: repeat(auto-fill, 245px); gap: 24px; }
 
+@media (max-width: 767px) {
+  .ux-card-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card-wrap {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 245 / 395;
+  }
+}
+
 /* ======= UTILITY CLASSES =======
    All scoped under .card-visual to prevent conflicts with global styles (e.g. Tailwind).
    The card system's slot content always renders inside .card-visual.
