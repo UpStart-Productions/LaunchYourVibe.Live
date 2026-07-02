@@ -1,0 +1,34 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="T-07"
+  domain="Spacing & Typography"
+  domainClass="d-t"
+  title=`Visual Hierarchy:<br/>3 Levels Maximum`
+  rule=`<strong>Every level you add competes with the others.</strong> Primary, secondary, and body. That's the hierarchy. Adding a fourth level usually means the third was doing too much.`
+>
+<div class="bad-good-row t07-visual">
+<div class="verdict-col">
+<span class="verdict-label label-bad"><X size={13} class="ux-icon" /> 5 Levels</span>
+<div class="vis-demo-bad">
+<div class="bar-red" style="height:7px;width:80%;margin-bottom:3px;"></div>
+<div class="bar-red" style="height:6px;width:65%;margin-bottom:3px;opacity:0.85;"></div>
+<div class="bar-red" style="height:5px;width:55%;margin-bottom:3px;opacity:0.7;"></div>
+<div class="bar-red" style="height:4px;width:45%;margin-bottom:3px;opacity:0.55;"></div>
+<div class="bar-red" style="height:3px;width:38%;opacity:0.4;"></div>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-good"><Check size={13} class="ux-icon" /> 3 Levels</span>
+<div class="vis-demo-good">
+<div class="bar-green" style="height:9px;width:80%;margin-bottom:5px;"></div>
+<div class="bar-green" style="height:6px;width:60%;margin-bottom:5px;opacity:0.7;"></div>
+<div class="bar-green" style="height:4px;width:100%;opacity:0.45;"></div>
+<div class="bar-green" style="height:4px;width:90%;margin-top:2px;opacity:0.45;"></div>
+</div>
+</div>
+</div>
+</UxCard>

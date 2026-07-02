@@ -1,0 +1,37 @@
+---
+interface Props {
+  id: string;          // e.g. "T-01"
+  domain: string;      // e.g. "Spacing & Typography"
+  domainClass: string; // e.g. "d-t"
+  title: string;
+  rule: string;
+}
+
+const { id, domain, domainClass, title, rule } = Astro.props;
+---
+
+<div class="card-wrap" data-card-id={id} onclick="this.classList.toggle('flipped')">
+  <div class="card-inner">
+    <div class="card-front">
+      <div class={`card-header ${domainClass}`}>
+        <span class="domain-tag">{domain}</span>
+        <span class="card-number">{id}</span>
+      </div>
+      <div class="card-title" set:html={title} />
+      <div class="card-visual">
+        <slot />
+      </div>
+    </div>
+    <div class="card-back">
+      <div class={`back-header ${domainClass}`}>
+        <span class="back-brand">LaunchYourVibe</span>
+        <span class="back-num">{id}</span>
+      </div>
+      <div class="back-rule" set:html={rule} />
+      <div class="back-footer">
+        <span class="back-footer-brand">LaunchYourVibe · UpStart Productions</span>
+        <span class="back-footer-url">launchyourvibe.live</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="D-03"
+  domain="Data"
+  domainClass="d-d"
+  title=`Empty Chart States<br/>Are Not Optional`
+  rule=`<strong>An empty chart with no explanation looks broken.</strong> Design the zero state: explain why there's no data, tell users what action produces data, and consider showing a ghost/preview of what the chart will look like. Every chart needs a zero state, a loading state, and an error state.`
+>
+<div class="fc-5 d03-visual">
+<div class="vis-box-bad-sm">
+<div class="vis-label-bad-sm"><X size={13} class="ux-icon" /> Broken empty state</div>
+<div style="display:flex;align-items:flex-end;gap:3px;height:20px;opacity:0.15;">
+<div class="vis-empty-bar" style="height:80%;"></div>
+<div class="vis-empty-bar-alt" style="height:40%;"></div>
+<div class="vis-empty-bar-alt" style="height:60%;"></div>
+</div>
+<div class="text-7-aa-center">undefined</div>
+</div>
+<div class="vis-box-good-sm">
+<div class="vis-label-good-sm"><Check size={13} class="ux-icon" /> Helpful empty state</div>
+<div class="text-7-5-body">No data yet for this period.<br/>Start tracking to see trends here.</div>
+</div>
+</div>
+</UxCard>

@@ -1,0 +1,34 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="A-06"
+  domain="Accessibility"
+  domainClass="a-a"
+  title=`Color Alone Is Not<br/>Enough`
+  rule=`<strong>Red/green distinctions are invisible to 8% of users.</strong> Always pair color with a second signal: an icon, a label, a pattern, or a shape. This applies to charts, status indicators, form errors, and any state communicated purely through hue.`
+>
+<div class="fc-5 a06-visual">
+<div class="fr-5">
+<div class="flex-bad-center">
+<div class="fr-c4-mb3">
+<div class="dot-green-sm"></div>
+<div class="dot-red-sm"></div>
+<div class="dot-orange-sm"></div>
+</div>
+<div class="mono-color-bad">Color only <X size={13} class="ux-icon" /></div>
+</div>
+<div class="flex-good-center">
+<div class="fr-c4-mb3">
+<div class="sq-green"><Check size={13} class="ux-icon" /></div>
+<div class="sq-red"><X size={13} class="ux-icon" /></div>
+<div class="sq-orange">!</div>
+</div>
+<div class="mono-color-good">Color + icon <Check size={13} class="ux-icon" /></div>
+</div>
+</div>
+<div class="text-xxs-muted">1 in 12 men have color vision deficiency</div>
+</div>
+</UxCard>

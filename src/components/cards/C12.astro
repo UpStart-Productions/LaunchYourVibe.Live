@@ -1,0 +1,31 @@
+---
+import UxCard from "../UxCard.astro";
+import { Clipboard, House, Search, User } from "lucide-astro";
+---
+
+<UxCard
+  id="C-12"
+  domain="Components"
+  domainClass="d-c"
+  title=`Search Placement<br/>Signals Its Importance`
+  rule=`<strong>If search is how most users navigate, it belongs at the top: always visible.</strong> If it's a power-user feature, tuck it in nav. Never make it a modal activation or a tiny corner icon on search-first apps.`
+>
+<div class="fc-6 c12-visual">
+<div class="vis-box">
+<div class="mono-primary-lbl">Primary use case → top of page</div>
+<div class="search-border-green"><span class="text-lg"><Search size={16} class="ux-icon" /></span><span class="text-sm-faded">Search products...</span></div>
+</div>
+<div class="vis-box">
+<div class="mono-secondary-lbl">Secondary use → header icon / tab</div>
+<div class="fr-c8">
+<div style="display:flex;gap:12px;">
+<span class="text-md-faded2"><House size={16} class="ux-icon" /></span>
+<span class="text-md-faded2"><Clipboard size={16} class="ux-icon" /></span>
+<span class="text-lg"><Search size={16} class="ux-icon" /></span>
+<span class="text-md-faded2"><User size={16} class="ux-icon" /></span>
+</div>
+<span class="text-7-faint">(nav bar icon)</span>
+</div>
+</div>
+</div>
+</UxCard>

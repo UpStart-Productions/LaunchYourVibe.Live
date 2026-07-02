@@ -1,0 +1,22 @@
+---
+import UxCard from "../UxCard.astro";
+import { Trash2 } from "lucide-astro";
+---
+
+<UxCard
+  id="I-04"
+  domain="Interaction"
+  domainClass="d-i"
+  title=`Destructive Actions<br/>Need Friction:<br/>On Purpose`
+  rule=`<strong>Make the danger legible.</strong> Red button, explicit label, and a cost statement. "Are you sure?" without consequences doesn't create real friction: specifics do.`
+>
+<div class="destruct-demo i04-visual">
+<div class="destruct-icon"><Trash2 size={28} class="ux-icon" /></div>
+<div class="destruct-title">Delete "Project Alpha"?</div>
+<div class="destruct-body">This will permanently remove all files and comments. This cannot be undone.</div>
+<div class="destruct-btns">
+<div class="destruct-cancel">Cancel</div>
+<div class="destruct-confirm">Delete Forever</div>
+</div>
+</div>
+</UxCard>

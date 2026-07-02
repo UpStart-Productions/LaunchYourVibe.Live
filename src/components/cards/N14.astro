@@ -1,0 +1,29 @@
+---
+import UxCard from "../UxCard.astro";
+---
+
+<UxCard
+  id="N-14"
+  domain="Navigation"
+  domainClass="d-n"
+  title=`Primary Actions Don't<br/>Belong Below the Fold`
+  rule=`<strong>The fold is not dead.</strong> On small screens, most users never scroll. Put the primary CTA in the viewport on load. Everything else can follow: but the first action the user should take must be immediately visible.`
+>
+<div style="display:flex;flex-direction:column;gap:5px;align-items:center;">
+<div class="phone-n14 n14-visual">
+<div class="n14-header-bar"></div>
+<div style="padding:6px;display:flex;flex-direction:column;gap:3px;">
+<div class="bar-e0" style="height:4px;width:90%;"></div>
+<div class="bar-e0" style="height:4px;width:75%;"></div>
+<div class="n14-cta-btn"><span class="n14-cta-text">BUY NOW</span></div>
+</div>
+<div class="divider-line"></div>
+<div style="padding:6px;display:flex;flex-direction:column;gap:3px;opacity:0.4;">
+<div class="bar-4-light"></div>
+<div class="bar-e0" style="height:4px;width:80%;"></div>
+<div class="bar-e0" style="height:4px;width:60%;"></div>
+</div>
+</div>
+<div class="mono-fold-note">Fold → primary action visible<br/>without scrolling</div>
+</div>
+</UxCard>

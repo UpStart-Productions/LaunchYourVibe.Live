@@ -1,0 +1,27 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="I-12"
+  domain="Interaction"
+  domainClass="d-i"
+  title=`Hover Actions<br/>Don't Exist on Mobile`
+  rule=`<strong>Touch has no cursor.</strong> Any interaction hidden behind hover is invisible on mobile. If your content needs additional actions, make them visible, not discoverable via pointer proximity.`
+>
+<div class="fc-6 i12-visual">
+<div class="vis-box-bad-lg">
+<div class="vis-label-bad"><X size={13} class="ux-icon" /> Desktop pattern on mobile</div>
+<div class="hover-bad-note">"Hover to see options": oops</div>
+</div>
+<div class="vis-box-good-lg">
+<div class="vis-label-good"><Check size={13} class="ux-icon" /> Mobile-first patterns</div>
+<div class="check-list">
+<div class="check-item"><span class="check-icon">→</span>Long press reveals context menu</div>
+<div class="check-item"><span class="check-icon">→</span>Swipe gesture shows actions</div>
+<div class="check-item"><span class="check-icon">→</span>Always-visible action icons</div>
+</div>
+</div>
+</div>
+</UxCard>

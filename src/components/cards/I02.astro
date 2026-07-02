@@ -1,0 +1,24 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="I-02"
+  domain="Interaction"
+  domainClass="d-i"
+  title=`Error Messages:<br/>Say What + Why + Fix`
+  rule=`<strong>What happened. Why. What to do.</strong> Three sentences max. Plain language. No stack traces. Never blame the user.`
+>
+<div class="fc-7 i02-visual">
+<div class="error-demo error-demo-bad">
+<div class="error-title"><X size={13} class="ux-icon" /> "An error occurred."</div>
+<div class="text-xxs-muted" style="font-style:italic;margin-top:2px;">...no help at all</div>
+</div>
+<div class="error-demo error-demo-good">
+<div class="error-title error-title-good"><Check size={13} class="ux-icon" /> "Couldn't save changes."</div>
+<div class="error-body">Your session timed out after 30 min of inactivity.</div>
+<div class="error-action error-action-blue">Sign in again to continue →</div>
+</div>
+</div>
+</UxCard>

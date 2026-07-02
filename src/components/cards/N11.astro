@@ -1,0 +1,23 @@
+---
+import UxCard from "../UxCard.astro";
+import { Bell, Check } from "lucide-astro";
+---
+
+<UxCard
+  id="N-11"
+  domain="Navigation"
+  domainClass="d-n"
+  title=`Ask for Notifications<br/>After Showing Their Value`
+  rule=`<strong>Permission prompts fail when the user has no context for what they're agreeing to.</strong> Link the ask to a specific action the user just took. The value exchange is clear, and they're far more likely to say yes.`
+>
+<div class="notif-demo n11-visual">
+<div class="notif-item notif-bad">
+<span class="notif-icon"><Bell size={16} class="ux-icon" /></span>
+<div class="notif-text"><strong>"Can we send you notifications?"</strong>: Asked on first launch, before doing anything. User has no reason to say yes. Declined forever.</div>
+</div>
+<div class="notif-item notif-good">
+<span class="notif-icon"><Check size={13} class="ux-icon" /></span>
+<div class="notif-text"><strong>User turns on price tracking.</strong> "Want to be notified when this drops?": Now they have a specific reason. Permission granted.</div>
+</div>
+</div>
+</UxCard>

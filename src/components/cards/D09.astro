@@ -1,0 +1,46 @@
+---
+import UxCard from "../UxCard.astro";
+---
+
+<UxCard
+  id="D-09"
+  domain="Data"
+  domainClass="d-d"
+  title=`Reduce Data Density<br/>on Mobile`
+  rule=`<strong>Mobile screens are too narrow for complex chart layouts.</strong> Reduce the number of data points, consolidate time periods (months → quarters), increase label size, and favor horizontal bar charts over vertical ones where space is constrained. Link to a fuller view if detail matters.`
+>
+<div class="fr-5 d09-visual">
+<div class="flex-box-bad-sq">
+<div class="vis-label-bad-sm">Desktop: full</div>
+<svg viewbox="0 0 55 35" width="100%">
+<line stroke="#EEE" stroke-width="1" x1="8" x2="8" y1="5" y2="30"></line>
+<line stroke="#EEE" stroke-width="1" x1="8" x2="52" y1="30" y2="30"></line>
+<rect fill="#B81800" height="15" width="5" x="10" y="15"></rect>
+<rect fill="#B81800" height="22" width="5" x="17" y="8"></rect>
+<rect fill="#B81800" height="12" width="5" x="24" y="18"></rect>
+<rect fill="#B81800" height="25" width="5" x="31" y="5"></rect>
+<rect fill="#B81800" height="18" width="5" x="38" y="12"></rect>
+<rect fill="#B81800" height="10" width="5" x="45" y="20"></rect>
+<text fill="#999" font-size="3" x="12" y="34">J</text>
+<text fill="#999" font-size="3" x="19" y="34">F</text>
+<text fill="#999" font-size="3" x="26" y="34">M</text>
+<text fill="#999" font-size="3" x="33" y="34">A</text>
+<text fill="#999" font-size="3" x="40" y="34">M</text>
+<text fill="#999" font-size="3" x="47" y="34">J</text>
+</svg>
+</div>
+<div class="flex-box-good-sq">
+<div class="vis-label-good-sm">Mobile: simplified</div>
+<svg viewbox="0 0 55 35" width="100%">
+<line stroke="#EEE" stroke-width="1" x1="8" x2="8" y1="5" y2="30"></line>
+<line stroke="#EEE" stroke-width="1" x1="8" x2="52" y1="30" y2="30"></line>
+<rect fill="#B81800" height="22" width="10" x="12" y="8"></rect>
+<rect fill="#B81800" height="25" width="10" x="28" y="5"></rect>
+<rect fill="#B81800" height="10" width="10" x="44" y="20"></rect>
+<text fill="#999" font-size="3.5" text-anchor="middle" x="17" y="34">Q1</text>
+<text fill="#999" font-size="3.5" text-anchor="middle" x="33" y="34">Q2</text>
+<text fill="#999" font-size="3.5" text-anchor="middle" x="49" y="34">Q3</text>
+</svg>
+</div>
+</div>
+</UxCard>

@@ -1,0 +1,19 @@
+---
+import UxCard from "../UxCard.astro";
+import { ArrowDown, ArrowLeft, ArrowRight, ZoomIn } from "lucide-astro";
+---
+
+<UxCard
+  id="N-10"
+  domain="Navigation"
+  domainClass="d-n"
+  title=`Gestures Must Be<br/>Taught or Discoverable`
+  rule=`<strong>Gestures are invisible: they don't announce themselves.</strong> Animate a partial gesture on first load, show a hint overlay, or reveal a "Did you know?" prompt. Never rely on discoverability alone for critical actions.`
+>
+<div class="gesture-demo n10-visual">
+<div class="gesture-row"><span class="gesture-icon"><ArrowLeft size={18} class="ux-icon" /></span><div class="gesture-desc"><span class="gesture-name">Swipe left</span>: delete, archive, act</div></div>
+<div class="gesture-row"><span class="gesture-icon"><ArrowRight size={18} class="ux-icon" /></span><div class="gesture-desc"><span class="gesture-name">Swipe right</span>: complete, like, flag</div></div>
+<div class="gesture-row"><span class="gesture-icon"><ZoomIn size={18} class="ux-icon" /></span><div class="gesture-desc"><span class="gesture-name">Pinch/spread</span>: zoom in/out</div></div>
+<div class="gesture-row"><span class="gesture-icon"><ArrowDown size={18} class="ux-icon" /></span><div class="gesture-desc"><span class="gesture-name">Pull to refresh</span>: reload content</div></div>
+</div>
+</UxCard>

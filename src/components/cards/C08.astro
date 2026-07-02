@@ -1,0 +1,32 @@
+---
+import UxCard from "../UxCard.astro";
+import { X } from "lucide-astro";
+---
+
+<UxCard
+  id="C-08"
+  domain="Components"
+  domainClass="d-c"
+  title=`Chips: Filter or Select,<br/>Not Both at Once`
+  rule=`<strong>Chips have two distinct jobs: filtering and input.</strong> Don't mix them on the same surface. Filter chips are toggles. Input chips represent values the user has added. Styling should signal the difference.`
+>
+<div class="fc-6 c08-visual">
+<div class="vis-box">
+<div class="vis-label">Filter chips: current filters</div>
+<div class="chips">
+<div class="chip chip-on">Design <X size={13} class="ux-icon" /></div>
+<div class="chip chip-on">Remote <X size={13} class="ux-icon" /></div>
+<div class="chip chip-off">+ Engineering</div>
+<div class="chip chip-off">+ Product</div>
+</div>
+</div>
+<div class="vis-box">
+<div class="vis-label">Input chips: entered values</div>
+<div class="input-chip-wrap">
+<div class="chip chip-on chip-sm">sarah@co.com <X size={13} class="ux-icon" /></div>
+<div class="chip chip-on chip-sm">mike@co.com <X size={13} class="ux-icon" /></div>
+<div class="text-sm-faded">Add...</div>
+</div>
+</div>
+</div>
+</UxCard>

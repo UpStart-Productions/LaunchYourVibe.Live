@@ -1,0 +1,38 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="C-03"
+  domain="Components"
+  domainClass="d-c"
+  title=`Forms Are Always<br/>Single Column on Mobile`
+  rule=`<strong>Two columns on mobile means two columns of tiny inputs.</strong> Users skip fields accidentally and make more errors. Single column, full width. One field, one decision at a time.`
+>
+<div class="bad-good-row c03-visual">
+<div class="verdict-col">
+<span class="verdict-label label-bad"><X size={13} class="ux-icon" /> Two Column</span>
+<div class="vis-demo-bad" style="padding:7px;">
+<div class="fr-4">
+<div class="bar-fill-bad"></div>
+<div class="bar-fill-bad"></div>
+</div>
+<div class="fr-4">
+<div class="bar-fill-bad"></div>
+<div class="bar-fill-bad"></div>
+</div>
+<div class="text-xs-bad-italic">cramped on small screen</div>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-good"><Check size={13} class="ux-icon" /> Single Column</span>
+<div class="vis-demo-good" style="padding:7px;">
+<div class="bar-good-mb"></div>
+<div class="bar-good-mb"></div>
+<div class="bar-good-mb"></div>
+<div class="bar-green" style="height:18px;border-radius:3px;"></div>
+</div>
+</div>
+</div>
+</UxCard>

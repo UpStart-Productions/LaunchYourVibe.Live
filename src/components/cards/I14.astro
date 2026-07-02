@@ -1,0 +1,28 @@
+---
+import UxCard from "../UxCard.astro";
+import { Pin, Trash2 } from "lucide-astro";
+---
+
+<UxCard
+  id="I-14"
+  domain="Interaction"
+  domainClass="d-i"
+  title=`Swipe Actions Need<br/>Visual Teaching`
+  rule=`<strong>Gestures are invisible until taught.</strong> On first use, animate a partial swipe. Use destructive actions only on one side: left for danger is a convention users already know.`
+>
+<div class="fc-6 i14-visual">
+<div class="vis-swipe-wrap">
+<div style="display:flex;align-items:stretch;height:44px;">
+<div class="swipe-action-good"><Pin size={16} class="ux-icon" /></div>
+<div class="swipe-msg">Message from Sarah</div>
+<div class="swipe-action-bad"><Trash2 size={13} class="ux-icon" /></div>
+</div>
+<div class="swipe-label">← swipe left / swipe right →</div>
+</div>
+<div class="check-list" style="padding:0 2px;">
+<div class="check-item"><span class="check-icon">→</span>Show hint on first load</div>
+<div class="check-item"><span class="check-icon">→</span>Reveal partially, then snap</div>
+<div class="check-item"><span class="check-icon">→</span>Use consistent direction</div>
+</div>
+</div>
+</UxCard>

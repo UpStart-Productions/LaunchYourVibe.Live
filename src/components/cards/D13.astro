@@ -1,0 +1,35 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="D-13"
+  domain="Data"
+  domainClass="d-d"
+  title=`Stacked Bars Mislead<br/>Middle Segments`
+  rule=`<strong>Stacked bars only allow accurate comparison of the bottom segment and the total.</strong> Middle segments float on different baselines, making comparison nearly impossible. If comparing sub-categories matters, use grouped bars. Use stacked bars only when total and bottom segment are the story.`
+>
+<div class="fc-5 d13-visual">
+<div class="vis-box-neutral">
+<svg viewbox="0 0 120 45" width="100%">
+<rect fill="#FFCDD2" height="35" width="20" x="10" y="5"></rect>
+<rect fill="#E57373" height="18" width="20" x="10" y="5"></rect>
+<rect fill="#B81800" height="8" width="20" x="10" y="5"></rect>
+<rect fill="#FFCDD2" height="35" width="20" x="40" y="5"></rect>
+<rect fill="#E57373" height="22" width="20" x="40" y="5"></rect>
+<rect fill="#B81800" height="10" width="20" x="40" y="5"></rect>
+<rect fill="#FFCDD2" height="35" width="20" x="70" y="5"></rect>
+<rect fill="#E57373" height="16" width="20" x="70" y="5"></rect>
+<rect fill="#B81800" height="12" width="20" x="70" y="5"></rect>
+<text fill="#999" font-size="4" text-anchor="middle" x="20" y="44">Q1</text>
+<text fill="#999" font-size="4" text-anchor="middle" x="50" y="44">Q2</text>
+<text fill="#999" font-size="4" text-anchor="middle" x="80" y="44">Q3</text>
+<text fill="#B81800" font-size="3.5" x="105" y="13">Top <Check size={13} class="ux-icon" /></text>
+<text fill="#E57373" font-size="3.5" x="105" y="22">Mid <X size={13} class="ux-icon" /></text>
+<text fill="#999" font-size="3.5" x="105" y="35">Bot <Check size={13} class="ux-icon" /></text>
+</svg>
+</div>
+<div class="text-xxs-muted">Middle segments float: hard to compare across bars</div>
+</div>
+</UxCard>

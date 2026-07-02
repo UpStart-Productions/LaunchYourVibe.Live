@@ -1,0 +1,25 @@
+---
+import UxCard from "../UxCard.astro";
+import { MousePointerClick, Vibrate, Volume2 } from "lucide-astro";
+---
+
+<UxCard
+  id="I-10"
+  domain="Interaction"
+  domainClass="d-i"
+  title=`Every Tap Needs<br/>Immediate Feedback`
+  rule=`<strong>Without feedback, users tap twice.</strong> Response within 100ms feels instantaneous. 100–300ms feels fast. Beyond 300ms, users start to doubt. Give visual feedback first, everything else second.`
+>
+<div class="fc-6 i10-visual">
+<div class="vis-demo-bg" style="padding:8px 9px;display:flex;flex-direction:column;gap:4px;">
+<div class="mono-fb-types">Feedback Types</div>
+<div class="fr-c8-md"><span class="text-lg"><MousePointerClick size={16} class="ux-icon" /></span><span><strong>Visual:</strong> color shift, scale, ripple</span></div>
+<div class="fr-c8-md"><span class="text-lg"><Vibrate size={16} class="ux-icon" /></span><span><strong>Haptic:</strong> light tap on iOS/Android</span></div>
+<div class="fr-c8-md"><span class="text-lg"><Volume2 size={16} class="ux-icon" /></span><span><strong>Audio:</strong> subtle chime (optional)</span></div>
+</div>
+<div class="fr-6">
+<div class="flex-bad-note">No feedback → broken?</div>
+<div class="flex-good-note">&lt; 100ms → feels instant</div>
+</div>
+</div>
+</UxCard>

@@ -1,0 +1,25 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="D-15"
+  domain="Data"
+  domainClass="d-d"
+  title=`Chart Titles State the<br/>Insight, Not the Subject`
+  rule=`<strong>A subject title labels the chart. An insight title does the analysis for the reader.</strong> Move the descriptive label to a subtitle. The title should complete the sentence: "The main thing this chart shows is ___." Users shouldn't have to read and interpret: they should arrive at the conclusion immediately.`
+>
+<div class="fc-5 d15-visual">
+<div class="vis-box-bad-sm2">
+<div class="vis-label-bad-sm"><X size={13} class="ux-icon" /> Subject title: reader works harder</div>
+<div class="text-md-bold-dark">Monthly Revenue by Region</div>
+<div class="text-7-muted-mt">What am I supposed to see here?</div>
+</div>
+<div class="vis-box-good-sm2">
+<div class="vis-label-good-sm"><Check size={13} class="ux-icon" /> Insight title: reader gets it instantly</div>
+<div class="text-md-bold-dark">West Region Outpaced All Others Q3</div>
+<div class="text-7-mid-mt">Revenue by region, Jan–Sep 2024</div>
+</div>
+</div>
+</UxCard>

@@ -1,0 +1,23 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="I-09"
+  domain="Interaction"
+  domainClass="d-i"
+  title=`Undo Beats<br/>Confirm Dialogs`
+  rule=`<strong>Confirms interrupt flow. Undo restores agency.</strong> Let users act immediately, then give them a short window to reverse it. They feel more in control, not less.`
+>
+<div class="fc-7 i09-visual">
+<div class="vis-demo-bad" style="padding:8px;display:flex;flex-direction:column;gap:4px;">
+<div class="vis-label-bad-cap"><X size={13} class="ux-icon" /> Interrupt with confirm</div>
+<div class="confirm-bad-box">Delete this message?<br/><span class="text-confirm-bad">[Cancel] [Delete]</span></div>
+</div>
+<div class="vis-demo-good" style="padding:8px;display:flex;flex-direction:column;gap:4px;">
+<div class="mono-undo-good"><Check size={13} class="ux-icon" /> Act, then offer undo</div>
+<div class="toast-undo"><span>Message deleted ·</span><span class="text-undo-action">Undo (5s)</span></div>
+</div>
+</div>
+</UxCard>

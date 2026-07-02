@@ -1,0 +1,30 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="T-10"
+  domain="Spacing & Typography"
+  domainClass="d-t"
+  title=`Two Typefaces.<br/>That's the Budget.`
+  rule=`<strong>Each typeface carries a personality: mixing them creates noise.</strong> Two typefaces in clear roles feel like a system. Three or more feel like you couldn't decide.`
+>
+<div class="fc-6 t10-visual">
+<div class="vis-good-bg">
+<div class="mono-good-hd-mb"><Check size={13} class="ux-icon" /> TWO FACES, ONE JOB EACH</div>
+<div class="typo-h1">Serif or Sans: headlines</div>
+<div class="mono-ui-lbl">Mono or different weight: UI labels, code</div>
+</div>
+<div class="vis-bad-bg">
+<div class="mono-bad-hd-mb"><X size={13} class="ux-icon" /> FONT COLLECTION</div>
+<div style="display:flex;gap:4px;flex-wrap:wrap;">
+<span class="pill pill-red">Georgia</span>
+<span class="pill pill-red">Futura</span>
+<span class="pill pill-red">Garamond</span>
+<span class="pill pill-red">Helvetica</span>
+<span class="pill pill-red">Courier</span>
+</div>
+</div>
+</div>
+</UxCard>

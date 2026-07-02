@@ -1,0 +1,33 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="T-13"
+  domain="Spacing & Typography"
+  domainClass="d-t"
+  title=`Proximity Creates<br/>Visual Grouping`
+  rule=`<strong>A label 8px from its field looks owned. A label 16px away looks like a heading.</strong> The gap between things signals their relationship: closer means "these belong together."`
+>
+<div class="bad-good-row t13-visual">
+<div class="verdict-col">
+<span class="verdict-label label-bad"><X size={13} class="ux-icon" /> Equal gaps</span>
+<div class="vis-demo-bg" style="padding:8px;display:flex;flex-direction:column;gap:7px;">
+<div class="text-md-bold">Label</div>
+<div class="bar-16-gray"></div>
+<div class="text-md-bold">Label</div>
+<div class="bar-16-gray"></div>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-good"><Check size={13} class="ux-icon" /> Labels close</span>
+<div class="vis-demo-bg" style="padding:8px;display:flex;flex-direction:column;">
+<div class="text-md-bold-mb">Label</div>
+<div class="bar-16-light"></div>
+<div class="text-md-bold-mb">Label</div>
+<div class="bar-16-gray"></div>
+</div>
+</div>
+</div>
+</UxCard>

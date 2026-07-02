@@ -1,0 +1,29 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="C-09"
+  domain="Components"
+  domainClass="d-c"
+  title=`Accordions Hide Content.<br/>Use Them Intentionally.`
+  rule=`<strong>Accordions create extra work for the user.</strong> Every collapsed section is a barrier. Use them when the content is genuinely optional: not to make a page feel shorter while hiding required reading.`
+>
+<div class="accordion-demo c09-visual">
+<div class="acc-item">
+<div class="acc-head">Shipping information <span class="acc-arrow">▲</span></div>
+<div class="acc-body">Arrives in 3–5 business days. Free on orders over $50.</div>
+</div>
+<div class="acc-item">
+<div class="acc-head">Returns policy <span class="acc-arrow">▼</span></div>
+</div>
+<div class="acc-item">
+<div class="acc-head">Size guide <span class="acc-arrow">▼</span></div>
+</div>
+</div>
+<div style="margin-top:7px;display:flex;flex-direction:column;gap:3px;">
+<div class="text-7-5-good"><strong><Check size={13} class="ux-icon" /> Use for:</strong> secondary info, long FAQ, optional detail</div>
+<div class="text-7-5-bad"><strong><X size={13} class="ux-icon" /> Avoid for:</strong> primary content, critical steps, comparisons</div>
+</div>
+</UxCard>

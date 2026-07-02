@@ -1,0 +1,27 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="A-03"
+  domain="Accessibility"
+  domainClass="a-a"
+  title=`Focus Indicators Must<br/>Be Visible`
+  rule=`<strong>Keyboard users navigate entirely by focus ring.</strong> Never suppress it with <code>outline: none</code> without a custom replacement. Focus must meet 3:1 contrast against adjacent colors. Use <code>:focus-visible</code> to show it only for keyboard, not mouse.`
+>
+<div class="fc-6 a03-visual">
+<div class="fr-c6">
+<div class="focus-btn-no">Button</div>
+<div class="mono-none-note">outline: none <X size={13} class="ux-icon" /></div>
+</div>
+<div class="fr-c6">
+<div class="focus-btn-ring">Button</div>
+<div class="text-7-mono">2px solid <Check size={13} class="ux-icon" /></div>
+</div>
+<div class="fr-c6">
+<div class="focus-btn-fill">Button</div>
+<div class="text-7-mono">offset ring <Check size={13} class="ux-icon" /></div>
+</div>
+</div>
+</UxCard>

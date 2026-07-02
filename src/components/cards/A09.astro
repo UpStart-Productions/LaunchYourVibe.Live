@@ -1,0 +1,25 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="A-09"
+  domain="Accessibility"
+  domainClass="a-a"
+  title=`Labels Always Visible:<br/>Never Placeholder-Only`
+  rule=`<strong>Placeholders vanish when users start typing.</strong> This breaks cognitive load for anyone who forgets what a field was, and breaks screen readers entirely. Use a persistent <code>&amp;lt;label&amp;gt;</code> element for every input. Placeholder text is fine for examples: not for labels.`
+>
+<div class="fr-5 a09-visual">
+<div class="flex-bad-pad">
+<div class="vis-label-bad-mb4"><X size={13} class="ux-icon" /> Placeholder label</div>
+<div class="input-placeholder">Email address</div>
+<div class="input-placeholder-note">Disappears on type</div>
+</div>
+<div class="flex-good-pad">
+<div class="vis-label-good-mb4"><Check size={13} class="ux-icon" /> Persistent label</div>
+<div class="input-label">Email address</div>
+<div class="input-active">user@example.com</div>
+</div>
+</div>
+</UxCard>

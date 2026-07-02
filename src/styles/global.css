@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-display: "Clash Grotesk", var(--font-primary);
+    --color-cosmic: #12101f;
+    --color-cosmic-light: #1a1730;
+    --color-cosmic-border: rgba(255, 255, 255, 0.08);
+    --color-text: #e8e6f0;
+    --color-text-muted: #9b97ad;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-cosmic);
+    color: var(--color-text);
+    font-family: var(--font-primary);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+}
+
+@layer utilities {
+  .bg-cosmic {
+    background-color: var(--color-cosmic);
+  }
+
+  .bg-cosmic-light {
+    background-color: var(--color-cosmic-light);
+  }
+
+  .text-muted-cosmic {
+    color: var(--color-text-muted);
+  }
+
+  .border-cosmic {
+    border-color: var(--color-cosmic-border);
+  }
+}

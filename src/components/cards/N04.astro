@@ -1,0 +1,23 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="N-04"
+  domain="Navigation"
+  domainClass="d-n"
+  title=`Delay Onboarding<br/>Until Users Need It`
+  rule=`<strong>Users skip onboarding they haven't earned yet.</strong> Show guidance at the moment it becomes relevant: not before. Empty states, coach marks, and contextual tooltips teach while users are actually doing the thing.`
+>
+<div class="fc-6 n04-visual">
+<div class="vis-box-bad">
+<div class="vis-label-bad"><X size={13} class="ux-icon" /> Front-loaded tutorial</div>
+<div class="text-sm-muted-relax">8-screen walkthrough before the user has done anything they need help with.</div>
+</div>
+<div class="vis-box-good">
+<div class="vis-label-good"><Check size={13} class="ux-icon" /> Just-in-time onboarding</div>
+<div class="text-sm-muted-relax">Tooltip appears when user first reaches a feature. Context is everything.</div>
+</div>
+</div>
+</UxCard>

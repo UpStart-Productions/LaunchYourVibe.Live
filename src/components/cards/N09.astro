@@ -1,0 +1,23 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="N-09"
+  domain="Navigation"
+  domainClass="d-n"
+  title=`Delay Login Until<br/>the User Has a Reason`
+  rule=`<strong>Login walls at launch filter out users who haven't seen the value yet.</strong> Let users experience the app before asking for commitment. Gate only actions that genuinely require an account.`
+>
+<div class="fc-6 n09-visual">
+<div class="vis-box-bad">
+<div class="vis-label-bad"><X size={13} class="ux-icon" /> Login wall on launch</div>
+<div class="text-sm-muted">"Create account to continue." They just opened the app.</div>
+</div>
+<div class="vis-box-good">
+<div class="vis-label-good"><Check size={13} class="ux-icon" /> Gate at value moment</div>
+<div class="text-sm-muted-relax">Let them browse. When they try to save or purchase: "Sign in to save this." <em>Now</em> they have a reason.</div>
+</div>
+</div>
+</UxCard>

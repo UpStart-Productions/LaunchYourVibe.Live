@@ -1,0 +1,33 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="A-02"
+  domain="Accessibility"
+  domainClass="a-a"
+  title=`Touch Target<br/>Minimum Sizes`
+  rule=`<strong>A visually small element can still have a large hit area.</strong> iOS requires 44×44pt, Android recommends 48×48dp. Use padding to expand the tap zone without changing visual size. Crowded targets need 8pt spacing between them.`
+>
+<div class="a02-visual" style="display:flex;justify-content:center;gap:10px;align-items:flex-end;">
+<div class="fc-center-4">
+<div class="touch-target-bad">
+<div class="text-icon-bad"><X size={13} class="ux-icon" /></div>
+</div>
+<div class="text-xs-mono-c">22px<br/>Too small</div>
+</div>
+<div class="fc-center-4">
+<div class="touch-target-warn">
+<div class="text-icon-warn">~</div>
+</div>
+<div class="text-xs-mono-c">36px<br/>Marginal</div>
+</div>
+<div class="fc-center-4">
+<div class="touch-target-ok">
+<div class="text-icon-good"><Check size={13} class="ux-icon" /></div>
+</div>
+<div class="mono-touch-hint">44pt iOS<br/>48dp Android</div>
+</div>
+</div>
+</UxCard>

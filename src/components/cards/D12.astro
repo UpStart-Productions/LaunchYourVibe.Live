@@ -1,0 +1,28 @@
+---
+import UxCard from "../UxCard.astro";
+---
+
+<UxCard
+  id="D-12"
+  domain="Data"
+  domainClass="d-d"
+  title=`Donut Charts: Add a<br/>Summary KPI in the Center`
+  rule=`<strong>The donut chart's hole is prime real estate.</strong> Use it for the single most important number: total, percentage complete, or a key KPI. Without a center value, a donut chart is just a pie with a hole: the center makes it meaningfully different.`
+>
+<div class="d12-visual" style="display:flex;gap:8px;justify-content:center;align-items:center;">
+<div style="position:relative;width:60px;height:60px;">
+<svg height="60" viewbox="0 0 60 60" width="60">
+<circle cx="30" cy="30" fill="none" r="22" stroke="#B81800" stroke-dasharray="80 58.4" stroke-width="10"></circle>
+<circle cx="30" cy="30" fill="none" r="22" stroke="#FFCDD2" stroke-dasharray="58.4 80" stroke-dashoffset="-80" stroke-width="10"></circle>
+<circle cx="30" cy="30" fill="white" r="16"></circle>
+<text fill="#B81800" font-size="7" font-weight="700" text-anchor="middle" x="30" y="27">58%</text>
+<text fill="#999" font-size="4" text-anchor="middle" x="30" y="35">Complete</text>
+</svg>
+</div>
+<div class="fc-4">
+<div class="fr-c4-xs"><div class="legend-sq-dark2"></div>Done 58%</div>
+<div class="fr-c4-xs"><div class="legend-sq-lite2"></div>Remaining 42%</div>
+<div class="text-xs-note-mt">Center = the whole story at a glance</div>
+</div>
+</div>
+</UxCard>

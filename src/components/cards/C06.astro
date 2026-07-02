@@ -1,0 +1,27 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="C-06"
+  domain="Components"
+  domainClass="d-c"
+  title=`Dropdowns on Mobile:<br/>Use Native or Bottom Sheet`
+  rule=`<strong>Custom dropdowns fight the OS.</strong> Native selects trigger the platform's built-in scroll picker: optimized for touch. Only build custom when the native control genuinely fails the need.`
+>
+<div class="fc-6 c06-visual">
+<div class="vis-box-bad">
+<div class="vis-label-bad"><X size={13} class="ux-icon" /> Tiny custom dropdown</div>
+<div class="dropdown-trigger"><span>Select country...</span><span>▼</span></div>
+<div class="dropdown-list">long list hard to scroll on touch</div>
+</div>
+<div class="vis-box-good">
+<div class="vis-label-good"><Check size={13} class="ux-icon" /> Native select / action sheet</div>
+<div class="check-list">
+<div class="check-item"><span class="check-icon">→</span>Native &lt;select&gt; for short lists</div>
+<div class="check-item"><span class="check-icon">→</span>Bottom sheet for long/visual lists</div>
+</div>
+</div>
+</div>
+</UxCard>

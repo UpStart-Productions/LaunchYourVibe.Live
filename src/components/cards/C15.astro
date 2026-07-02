@@ -1,0 +1,29 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check } from "lucide-astro";
+---
+
+<UxCard
+  id="C-15"
+  domain="Components"
+  domainClass="d-c"
+  title=`Infinite Scroll for Browse.<br/>Pagination for Find.`
+  rule=`<strong>Infinite scroll removes the user's sense of location.</strong> If they need to return to a specific item or share a result, pagination gives them an address. Endless scroll is for consuming, not finding.`
+>
+<div class="two-col-list c15-visual">
+<div class="tcl-col">
+<div class="tcl-head"><Check size={13} class="ux-icon" /> Infinite scroll</div>
+<div class="tcl-item">Social feeds</div>
+<div class="tcl-item">Photo galleries</div>
+<div class="tcl-item">Content discovery</div>
+<div class="tcl-item">News streams</div>
+</div>
+<div class="tcl-col">
+<div class="tcl-head"><Check size={13} class="ux-icon" /> Pagination</div>
+<div class="tcl-item">Search results</div>
+<div class="tcl-item">Data tables</div>
+<div class="tcl-item">E-commerce lists</div>
+<div class="tcl-item">Audit logs</div>
+</div>
+</div>
+</UxCard>

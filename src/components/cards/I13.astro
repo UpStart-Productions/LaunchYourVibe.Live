@@ -1,0 +1,29 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="I-13"
+  domain="Interaction"
+  domainClass="d-i"
+  title=`Disabled Means<br/>"Not Yet": Explain Why`
+  rule=`<strong>A grayed button with no explanation creates confusion.</strong> Tell users what they're missing. The block becomes a guide, and prevents them from abandoning the form in frustration.`
+>
+<div class="fc-5 i13-visual">
+<div class="vis-box-bad">
+<div class="vis-label-bad"><X size={13} class="ux-icon" /> Silent disabled</div>
+<div class="fr-between">
+<div class="btn-disabled-lg">Submit</div>
+<div class="text-xxs-muted" style="font-style:italic;">...why can't I click?</div>
+</div>
+</div>
+<div class="vis-box-good">
+<div class="vis-label-good"><Check size={13} class="ux-icon" /> Contextual disabled</div>
+<div class="fc-4">
+<div class="btn-disabled-inline">Submit</div>
+<div class="text-8-muted">Complete all required fields to continue</div>
+</div>
+</div>
+</div>
+</UxCard>

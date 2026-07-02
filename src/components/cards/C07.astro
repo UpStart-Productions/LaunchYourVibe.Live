@@ -1,0 +1,29 @@
+---
+import UxCard from "../UxCard.astro";
+import { ArrowUp, Bell, Check, Pencil, X } from "lucide-astro";
+---
+
+<UxCard
+  id="C-07"
+  domain="Components"
+  domainClass="d-c"
+  title=`FAB = One Primary<br/>Action. One.`
+  rule=`<strong>The FAB is the most prominent tap target on screen.</strong> It implies "this is the thing you do most." If you can't name that one action, the FAB isn't the right pattern.`
+>
+<div class="fc-center-6 c07-visual">
+<div class="vis-demo-good" style="width:100%;display:flex;align-items:center;gap:8px;">
+<div class="fab-good">+</div>
+<div class="text-fab-good"><strong><Check size={13} class="ux-icon" /> One action,</strong> unmistakably primary</div>
+</div>
+<div class="vis-demo-bad" style="width:100%;display:flex;flex-direction:column;gap:4px;">
+<div class="vis-label-bad-cap"><X size={13} class="ux-icon" /> FAB Abuse</div>
+<div style="display:flex;gap:5px;justify-content:center;">
+<div class="avatar-pink">+</div>
+<div class="avatar-pink"><Pencil size={13} class="ux-icon" /></div>
+<div class="avatar-pink"><ArrowUp size={13} class="ux-icon" /></div>
+<div class="avatar-pink"><Bell size={16} class="ux-icon" /></div>
+</div>
+<div class="text-7-bad" style="text-align:center;">now nothing is primary</div>
+</div>
+</div>
+</UxCard>

@@ -1,0 +1,33 @@
+---
+import UxCard from "../UxCard.astro";
+---
+
+<UxCard
+  id="A-07"
+  domain="Accessibility"
+  domainClass="a-a"
+  title=`Support Text Resize<br/>Up to 200%`
+  rule=`<strong>Low-vision users regularly set system font size to 150–200%.</strong> Use relative units (rem, em): never px for font sizes. Test by bumping browser font size to 200% and checking for content loss, overflow, or broken layouts. Mobile: respect system dynamic type settings.`
+>
+<div class="fr-5 a07-visual">
+<div class="flex-pad-col">
+<div class="vis-label-center">100%</div>
+<div class="text-demo">The quick brown fox jumps.</div>
+<div class="bar-14-brown"></div>
+<div class="fr-2">
+<div class="bar-fill-8"></div>
+<div class="bar-brown-sm"></div>
+</div>
+</div>
+<div class="flex-pad-col">
+<div class="vis-label-center">200%</div>
+<div class="text-demo-clip">The quick…</div>
+<div class="bar-14-brown"></div>
+<div class="fr-2">
+<div class="bar-fill-8"></div>
+<div class="bar-brown-sm"></div>
+</div>
+</div>
+</div>
+<div class="mono-center-bad-mt4">No horizontal scroll. No clipped content.</div>
+</UxCard>

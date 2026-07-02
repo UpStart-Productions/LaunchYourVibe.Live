@@ -1,0 +1,19 @@
+---
+import UxCard from "../UxCard.astro";
+---
+
+<UxCard
+  id="N-02"
+  domain="Navigation"
+  domainClass="d-n"
+  title=`New Screen or Overlay?<br/>Ask About Context.`
+  rule=`<strong>The choice is really about whether the user is leaving their current task or pausing it.</strong> If they're leaving, push a new screen. If they're pausing, use an overlay that lets them see and return to where they came from.`
+>
+<div class="fc-5 n02-visual">
+<div class="label-row"><span>Unrelated task</span><span class="val text-purple-sm">New screen</span></div>
+<div class="label-row"><span>Quick edit / confirm</span><span class="val text-purple-sm">Sheet / dialog</span></div>
+<div class="label-row"><span>Contextual detail</span><span class="val text-purple-sm">Side panel</span></div>
+<div class="label-row"><span>Multi-step task</span><span class="val text-purple-sm">New screen</span></div>
+<div class="label-row"><span>Ephemeral info</span><span class="val text-purple-sm">Tooltip / toast</span></div>
+</div>
+</UxCard>

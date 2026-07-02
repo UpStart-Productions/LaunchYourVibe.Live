@@ -1,0 +1,30 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="N-01"
+  domain="Navigation"
+  domainClass="d-n"
+  title=`Empty States Are<br/>Not Optional`
+  rule=`<strong>Every empty screen is a first impression of a feature.</strong> Tell them what belongs here, why it's empty, and exactly what to do next. Icon + headline + CTA. Three elements, every time.`
+>
+<div class="bad-good-row n01-visual">
+<div class="verdict-col">
+<span class="verdict-label label-bad"><X size={13} class="ux-icon" /> Blank</span>
+<div class="vis-demo-bg" style="padding:8px;height:95px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;">
+<div class="icon-placeholder">-</div>
+<div class="text-empty-placeholder">nothing here</div>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-good"><Check size={13} class="ux-icon" /> Designed</span>
+<div class="vis-box-purple-sm" style="padding:7px;height:95px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;">
+<div class="empty-icon-purple">+</div>
+<div class="text-empty-heading">No items yet</div>
+<div class="text-empty-body">Add your first item<br/>to get started</div>
+</div>
+</div>
+</div>
+</UxCard>

@@ -1,0 +1,23 @@
+---
+import UxCard from "../UxCard.astro";
+---
+
+<UxCard
+  id="A-14"
+  domain="Accessibility"
+  domainClass="a-a"
+  title=`Icon Buttons Need<br/>Accessible Names`
+  rule=`<strong>The accessible name is what screen readers announce.</strong> For icon-only buttons the visual label is the icon: which is meaningless to AT. Pick the strategy that fits: <code>aria-label</code> for standalone icons, visually-hidden text when you need translatable strings, <code>aria-labelledby</code> when a visible label exists nearby.`
+>
+<div class="fc-5 a14-visual">
+<div class="vis-box-neutral">
+<div class="mono-section-head" style="margin-bottom:4px;">Three ways to name an icon button</div>
+<div class="fc-3">
+<div class="vis-label-dark">aria-label="Search"</div>
+<div class="vis-label-dark">aria-labelledby="visible-text-id"</div>
+<div class="vis-label-dark">&lt;span class="sr-only"&gt;Search&lt;/span&gt;</div>
+</div>
+</div>
+<div class="vis-label-bad-cap">title="" alone doesn't count: it's not announced reliably</div>
+</div>
+</UxCard>

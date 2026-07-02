@@ -1,0 +1,24 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="A-05"
+  domain="Accessibility"
+  domainClass="a-a"
+  title=`Semantic HTML:<br/>Structure Is Meaning`
+  rule=`<strong>HTML elements carry meaning that assistive tech relies on.</strong> Use <code>&amp;lt;button&amp;gt;</code> for actions, <code>&amp;lt;a&amp;gt;</code> for navigation, and heading tags in sequential order. Screen readers use landmark elements (<code>main</code>, <code>nav</code>, <code>aside</code>) to let users jump between page sections.`
+>
+<div class="fr-5 a05-visual">
+<div class="flex-box-bad">
+<div class="vis-label-bad-mb4"><X size={13} class="ux-icon" /> Div soup</div>
+<div class="mono-code-bad">&lt;div class="hd"&gt;<br/>&lt;div class="nav"&gt;<br/>&lt;div class="btn"&gt;</div>
+</div>
+<div class="flex-box-good">
+<div class="vis-label-good-mb4"><Check size={13} class="ux-icon" /> Semantic</div>
+<div class="mono-code-good">&lt;header&gt;<br/>&lt;nav&gt;<br/>&lt;button&gt;</div>
+</div>
+</div>
+<div class="mono-center-muted-mt5">h1 → h2 → h3. Never skip levels.</div>
+</UxCard>

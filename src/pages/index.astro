@@ -1,0 +1,275 @@
+---
+import "../styles/ux-deck.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import QuickNav from "../components/QuickNav.astro";
+import { SITE } from "../config/site";
+import {
+  Type,
+  MousePointerClick,
+  LayoutGrid,
+  Compass,
+  Eye,
+  BarChart3,
+} from "lucide-astro";
+import T01 from "../components/cards/T01.astro";
+import T02 from "../components/cards/T02.astro";
+import T03 from "../components/cards/T03.astro";
+import T04 from "../components/cards/T04.astro";
+import T05 from "../components/cards/T05.astro";
+import T06 from "../components/cards/T06.astro";
+import T07 from "../components/cards/T07.astro";
+import T08 from "../components/cards/T08.astro";
+import T09 from "../components/cards/T09.astro";
+import T10 from "../components/cards/T10.astro";
+import T11 from "../components/cards/T11.astro";
+import T12 from "../components/cards/T12.astro";
+import T13 from "../components/cards/T13.astro";
+import T14 from "../components/cards/T14.astro";
+import T15 from "../components/cards/T15.astro";
+import I01 from "../components/cards/I01.astro";
+import I02 from "../components/cards/I02.astro";
+import I03 from "../components/cards/I03.astro";
+import I04 from "../components/cards/I04.astro";
+import I05 from "../components/cards/I05.astro";
+import I06 from "../components/cards/I06.astro";
+import I07 from "../components/cards/I07.astro";
+import I08 from "../components/cards/I08.astro";
+import I09 from "../components/cards/I09.astro";
+import I10 from "../components/cards/I10.astro";
+import I11 from "../components/cards/I11.astro";
+import I12 from "../components/cards/I12.astro";
+import I13 from "../components/cards/I13.astro";
+import I14 from "../components/cards/I14.astro";
+import I15 from "../components/cards/I15.astro";
+import C01 from "../components/cards/C01.astro";
+import C02 from "../components/cards/C02.astro";
+import C03 from "../components/cards/C03.astro";
+import C04 from "../components/cards/C04.astro";
+import C05 from "../components/cards/C05.astro";
+import C06 from "../components/cards/C06.astro";
+import C07 from "../components/cards/C07.astro";
+import C08 from "../components/cards/C08.astro";
+import C09 from "../components/cards/C09.astro";
+import C10 from "../components/cards/C10.astro";
+import C11 from "../components/cards/C11.astro";
+import C12 from "../components/cards/C12.astro";
+import C13 from "../components/cards/C13.astro";
+import C14 from "../components/cards/C14.astro";
+import C15 from "../components/cards/C15.astro";
+import N01 from "../components/cards/N01.astro";
+import N02 from "../components/cards/N02.astro";
+import N03 from "../components/cards/N03.astro";
+import N04 from "../components/cards/N04.astro";
+import N05 from "../components/cards/N05.astro";
+import N06 from "../components/cards/N06.astro";
+import N07 from "../components/cards/N07.astro";
+import N08 from "../components/cards/N08.astro";
+import N09 from "../components/cards/N09.astro";
+import N10 from "../components/cards/N10.astro";
+import N11 from "../components/cards/N11.astro";
+import N12 from "../components/cards/N12.astro";
+import N13 from "../components/cards/N13.astro";
+import N14 from "../components/cards/N14.astro";
+import N15 from "../components/cards/N15.astro";
+import A01 from "../components/cards/A01.astro";
+import A02 from "../components/cards/A02.astro";
+import A03 from "../components/cards/A03.astro";
+import A04 from "../components/cards/A04.astro";
+import A05 from "../components/cards/A05.astro";
+import A06 from "../components/cards/A06.astro";
+import A07 from "../components/cards/A07.astro";
+import A08 from "../components/cards/A08.astro";
+import A09 from "../components/cards/A09.astro";
+import A10 from "../components/cards/A10.astro";
+import A11 from "../components/cards/A11.astro";
+import A12 from "../components/cards/A12.astro";
+import A13 from "../components/cards/A13.astro";
+import A14 from "../components/cards/A14.astro";
+import A15 from "../components/cards/A15.astro";
+import D01 from "../components/cards/D01.astro";
+import D02 from "../components/cards/D02.astro";
+import D03 from "../components/cards/D03.astro";
+import D04 from "../components/cards/D04.astro";
+import D05 from "../components/cards/D05.astro";
+import D06 from "../components/cards/D06.astro";
+import D07 from "../components/cards/D07.astro";
+import D08 from "../components/cards/D08.astro";
+import D09 from "../components/cards/D09.astro";
+import D10 from "../components/cards/D10.astro";
+import D11 from "../components/cards/D11.astro";
+import D12 from "../components/cards/D12.astro";
+import D13 from "../components/cards/D13.astro";
+import D14 from "../components/cards/D14.astro";
+import D15 from "../components/cards/D15.astro";
+
+const sectionNavItems = [
+  { label: "Spacing & Typography", href: "#spacing-typography", icon: Type },
+  { label: "Interaction", href: "#interaction", icon: MousePointerClick },
+  { label: "Components", href: "#components", icon: LayoutGrid },
+  { label: "Navigation", href: "#navigation", icon: Compass },
+  { label: "Accessibility", href: "#accessibility", icon: Eye },
+  { label: "Data", href: "#data", icon: BarChart3 },
+];
+---
+
+<BaseLayout
+  title={`${SITE.name} — 90 reference cards for vibe coders`}
+  description="Browse 90 UX reference cards across 6 domains. Built for non-developer vibe coders who want to ship good, accessible, secure software."
+>
+  <Header />
+
+  <main>
+    <section class="border-b border-cosmic bg-cosmic-light py-10 md:py-12">
+      <div class="container mx-auto px-4">
+        <div class="mx-auto flex max-w-3xl flex-col items-center text-center">
+          <img
+            src="/images/logo.svg"
+            alt="LaunchYourVibe"
+            class="mb-6 w-32 md:w-40"
+          />
+          <h1 class="text-3xl font-semibold text-white md:text-4xl">
+            Ship with confidence
+          </h1>
+          <p class="mt-3 max-w-2xl text-base leading-relaxed text-muted-cosmic md:text-lg">
+            90 reference cards for vibe coders who can ship with AI but want the
+            vocabulary to make it feel right. Click any card to flip.
+          </p>
+          <p class="mt-2 text-sm text-muted-cosmic">
+            6 domains · 15 cards each
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <QuickNav items={sectionNavItems} />
+
+    <section class="bg-cosmic py-16">
+      <div class="container mx-auto px-4">
+        <div id="spacing-typography" class="ux-domain-section scroll-mt-[148px] md:scroll-mt-[156px]">
+          <div class="ux-domain-heading">
+            <div class="ux-domain-swatch d-t"></div>
+            <span class="ux-domain-label">Spacing &amp; Typography</span>
+          </div>
+          <div class="ux-card-grid">
+            <T01 /><T02 /><T03 /><T04 /><T05 />
+            <T06 /><T07 /><T08 /><T09 /><T10 />
+            <T11 /><T12 /><T13 /><T14 /><T15 />
+          </div>
+        </div>
+
+        <div id="interaction" class="ux-domain-section scroll-mt-[148px] md:scroll-mt-[156px]">
+          <div class="ux-domain-heading">
+            <div class="ux-domain-swatch d-i"></div>
+            <span class="ux-domain-label">Interaction</span>
+          </div>
+          <div class="ux-card-grid">
+            <I01 /><I02 /><I03 /><I04 /><I05 />
+            <I06 /><I07 /><I08 /><I09 /><I10 />
+            <I11 /><I12 /><I13 /><I14 /><I15 />
+          </div>
+        </div>
+
+        <div id="components" class="ux-domain-section scroll-mt-[148px] md:scroll-mt-[156px]">
+          <div class="ux-domain-heading">
+            <div class="ux-domain-swatch d-c"></div>
+            <span class="ux-domain-label">Components</span>
+          </div>
+          <div class="ux-card-grid">
+            <C01 /><C02 /><C03 /><C04 /><C05 />
+            <C06 /><C07 /><C08 /><C09 /><C10 />
+            <C11 /><C12 /><C13 /><C14 /><C15 />
+          </div>
+        </div>
+
+        <div id="navigation" class="ux-domain-section scroll-mt-[148px] md:scroll-mt-[156px]">
+          <div class="ux-domain-heading">
+            <div class="ux-domain-swatch d-n"></div>
+            <span class="ux-domain-label">Navigation</span>
+          </div>
+          <div class="ux-card-grid">
+            <N01 /><N02 /><N03 /><N04 /><N05 />
+            <N06 /><N07 /><N08 /><N09 /><N10 />
+            <N11 /><N12 /><N13 /><N14 /><N15 />
+          </div>
+        </div>
+
+        <div id="accessibility" class="ux-domain-section scroll-mt-[148px] md:scroll-mt-[156px]">
+          <div class="ux-domain-heading">
+            <div class="ux-domain-swatch a-a"></div>
+            <span class="ux-domain-label">Accessibility</span>
+          </div>
+          <div class="ux-card-grid">
+            <A01 /><A02 /><A03 /><A04 /><A05 />
+            <A06 /><A07 /><A08 /><A09 /><A10 />
+            <A11 /><A12 /><A13 /><A14 /><A15 />
+          </div>
+        </div>
+
+        <div id="data" class="ux-domain-section scroll-mt-[148px] md:scroll-mt-[156px]">
+          <div class="ux-domain-heading">
+            <div class="ux-domain-swatch d-d"></div>
+            <span class="ux-domain-label">Data</span>
+          </div>
+          <div class="ux-card-grid">
+            <D01 /><D02 /><D03 /><D04 /><D05 />
+            <D06 /><D07 /><D08 /><D09 /><D10 />
+            <D11 /><D12 /><D13 /><D14 /><D15 />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style is:global>
+  .ux-domain-label {
+    color: #8b86a0;
+  }
+</style>
+
+<script>
+  /** T-01 intro flip: show users cards are clickable to reveal the rule on back. */
+  (function initT01FlipDemo() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const card = document.querySelector('[data-card-id="T-01"]');
+    if (!card) return;
+
+    const FLIP_MS = 550;
+    const HOLD_MS = 3000;
+    const START_DELAY = 900;
+    const timers: ReturnType<typeof setTimeout>[] = [];
+    let cancelled = false;
+
+    function later(fn: () => void, ms: number) {
+      timers.push(setTimeout(fn, ms));
+    }
+
+    function cancel() {
+      cancelled = true;
+      timers.forEach(clearTimeout);
+      timers.length = 0;
+    }
+
+    function onUserClick() {
+      cancel();
+      card.removeEventListener("click", onUserClick);
+    }
+
+    card.addEventListener("click", onUserClick);
+
+    later(() => {
+      if (cancelled) return;
+      card.classList.add("flipped");
+      later(() => {
+        if (cancelled) return;
+        card.classList.remove("flipped");
+        card.removeEventListener("click", onUserClick);
+      }, FLIP_MS + HOLD_MS);
+    }, START_DELAY);
+  })();
+</script>

@@ -1,0 +1,28 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="N-07"
+  domain="Navigation"
+  domainClass="d-n"
+  title=`Breadcrumbs for<br/>Deep Hierarchies Only`
+  rule=`<strong>Breadcrumbs tell you where you are in a hierarchy: not history.</strong> They're a map, not a back button. On mobile, replace with just a Back label showing the parent's name.`
+>
+<div class="fc-6 n07-visual">
+<div class="vis-box-purple">
+<div class="mono-purple-hd">Good fit: 3+ level hierarchy</div>
+<div class="mono-breadcrumb">
+<span class="text-purple-link">Store</span> › <span class="text-purple-link">Electronics</span> › <span class="text-purple-link">Laptops</span> › MacBook Pro
+                </div>
+</div>
+<div class="vis-demo-bg" style="padding:8px 9px;">
+<div class="check-list">
+<div class="check-item"><span class="text-red"><X size={13} class="ux-icon" /></span>Single level flat nav (redundant)</div>
+<div class="check-item"><span class="text-red"><X size={13} class="ux-icon" /></span>Mobile: takes precious header space</div>
+<div class="check-item"><span class="text-lg-green"><Check size={13} class="ux-icon" /></span>Desktop e-commerce, admin dashboards</div>
+</div>
+</div>
+</div>
+</UxCard>

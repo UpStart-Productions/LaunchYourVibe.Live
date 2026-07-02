@@ -1,0 +1,21 @@
+{
+  "name": "launchyourvibe-live",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "UX reference cards for vibe coders — LaunchYourVibe by UpStart Productions",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build && node scripts/finalize-sitemap.mjs",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.2",
+    "@tailwindcss/vite": "^4.1.16",
+    "astro": "^5.15.1",
+    "lucide-astro": "^0.548.0",
+    "tailwindcss": "^4.1.16"
+  }
+}

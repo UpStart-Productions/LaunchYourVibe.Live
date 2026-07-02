@@ -1,0 +1,25 @@
+---
+import UxCard from "../UxCard.astro";
+---
+
+<UxCard
+  id="N-05"
+  domain="Navigation"
+  domainClass="d-n"
+  title=`Every Screen Should<br/>Be Deep-Linkable`
+  rule=`<strong>If you can't link to it, you can't share it, bookmark it, or return to it.</strong> Every meaningful screen in your app should have a URL that restores its full state. This also forces you to design URL-safe navigation.`
+>
+<div class="fc-5 n05-visual">
+<div class="vis-box-blue-md">
+<div class="mono-blue-hd">Each screen needs a URL / route</div>
+<div class="mono-route">/settings<br/>/profile/edit<br/>/orders/ORD-123<br/>/reports/2024/q3</div>
+</div>
+<div class="vis-box">
+<div class="check-list">
+<div class="check-item"><span class="check-icon">→</span>Shareable links work</div>
+<div class="check-item"><span class="check-icon">→</span>Browser back works</div>
+<div class="check-item"><span class="check-icon">→</span>Refresh doesn't lose state</div>
+</div>
+</div>
+</div>
+</UxCard>

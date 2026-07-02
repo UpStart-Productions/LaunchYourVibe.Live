@@ -1,0 +1,29 @@
+---
+import UxCard from "../UxCard.astro";
+---
+
+<UxCard
+  id="I-03"
+  domain="Interaction"
+  domainClass="d-i"
+  title=`Loading: Match the<br/>Wait to the Pattern`
+  rule=`<strong>Blank screens feel broken; spinners feel slow.</strong> Use skeleton loaders for content-heavy loads. Spinners for &lt;2s actions. Progress bars when the user needs to know how long.`
+>
+<div class="fc-6 i03-visual">
+<div class="vis-box">
+<div class="vis-label">Skeleton: page/card load</div>
+<div class="skeleton-gray" style="width:60%;margin-bottom:4px;"></div>
+<div class="skeleton-light" style="width:100%;margin-bottom:3px;"></div>
+<div class="skeleton-light" style="width:85%;"></div>
+</div>
+<div class="vis-box">
+<div class="vis-label">Progress: known duration</div>
+<div class="progress-track"><div class="progress-fill" style="width:65%;"></div></div>
+<div class="mono-pct-right">65%</div>
+</div>
+<div class="vis-demo-bg" style="padding:7px 9px;display:flex;align-items:center;gap:7px;">
+<div class="mono-spin-lbl">Spinner: quick actions</div>
+<div class="spinner-ring"></div>
+</div>
+</div>
+</UxCard>

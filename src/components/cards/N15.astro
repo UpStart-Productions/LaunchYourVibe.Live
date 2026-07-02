@@ -1,0 +1,27 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="N-15"
+  domain="Navigation"
+  domainClass="d-n"
+  title=`Preserve State When<br/>Users Leave and Return`
+  rule=`<strong>Users don't live inside your app.</strong> They switch apps, get interrupted, background it. Persist form data, scroll position, and filter state. Losing work is one of the fastest ways to lose users permanently.`
+>
+<div class="fc-5 n15-visual">
+<div class="vis-box-bad">
+<div class="vis-label-bad"><X size={13} class="ux-icon" /> State destroyed on leave</div>
+<div class="text-sm-muted-relax">Form with 15 fields: user gets a call, switches app, returns to empty form.</div>
+</div>
+<div class="vis-box-good">
+<div class="vis-label-good"><Check size={13} class="ux-icon" /> State preserved</div>
+<div class="check-list">
+<div class="check-item"><span class="check-icon">→</span>Form progress saved locally</div>
+<div class="check-item"><span class="check-icon">→</span>Scroll position restored</div>
+<div class="check-item"><span class="check-icon">→</span>Draft auto-saved</div>
+</div>
+</div>
+</div>
+</UxCard>

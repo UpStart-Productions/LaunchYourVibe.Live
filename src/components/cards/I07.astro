@@ -1,0 +1,30 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="I-07"
+  domain="Interaction"
+  domainClass="d-i"
+  title=`Validate on Blur,<br/>Not on Keystroke`
+  rule=`<strong>Showing errors while someone is mid-thought is hostile.</strong> Wait for blur (field exit) to validate. Only re-validate on keystroke after the first error appears. Never on every character.`
+>
+<div class="field-demo i07-visual">
+<div class="field-wrap">
+<div class="field-label">Email address</div>
+<div class="field-input ok">sarah@company.com</div>
+<div class="field-hint hint-ok"><Check size={13} class="ux-icon" /> Looks good</div>
+</div>
+<div class="field-wrap">
+<div class="field-label">Password</div>
+<div class="field-input err">••••••</div>
+<div class="field-hint hint-err"><X size={13} class="ux-icon" /> Must be 8+ chars with a number</div>
+</div>
+<div class="field-wrap">
+<div class="field-label">Phone</div>
+<div class="field-input field-input-typing">Still typing...</div>
+<div style="height:7px;"></div>
+</div>
+</div>
+</UxCard>

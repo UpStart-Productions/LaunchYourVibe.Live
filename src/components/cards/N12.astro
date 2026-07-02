@@ -1,0 +1,20 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="N-12"
+  domain="Navigation"
+  domainClass="d-n"
+  title=`Design the Exit:<br/>Offboarding Matters`
+  rule=`<strong>How users leave shapes how they remember you.</strong> Dark patterns at offboarding (roach motel UX) create resentment and reviews. A clean, honest exit is a final brand impression, and sometimes brings people back.`
+>
+<div class="fc-5 n12-visual">
+<div class="label-row"><span>Show what will be lost</span><span class="val text-purple-xs"><Check size={13} class="ux-icon" /> respect</span></div>
+<div class="label-row"><span>Offer data export</span><span class="val text-purple-xs"><Check size={13} class="ux-icon" /> trust</span></div>
+<div class="label-row"><span>Allow pause/snooze</span><span class="val text-purple-xs"><Check size={13} class="ux-icon" /> retention</span></div>
+<div class="label-row"><span>Confirm what was deleted</span><span class="val text-purple-xs"><Check size={13} class="ux-icon" /> closure</span></div>
+<div class="label-row"><span>Dark patterns to guilt</span><span class="val" class="text-7-bad"><X size={13} class="ux-icon" /> always</span></div>
+</div>
+</UxCard>

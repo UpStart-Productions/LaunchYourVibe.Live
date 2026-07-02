@@ -1,0 +1,16 @@
+---
+import UxCard from "../UxCard.astro";
+---
+
+<UxCard
+  id="A-08"
+  domain="Accessibility"
+  domainClass="d-a"
+  title=`Respect Reduced<br/>Motion Preferences`
+  rule=`<strong>Parallax, auto-playing carousels, and screen-wide transitions can trigger vestibular disorders.</strong> Check <code>prefers-reduced-motion</code> and remove or minimize non-essential animation. Keep functional transitions (loading, focus)...eliminate decorative ones.`
+>
+<div class="fc-5 a08-visual">
+<div class="code-block">@media (prefers-reduced-motion: reduce) &#123;<br/>  * &#123; animation-duration: 0.01ms !important;<br/>      transition-duration: 0.01ms !important; &#125;<br/>&#125;</div>
+<div class="text-xxs-muted">Vestibular disorders affect 35% of adults 40+</div>
+</div>
+</UxCard>

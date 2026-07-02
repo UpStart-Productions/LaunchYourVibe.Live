@@ -1,0 +1,36 @@
+---
+import UxCard from "../UxCard.astro";
+import { X } from "lucide-astro";
+---
+
+<UxCard
+  id="A-01"
+  domain="Accessibility"
+  domainClass="a-a"
+  title=`Contrast Ratios:<br/>AA vs AAA`
+  rule=`<strong>AA is the legal baseline; AAA is the gold standard.</strong> Body text needs 4.5:1. Large text (18pt+ or 14pt+ bold) needs 3:1. UI components and icons need 3:1 against adjacent colors. Test with a real contrast checker: eyeballing fails.`
+>
+<div class="fc-4 a01-visual">
+<div class="fr-4">
+<div class="contrast-col contrast-aa">
+<div class="text-sm-white-bold">Body Text</div>
+<div class="text-xxs-white">4.5:1 minimum</div>
+</div>
+<div class="contrast-col contrast-large">
+<div class="text-sm-white-bold">Large Text</div>
+<div class="text-xxs-white">3:1 minimum</div>
+</div>
+</div>
+<div class="fr-4">
+<div class="contrast-col contrast-aaa">
+<div class="text-sm-white-bold">Enhanced</div>
+<div class="text-xxs-white">7:1 AAA</div>
+</div>
+<div class="contrast-col contrast-fail">
+<div class="text-contrast-fail">This fails</div>
+<div class="text-7-faint">2.9:1 <X size={13} class="ux-icon" /></div>
+</div>
+</div>
+<div class="mono-center-muted-mt">Large text = 18pt normal or 14pt bold</div>
+</div>
+</UxCard>

@@ -1,0 +1,29 @@
+---
+import UxCard from "../UxCard.astro";
+import { X } from "lucide-astro";
+---
+
+<UxCard
+  id="D-02"
+  domain="Data"
+  domainClass="d-d"
+  title=`Pie Charts: Part-to-Whole<br/>Only. Max 5 Slices.`
+  rule=`<strong>Pie charts only answer one question: what share of the whole?</strong> They require slices to sum to 100%. Beyond 5 slices, human perception breaks down: angles are harder to compare than lengths. Use a bar chart if you want comparison; a pie if you want composition.`
+>
+<div class="d02-visual" style="display:flex;gap:8px;align-items:center;justify-content:center;">
+<div>
+<svg height="60" viewbox="0 0 60 60" width="60">
+<circle cx="30" cy="30" fill="#F5F5F5" r="28"></circle>
+<path d="M30 30 L30 2 A28 28 0 0 1 54.8 44 Z" fill="#B81800"></path>
+<path d="M30 30 L54.8 44 A28 28 0 0 1 5.2 44 Z" fill="#E57373"></path>
+<path d="M30 30 L5.2 44 A28 28 0 0 1 30 2 Z" fill="#FFCDD2"></path>
+</svg>
+</div>
+<div class="fc-3">
+<div class="fr-c4-xs"><div class="legend-sq-dark"></div>Desktop 45%</div>
+<div class="fr-c4-xs"><div class="legend-sq-mid"></div>Mobile 35%</div>
+<div class="fr-c4-xs"><div class="legend-sq-lite"></div>Tablet 20%</div>
+<div class="mono-pie-bad"><X size={13} class="ux-icon" /> Never compare across pies</div>
+</div>
+</div>
+</UxCard>

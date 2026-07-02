@@ -1,0 +1,26 @@
+---
+import UxCard from "../UxCard.astro";
+---
+
+<UxCard
+  id="A-15"
+  domain="Accessibility"
+  domainClass="a-a"
+  title=`WCAG Levels: A, AA,<br/>and AAA in Practice`
+  rule=`<strong>AA is the target for most products, and what most accessibility laws require.</strong> AAA is aspirational and not required for entire sites. Start with AA conformance, document your approach, and layer in AAA where it meaningfully serves your users.`
+>
+<div class="fc-4 a15-visual">
+<div class="wcag-a">
+<div class="wcag-level-warn">Level A</div>
+<div class="text-xxs-gray">Minimum. Alt text, keyboard access, no seizure-inducing content.</div>
+</div>
+<div class="wcag-aa">
+<div class="wcag-level-info">Level AA</div>
+<div class="text-xxs-gray">Legal standard. 4.5:1 contrast, captions, visible focus, consistent nav.</div>
+</div>
+<div class="wcag-aaa">
+<div class="wcag-level-good">Level AAA</div>
+<div class="text-xxs-gray">Gold standard. 7:1 contrast, sign language, extended audio desc.</div>
+</div>
+</div>
+</UxCard>

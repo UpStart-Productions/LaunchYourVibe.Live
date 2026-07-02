@@ -1,0 +1,32 @@
+---
+import UxCard from "../UxCard.astro";
+---
+
+<UxCard
+  id="D-01"
+  domain="Data"
+  domainClass="d-d"
+  title=`Bar = Compare.<br/>Line = Change Over Time.`
+  rule=`<strong>The wrong chart type doesn't just look off: it misleads.</strong> Use bars when comparing discrete values across categories. Use lines when showing how a single value changes continuously over time. Connecting discrete categories with a line implies continuity that doesn't exist.`
+>
+<div class="d01-visual">
+<div class="fr-5">
+<div class="flex-box-neutral">
+<div class="vis-label-muted">BAR: Compare</div>
+<div style="display:flex;align-items:flex-end;gap:3px;height:30px;">
+<div class="bar-data-red" style="height:60%;"></div>
+<div class="bar-data-red" style="height:100%;"></div>
+<div class="bar-data-red" style="height:40%;"></div>
+<div class="bar-data-red" style="height:75%;"></div>
+</div>
+</div>
+<div class="flex-box-neutral">
+<div class="vis-label-muted">LINE: Trend</div>
+<svg height="30" viewbox="0 0 60 30" width="100%">
+<polyline fill="none" points="5,25 15,18 25,20 35,10 45,14 55,5" stroke="#B81800" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polyline>
+</svg>
+</div>
+</div>
+<div class="chart-note-mt">Scatter: correlation · Area: volume over time</div>
+</div>
+</UxCard>

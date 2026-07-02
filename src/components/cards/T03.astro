@@ -1,0 +1,39 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="T-03"
+  domain="Spacing & Typography"
+  domainClass="d-t"
+  title=`Line Length:<br/>45–75 Characters`
+  rule=`<strong>Long lines force the eye to hunt for the next line.</strong> Short columns increase jumps per paragraph. 45–75 chars is where reading becomes effortless.`
+>
+<div class="bad-good-row t03-visual">
+  <div class="verdict-col">
+    <span class="verdict-label label-bad"><X size={13} class="ux-icon" /> Too Wide</span>
+    <div class="verdict-box verdict-box-bad">
+      <div class="text-lines">
+        <div class="text-line text-line-bad" style="width:100%;"></div>
+        <div class="text-line text-line-bad" style="width:97%;"></div>
+        <div class="text-line text-line-bad" style="width:100%;"></div>
+        <div class="text-line text-line-bad" style="width:93%;"></div>
+      </div>
+      <div class="verdict-anno verdict-anno-bad">~120 chars</div>
+    </div>
+  </div>
+  <div class="verdict-col">
+    <span class="verdict-label label-good"><Check size={13} class="ux-icon" /> Just Right</span>
+    <div class="verdict-box verdict-box-good">
+      <div class="text-lines">
+        <div class="text-line text-line-good" style="width:84%;"></div>
+        <div class="text-line text-line-good" style="width:78%;"></div>
+        <div class="text-line text-line-good" style="width:82%;"></div>
+        <div class="text-line text-line-good" style="width:76%;"></div>
+      </div>
+      <div class="verdict-anno verdict-anno-good">~60 chars</div>
+    </div>
+  </div>
+</div>
+</UxCard>

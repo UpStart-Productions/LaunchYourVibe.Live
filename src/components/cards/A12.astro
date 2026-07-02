@@ -1,0 +1,27 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="A-12"
+  domain="Accessibility"
+  domainClass="a-a"
+  title=`Alt Text: Describe<br/>the Purpose, Not the Pixels`
+  rule=`<strong>Alt text should convey what the image communicates in context.</strong> If the image is pure decoration, use an empty alt attribute (<code>alt=""</code>) so screen readers skip it. If it's a chart, describe the key insight: not the visual style.`
+>
+<div class="fc-4 a12-visual">
+<div class="vis-box-bad-sm">
+<div class="vis-label-bad-sm"><X size={13} class="ux-icon" /> Describes pixels</div>
+<div class="text-8-muted">"Image of a person smiling at a laptop with plants in the background"</div>
+</div>
+<div class="vis-box-good-sm">
+<div class="vis-label-good-sm"><Check size={13} class="ux-icon" /> Describes purpose</div>
+<div class="text-alt-good">"Customer using the dashboard to track weekly goals"</div>
+</div>
+<div class="vis-box-plain">
+<div class="mono-section-head">Decorative images</div>
+<div class="text-8-muted">alt="": intentionally empty</div>
+</div>
+</div>
+</UxCard>

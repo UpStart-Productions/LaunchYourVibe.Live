@@ -1,0 +1,19 @@
+---
+import UxCard from "../UxCard.astro";
+---
+
+<UxCard
+  id="A-11"
+  domain="Accessibility"
+  domainClass="a-a"
+  title=`Skip Navigation Links<br/>Save Keyboard Users`
+  rule=`<strong>Keyboard users Tab through every nav item on every page load.</strong> A skip link lets them jump directly to main content. Place it as the very first focusable element. Visually hide it until focused: don't remove it from the DOM or tab order.`
+>
+<div class="fc-5 a11-visual">
+<div class="vis-box-plain">
+<div class="skip-link-demo">Skip to main content</div>
+<div class="mono-skip-notes">Visible on :focus-visible only<br/>Hidden from sighted users<br/>First element in DOM</div>
+</div>
+<div class="text-skip-note">Without skip link: Tab × 40+ to reach content</div>
+</div>
+</UxCard>

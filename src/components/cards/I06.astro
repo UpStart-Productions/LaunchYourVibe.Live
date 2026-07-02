@@ -1,0 +1,30 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check } from "lucide-astro";
+---
+
+<UxCard
+  id="I-06"
+  domain="Interaction"
+  domainClass="d-i"
+  title=`Toast = Info.<br/>Dialog = Decision.`
+  rule=`<strong>Dialogs steal focus because they have to.</strong> If the user can ignore it, use a toast. If they must choose, use a dialog. Never use a dialog to say something they don't need to act on.`
+>
+<div class="fc-7 i06-visual">
+<div class="vis-box-sq">
+<div class="vis-label">Toast: ephemeral, non-blocking</div>
+<div class="toast-dark"><span><Check size={13} class="ux-icon" /></span> File saved · <span class="text-undo-lnk">Undo</span></div>
+</div>
+<div class="vis-box-sq">
+<div class="vis-label">Dialog: requires a choice</div>
+<div class="dialog-box">
+<div class="dialog-title">Unsaved Changes</div>
+<div class="dialog-body">Save before closing?</div>
+<div style="display:flex;gap:4px;justify-content:flex-end;">
+<div class="btn-discard">Discard</div>
+<div class="btn-save-dlg">Save</div>
+</div>
+</div>
+</div>
+</div>
+</UxCard>

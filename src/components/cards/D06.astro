@@ -1,0 +1,33 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="D-06"
+  domain="Data"
+  domainClass="d-d"
+  title=`Use Accessible Palettes<br/>in Data Visualization`
+  rule=`<strong>Never rely on red vs. green to distinguish data series.</strong> Use palettes designed for colorblind users (IBM Carbon, ColorBrewer, Tableau colorblind). Pair color differences with shape, texture, or direct labeling so the chart works without color at all.`
+>
+<div class="fc-5 d06-visual">
+<div class="vis-box-bad-sm">
+<div class="vis-label-bad-sm"><X size={13} class="ux-icon" /> Red/green only</div>
+<div class="fr-3">
+<div class="pal-bar pal-green"></div>
+<div class="pal-bar pal-red"></div>
+<div class="text-7-aa-indent">Indistinct to 8% of users</div>
+</div>
+</div>
+<div class="vis-box-good-sm">
+<div class="vis-label-good-sm"><Check size={13} class="ux-icon" /> Colorblind-safe</div>
+<div class="fr-3">
+<div class="pal-bar pal-blue"></div>
+<div class="pal-bar pal-orange"></div>
+<div class="pal-bar pal-gold"></div>
+<div class="pal-bar pal-teal"></div>
+</div>
+</div>
+<div class="text-xxs-muted">Also vary shape + pattern for print</div>
+</div>
+</UxCard>
