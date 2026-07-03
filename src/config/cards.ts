@@ -1,9 +1,16 @@
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+import { parseUxCardMeta } from "../utils/card-seo";
 
 const modules = import.meta.glob<{ default: AstroComponentFactory }>(
   "../components/cards/*.astro",
   { eager: true }
 );
+
+const rawModules = import.meta.glob<string>("../components/cards/*.astro", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+});
 
 function fileNameToCardId(name: string): string {
   const match = name.match(/^([A-Z])(\d+)\.astro$/);
@@ -14,6 +21,9 @@ function fileNameToCardId(name: string): string {
 export type CardEntry = {
   id: string;
   slug: string;
+  domain: string;
+  title: string;
+  rule: string;
   component: AstroComponentFactory;
 };
 
@@ -21,9 +31,18 @@ export const CARDS: CardEntry[] = Object.keys(modules)
   .map((path) => {
     const name = path.split("/").pop()!;
     const id = fileNameToCardId(name);
+    const { domain, title, rule } = parseUxCardMeta(rawModules[path]);
+
+    if (!domain || !title || !rule) {
+      throw new Error(`Missing UxCard metadata in ${name}`);
+    }
+
     return {
       id,
       slug: id.toLowerCase(),
+      domain,
+      title,
+      rule,
       component: modules[path].default,
     };
   })

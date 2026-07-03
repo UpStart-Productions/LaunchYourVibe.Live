@@ -4,6 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import CardDeckScripts from "../../components/CardDeckScripts.astro";
 import { CARD_BY_SLUG, CARDS } from "../../config/cards";
 import { SITE } from "../../config/site";
+import { cardPageDescription, cardPageTitle } from "../../utils/card-seo";
 
 export function getStaticPaths() {
   return CARDS.map((card) => ({ params: { id: card.slug } }));
@@ -13,13 +14,11 @@ const { id } = Astro.params;
 const card = CARD_BY_SLUG[id!];
 
 const CardComponent = card.component;
-const pageTitle = `${card.id} — ${SITE.name}`;
+const pageTitle = cardPageTitle(card, SITE.name);
+const pageDescription = cardPageDescription(card, SITE.name);
 ---
 
-<BaseLayout
-  title={pageTitle}
-  description={`UX reference card ${card.id} from ${SITE.name}. ${SITE.tagline}`}
->
+<BaseLayout title={pageTitle} description={pageDescription}>
   <main class="card-single-page">
     <div class="card-single-stage">
       <CardComponent />
