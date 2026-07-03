@@ -242,6 +242,12 @@ const { categories } = Astro.props;
     if (!input || !emptyState || !menu || !trigger || !popover) return;
 
     let debounceTimer: ReturnType<typeof setTimeout> | undefined;
+    let searchPinnedHeight = 0;
+    const cardsSection = document.querySelector<HTMLElement>("main section.py-16");
+
+    function hasActiveSearch() {
+      return input.value.trim().length > 0;
+    }
 
     function setPopoverOpen(open: boolean) {
       trigger.setAttribute("aria-expanded", String(open));
@@ -275,6 +281,19 @@ const { categories } = Astro.props;
 
     function applySearch() {
       const query = input.value.trim().toLowerCase();
+
+      if (query) {
+        if (searchPinnedHeight === 0 && cardsSection) {
+          searchPinnedHeight = cardsSection.offsetHeight;
+        }
+        if (cardsSection && searchPinnedHeight > 0) {
+          cardsSection.style.minHeight = `${searchPinnedHeight}px`;
+        }
+      } else {
+        searchPinnedHeight = 0;
+        if (cardsSection) cardsSection.style.minHeight = "";
+      }
+
       let visibleCount = 0;
 
       cards.forEach((card) => {
@@ -290,6 +309,12 @@ const { categories } = Astro.props;
       });
 
       emptyState.classList.toggle("hidden", visibleCount > 0 || !query);
+
+      if (query) {
+        requestAnimationFrame(() => stabilizeScrollForActiveSearch());
+      } else if (window.scrollY < getStuckThreshold()) {
+        setSearchRaised(false);
+      }
     }
 
     input.addEventListener("input", () => {
@@ -299,10 +324,30 @@ const { categories } = Astro.props;
 
     input.addEventListener("search", applySearch);
 
-    initSearchRaise(root as HTMLElement);
+    let getStuckThreshold = () => 0;
+    let setSearchRaised = (_raised: boolean) => {};
+    let stabilizeScrollForActiveSearch = () => {};
+
+    initSearchRaise(root as HTMLElement, input, {
+      bindRaise(api) {
+        getStuckThreshold = api.getStuckThreshold;
+        setSearchRaised = api.setRaised;
+        stabilizeScrollForActiveSearch = api.stabilizeScrollForActiveSearch;
+      },
+    });
   }
 
-  function initSearchRaise(panel: HTMLElement) {
+  function initSearchRaise(
+    panel: HTMLElement,
+    input: HTMLInputElement,
+    hooks: {
+      bindRaise: (api: {
+        getStuckThreshold: () => number;
+        setRaised: (raised: boolean) => void;
+        stabilizeScrollForActiveSearch: () => void;
+      }) => void;
+    },
+  ) {
     if (panel.dataset.raiseInit === "true") return;
     panel.dataset.raiseInit = "true";
 
@@ -326,6 +371,25 @@ const { categories } = Astro.props;
     function stuckThreshold() {
       return panelStart - header.offsetHeight;
     }
+
+    function stabilizeScrollForActiveSearch() {
+      if (!input.value.trim()) return;
+
+      const threshold = stuckThreshold();
+      if (window.scrollY < threshold) {
+        window.scrollTo({ top: threshold, left: 0, behavior: "instant" });
+      }
+
+      if (window.scrollY >= threshold) {
+        setRaised(true);
+      }
+    }
+
+    hooks.bindRaise({
+      getStuckThreshold: stuckThreshold,
+      setRaised,
+      stabilizeScrollForActiveSearch,
+    });
 
     function prefersReducedMotion() {
       return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -412,7 +476,7 @@ const { categories } = Astro.props;
           return;
         }
 
-        if (scrollY < threshold) {
+        if (scrollY < threshold && !input.value.trim()) {
           setRaised(false);
         } else if (scrollY > lastScrollY) {
           setRaised(true);

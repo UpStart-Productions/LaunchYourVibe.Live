@@ -67,6 +67,10 @@ const downloadHref = manifest.downloadPath;
 </div>
 
 <style>
+  .guardrails-dl {
+    width: 100%;
+  }
+
   .guardrails-dl__hero-slot {
     position: relative;
     display: inline-block;
@@ -375,6 +379,36 @@ const downloadHref = manifest.downloadPath;
     .guardrails-dl__trigger,
     .guardrails-dl__label {
       transition: none !important;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .guardrails-dl {
+      display: flex;
+      justify-content: center;
+    }
+
+    .guardrails-dl__hero-slot {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .guardrails-dl__hero-sentinel {
+      width: min(100%, 18.5rem);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .guardrails-dl__hero-slot > .guardrails-dl__trigger:not(.guardrails-dl__trigger--docked) {
+      position: relative;
+      top: auto;
+      left: auto;
+      margin-top: 0.25rem;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: calc(100vw - 2.5rem);
+      font-size: 0.875rem;
+      padding: 0.65rem 1rem;
     }
   }
 </style>
