@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Check, X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -23,7 +23,7 @@ import { Check, X } from "lucide-astro";
 </div>
 </div>
 <div style="margin-top:7px;display:flex;flex-direction:column;gap:3px;">
-<div class="text-7-5-good"><strong><Check size={13} class="ux-icon" /> Use for:</strong> secondary info, long FAQ, optional detail</div>
-<div class="text-7-5-bad"><strong><X size={13} class="ux-icon" /> Avoid for:</strong> primary content, critical steps, comparisons</div>
+<div class="text-7-5-good"><strong><Icon name="Check" size={13} class="ux-icon" /> Use for:</strong> secondary info, long FAQ, optional detail</div>
+<div class="text-7-5-bad"><strong><Icon name="X" size={13} class="ux-icon" /> Avoid for:</strong> primary content, critical steps, comparisons</div>
 </div>
 </UxCard>

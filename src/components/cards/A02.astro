@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Check, X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -13,7 +13,7 @@ import { Check, X } from "lucide-astro";
 <div class="a02-visual" style="display:flex;justify-content:center;gap:10px;align-items:flex-end;">
 <div class="fc-center-4">
 <div class="touch-target-bad">
-<div class="text-icon-bad"><X size={13} class="ux-icon" /></div>
+<div class="text-icon-bad"><Icon name="X" size={13} class="ux-icon" /></div>
 </div>
 <div class="text-xs-mono-c">22px<br/>Too small</div>
 </div>
@@ -25,7 +25,7 @@ import { Check, X } from "lucide-astro";
 </div>
 <div class="fc-center-4">
 <div class="touch-target-ok">
-<div class="text-icon-good"><Check size={13} class="ux-icon" /></div>
+<div class="text-icon-good"><Icon name="Check" size={13} class="ux-icon" /></div>
 </div>
 <div class="mono-touch-hint">44pt iOS<br/>48dp Android</div>
 </div>

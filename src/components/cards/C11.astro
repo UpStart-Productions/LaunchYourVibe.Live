@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Check, Info, TriangleAlert, X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -11,9 +11,9 @@ import { Check, Info, TriangleAlert, X } from "lucide-astro";
   rule=`<strong>Every alert in red trains users to ignore red.</strong> Reserve error alerts for actual errors. Info banners for context. If everything is urgent, nothing is. Overused alerts become wallpaper.`
 >
 <div class="fc-4 c11-visual">
-<div class="alert-info"><strong><Info size={13} class="ux-icon" /> Info</strong>: context, not urgent</div>
-<div class="alert-success"><strong><Check size={13} class="ux-icon" /> Success</strong>: action completed</div>
-<div class="alert-warn"><strong><TriangleAlert size={13} class="ux-icon" /> Warning</strong>: may need attention</div>
-<div class="alert-error"><strong><X size={13} class="ux-icon" /> Error</strong>: action failed or blocked</div>
+<div class="alert-info"><strong><Icon name="Info" size={13} class="ux-icon" /> Info</strong>: context, not urgent</div>
+<div class="alert-success"><strong><Icon name="Check" size={13} class="ux-icon" /> Success</strong>: action completed</div>
+<div class="alert-warn"><strong><Icon name="TriangleAlert" size={13} class="ux-icon" /> Warning</strong>: may need attention</div>
+<div class="alert-error"><strong><Icon name="X" size={13} class="ux-icon" /> Error</strong>: action failed or blocked</div>
 </div>
 </UxCard>

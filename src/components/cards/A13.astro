@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Check, X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -12,11 +12,11 @@ import { Check, X } from "lucide-astro";
 >
 <div class="fr-5 a13-visual">
 <div class="flex-box-bad">
-<div class="vis-label-bad-mb4"><X size={13} class="ux-icon" /> CSS-reordered</div>
+<div class="vis-label-bad-mb4"><Icon name="X" size={13} class="ux-icon" /> CSS-reordered</div>
 <div class="mono-dom-bad">DOM: Footer<br/>DOM: Main<br/>DOM: Header<br/><br/>CSS order: 3 1 2</div>
 </div>
 <div class="flex-box-good">
-<div class="vis-label-good-mb4"><Check size={13} class="ux-icon" /> Logical DOM</div>
+<div class="vis-label-good-mb4"><Icon name="Check" size={13} class="ux-icon" /> Logical DOM</div>
 <div class="mono-dom-good">DOM: Header<br/>DOM: Main<br/>DOM: Footer<br/><br/>Matches visual order</div>
 </div>
 </div>

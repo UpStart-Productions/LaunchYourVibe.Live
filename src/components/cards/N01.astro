@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Check, X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -12,14 +12,14 @@ import { Check, X } from "lucide-astro";
 >
 <div class="bad-good-row n01-visual">
 <div class="verdict-col">
-<span class="verdict-label label-bad"><X size={13} class="ux-icon" /> Blank</span>
+<span class="verdict-label label-bad"><Icon name="X" size={13} class="ux-icon" /> Blank</span>
 <div class="vis-demo-bg" style="padding:8px;height:95px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;">
 <div class="icon-placeholder">-</div>
 <div class="text-empty-placeholder">nothing here</div>
 </div>
 </div>
 <div class="verdict-col">
-<span class="verdict-label label-good"><Check size={13} class="ux-icon" /> Designed</span>
+<span class="verdict-label label-good"><Icon name="Check" size={13} class="ux-icon" /> Designed</span>
 <div class="vis-box-purple-sm" style="padding:7px;height:95px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;">
 <div class="empty-icon-purple">+</div>
 <div class="text-empty-heading">No items yet</div>

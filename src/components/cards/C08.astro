@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -14,8 +14,8 @@ import { X } from "lucide-astro";
 <div class="vis-box">
 <div class="vis-label">Filter chips: current filters</div>
 <div class="chips">
-<div class="chip chip-on">Design <X size={13} class="ux-icon" /></div>
-<div class="chip chip-on">Remote <X size={13} class="ux-icon" /></div>
+<div class="chip chip-on">Design <Icon name="X" size={13} class="ux-icon" /></div>
+<div class="chip chip-on">Remote <Icon name="X" size={13} class="ux-icon" /></div>
 <div class="chip chip-off">+ Engineering</div>
 <div class="chip chip-off">+ Product</div>
 </div>
@@ -23,8 +23,8 @@ import { X } from "lucide-astro";
 <div class="vis-box">
 <div class="vis-label">Input chips: entered values</div>
 <div class="input-chip-wrap">
-<div class="chip chip-on chip-sm">sarah@co.com <X size={13} class="ux-icon" /></div>
-<div class="chip chip-on chip-sm">mike@co.com <X size={13} class="ux-icon" /></div>
+<div class="chip chip-on chip-sm">sarah@co.com <Icon name="X" size={13} class="ux-icon" /></div>
+<div class="chip chip-on chip-sm">mike@co.com <Icon name="X" size={13} class="ux-icon" /></div>
 <div class="text-sm-faded">Add...</div>
 </div>
 </div>

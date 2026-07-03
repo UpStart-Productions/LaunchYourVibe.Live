@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -12,7 +12,7 @@ import { X } from "lucide-astro";
 >
 <div class="fc-5 s04-visual">
 <div class="vis-box-bad">
-<div class="vis-label-bad"><X size={13} class="ux-icon" /> Exposed in bundle</div>
+<div class="vis-label-bad"><Icon name="X" size={13} class="ux-icon" /> Exposed in bundle</div>
 <div class="code-block">const API_KEY = "sk_live_...";<br/>const isAdmin = true;</div>
 </div>
 <div class="vis-label-bad-cap">View Source · DevTools · Network tab = all public</div>

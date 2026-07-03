@@ -1,0 +1,23 @@
+---
+import type { IconName } from "./types";
+import { ICON_SLUGS } from "./types";
+
+interface Props {
+  name: IconName;
+  size?: number;
+  class?: string;
+}
+
+const { name, size = 24, class: className, ...rest } = Astro.props;
+const slug = ICON_SLUGS[name];
+---
+
+<svg
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  class:list={["lucide", `lucide-${slug}`, className]}
+  {...rest}
+>
+  <use href={`#icon-${slug}`} />
+</svg>

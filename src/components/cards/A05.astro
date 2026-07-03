@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Check, X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -12,11 +12,11 @@ import { Check, X } from "lucide-astro";
 >
 <div class="fr-5 a05-visual">
 <div class="flex-box-bad">
-<div class="vis-label-bad-mb4"><X size={13} class="ux-icon" /> Div soup</div>
+<div class="vis-label-bad-mb4"><Icon name="X" size={13} class="ux-icon" /> Div soup</div>
 <div class="mono-code-bad">&lt;div class="hd"&gt;<br/>&lt;div class="nav"&gt;<br/>&lt;div class="btn"&gt;</div>
 </div>
 <div class="flex-box-good">
-<div class="vis-label-good-mb4"><Check size={13} class="ux-icon" /> Semantic</div>
+<div class="vis-label-good-mb4"><Icon name="Check" size={13} class="ux-icon" /> Semantic</div>
 <div class="mono-code-good">&lt;header&gt;<br/>&lt;nav&gt;<br/>&lt;button&gt;</div>
 </div>
 </div>

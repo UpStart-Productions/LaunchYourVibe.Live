@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Check } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -11,7 +11,7 @@ import { Check } from "lucide-astro";
   rule=`<strong>Silence after a successful action breeds doubt.</strong> Confirm what happened, to whom, and what comes next. The user's mental model needs closure.`
 >
 <div class="fc-center-6 i05-visual">
-<div class="success-icon-wrap"><Check size={13} class="ux-icon" /></div>
+<div class="success-icon-wrap"><Icon name="Check" size={13} class="ux-icon" /></div>
 <div class="text-success-heading">Payment Sent</div>
 <div class="text-success-body">$240.00 to Sarah Johnson<br/>arrives in 1–2 business days</div>
 <div class="btn-receipt">View Receipt →</div>

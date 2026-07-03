@@ -1,10 +1,11 @@
 ---
-import { Search, ChevronDown } from "lucide-astro";
+import Icon from "./icons/Icon.astro";
+import type { IconName } from "./icons/types";
 
 interface CategoryItem {
   label: string;
   href: string;
-  icon: any;
+  icon: IconName;
 }
 
 interface Props {
@@ -21,7 +22,7 @@ const { categories } = Astro.props;
   <div class="container mx-auto px-4">
     <div class="search-bar-shell mx-auto max-w-3xl">
       <label class="search-input-wrap" for="card-search">
-        <Search size={20} class="search-icon" aria-hidden="true" />
+        <Icon name="Search" size={20} class="search-icon" aria-hidden="true" />
         <input
           id="card-search"
           type="search"
@@ -44,7 +45,7 @@ const { categories } = Astro.props;
           data-category-trigger
         >
           <span class="category-trigger-label">Categories</span>
-          <ChevronDown size={18} class="category-chevron" aria-hidden="true" />
+          <Icon name="ChevronDown" size={18} class="category-chevron" aria-hidden="true" />
         </button>
 
         <div
@@ -58,7 +59,7 @@ const { categories } = Astro.props;
           {
             categories.map((item) => (
               <a href={item.href} class="category-option" role="option">
-                <item.icon size={16} aria-hidden="true" />
+                <Icon name={item.icon} size={16} aria-hidden="true" />
                 {item.label}
               </a>
             ))

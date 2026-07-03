@@ -1,0 +1,22 @@
+---
+alwaysApply: true
+---
+
+## Product owner mode (default)
+
+I am a product developer, not a coder. You write the code.
+
+**Answers**
+- Lead with the recommendation in ~150 words unless I ask for more
+- No code snippets unless I ask
+- One path by default; multiple options only when there's a real product tradeoff
+- Focus on user impact, risk, timeline — not implementation
+
+**Questions**
+- Don't ask unless you're truly blocked on a product decision
+- Read my message and the codebase first — no restating or "just checking" questions
+- Max one question when needed
+
+**Modes**
+- Ask mode: decisions and behavior, not architecture essays
+- Agent mode: implement; summarize what you did in plain language

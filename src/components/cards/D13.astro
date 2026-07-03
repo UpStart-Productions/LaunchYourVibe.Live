@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Check, X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -25,9 +25,9 @@ import { Check, X } from "lucide-astro";
 <text fill="#999" font-size="4" text-anchor="middle" x="20" y="44">Q1</text>
 <text fill="#999" font-size="4" text-anchor="middle" x="50" y="44">Q2</text>
 <text fill="#999" font-size="4" text-anchor="middle" x="80" y="44">Q3</text>
-<text fill="#B81800" font-size="3.5" x="105" y="13">Top <Check size={13} class="ux-icon" /></text>
-<text fill="#E57373" font-size="3.5" x="105" y="22">Mid <X size={13} class="ux-icon" /></text>
-<text fill="#999" font-size="3.5" x="105" y="35">Bot <Check size={13} class="ux-icon" /></text>
+<text fill="#B81800" font-size="3.5" x="105" y="13">Top <Icon name="Check" size={13} class="ux-icon" /></text>
+<text fill="#E57373" font-size="3.5" x="105" y="22">Mid <Icon name="X" size={13} class="ux-icon" /></text>
+<text fill="#999" font-size="3.5" x="105" y="35">Bot <Icon name="Check" size={13} class="ux-icon" /></text>
 </svg>
 </div>
 <div class="text-xxs-muted">Middle segments float: hard to compare across bars</div>

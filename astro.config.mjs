@@ -7,6 +7,9 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   output: "static",
   site: "https://launchyourvibe.live",
+  build: {
+    inlineStylesheets: "never",
+  },
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],

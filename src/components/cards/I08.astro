@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Check, X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -12,16 +12,16 @@ import { Check, X } from "lucide-astro";
 >
 <div class="fc-6 i08-visual">
 <div class="vis-demo-bad" style="padding:7px 9px;">
-<div class="vis-label-bad"><X size={13} class="ux-icon" /> Pessimistic</div>
+<div class="vis-label-bad"><Icon name="X" size={13} class="ux-icon" /> Pessimistic</div>
 <div class="text-wait">
 <div class="spinner-bad"></div>
                   User waits for server confirmation
                 </div>
 </div>
 <div class="vis-box-good">
-<div class="vis-label-good"><Check size={13} class="ux-icon" /> Optimistic</div>
+<div class="vis-label-good"><Icon name="Check" size={13} class="ux-icon" /> Optimistic</div>
 <div class="fc-3">
-<div class="text-sm-muted">UI updates instantly <Check size={13} class="ux-icon" /></div>
+<div class="text-sm-muted">UI updates instantly <Icon name="Check" size={13} class="ux-icon" /></div>
 <div class="text-sm-muted">Server syncs in background</div>
 <div class="text-sm-muted">Rollback only if server fails</div>
 </div>

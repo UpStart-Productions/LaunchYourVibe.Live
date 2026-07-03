@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Clipboard, House, Search, User } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -13,16 +13,16 @@ import { Clipboard, House, Search, User } from "lucide-astro";
 <div class="fc-6 c12-visual">
 <div class="vis-box">
 <div class="mono-primary-lbl">Primary use case → top of page</div>
-<div class="search-border-green"><span class="text-lg"><Search size={16} class="ux-icon" /></span><span class="text-sm-faded">Search products...</span></div>
+<div class="search-border-green"><span class="text-lg"><Icon name="Search" size={16} class="ux-icon" /></span><span class="text-sm-faded">Search products...</span></div>
 </div>
 <div class="vis-box">
 <div class="mono-secondary-lbl">Secondary use → header icon / tab</div>
 <div class="fr-c8">
 <div style="display:flex;gap:12px;">
-<span class="text-md-faded2"><House size={16} class="ux-icon" /></span>
-<span class="text-md-faded2"><Clipboard size={16} class="ux-icon" /></span>
-<span class="text-lg"><Search size={16} class="ux-icon" /></span>
-<span class="text-md-faded2"><User size={16} class="ux-icon" /></span>
+<span class="text-md-faded2"><Icon name="House" size={16} class="ux-icon" /></span>
+<span class="text-md-faded2"><Icon name="Clipboard" size={16} class="ux-icon" /></span>
+<span class="text-lg"><Icon name="Search" size={16} class="ux-icon" /></span>
+<span class="text-md-faded2"><Icon name="User" size={16} class="ux-icon" /></span>
 </div>
 <span class="text-7-faint">(nav bar icon)</span>
 </div>

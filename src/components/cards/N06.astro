@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Bell, Calendar, Check, House, MessageSquare, Plus, Search, User, X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -12,18 +12,18 @@ import { Bell, Calendar, Check, House, MessageSquare, Plus, Search, User, X } fr
 >
 <div class="fc-6 n06-visual">
 <div class="tab-good-wrap">
-<div class="vis-label-good-lg"><Check size={13} class="ux-icon" /> 4 items: clear, usable</div>
+<div class="vis-label-good-lg"><Icon name="Check" size={13} class="ux-icon" /> 4 items: clear, usable</div>
 <div class="fr-around">
-<div class="fc-center-1"><span class="text-2xl"><House size={16} class="ux-icon" /></span><span class="tab-active-lbl">Home</span></div>
-<div class="fc-center-1"><span class="text-2xl"><Search size={16} class="ux-icon" /></span><span class="text-xs-muted">Search</span></div>
-<div class="fc-center-1"><span class="text-2xl"><Bell size={16} class="ux-icon" /></span><span class="text-xs-muted">Alerts</span></div>
-<div class="fc-center-1"><span class="text-2xl"><User size={16} class="ux-icon" /></span><span class="text-xs-muted">Profile</span></div>
+<div class="fc-center-1"><span class="text-2xl"><Icon name="House" size={16} class="ux-icon" /></span><span class="tab-active-lbl">Home</span></div>
+<div class="fc-center-1"><span class="text-2xl"><Icon name="Search" size={16} class="ux-icon" /></span><span class="text-xs-faded">Search</span></div>
+<div class="fc-center-1"><span class="text-2xl"><Icon name="Bell" size={16} class="ux-icon" /></span><span class="text-xs-faded">Alerts</span></div>
+<div class="fc-center-1"><span class="text-2xl"><Icon name="User" size={16} class="ux-icon" /></span><span class="text-xs-faded">Profile</span></div>
 </div>
 </div>
 <div class="tab-bad-wrap">
-<div class="mono-bad-tab-hd"><X size={13} class="ux-icon" /> 7 items: crammed, confusing</div>
+<div class="mono-bad-tab-hd"><Icon name="X" size={13} class="ux-icon" /> 7 items: crammed, confusing</div>
 <div class="fr-around">
-<span class="text-md-faded"><House size={16} class="ux-icon" /></span><span class="text-md-faded"><Search size={16} class="ux-icon" /></span><span class="text-md-faded"><Plus size={16} class="ux-icon" /></span><span class="text-md-faded"><Bell size={16} class="ux-icon" /></span><span class="text-md-faded"><MessageSquare size={16} class="ux-icon" /></span><span class="text-md-faded"><Calendar size={16} class="ux-icon" /></span><span class="text-md-faded"><User size={16} class="ux-icon" /></span>
+<span class="text-md-faded"><Icon name="House" size={16} class="ux-icon" /></span><span class="text-md-faded"><Icon name="Search" size={16} class="ux-icon" /></span><span class="text-md-faded"><Icon name="Plus" size={16} class="ux-icon" /></span><span class="text-md-faded"><Icon name="Bell" size={16} class="ux-icon" /></span><span class="text-md-faded"><Icon name="MessageSquare" size={16} class="ux-icon" /></span><span class="text-md-faded"><Icon name="Calendar" size={16} class="ux-icon" /></span><span class="text-md-faded"><Icon name="User" size={16} class="ux-icon" /></span>
 </div>
 </div>
 </div>

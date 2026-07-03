@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { House, Monitor, Search, Smartphone, User } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -12,27 +12,27 @@ import { House, Monitor, Search, Smartphone, User } from "lucide-astro";
 >
 <div class="comp-compare c02-visual">
 <div class="comp-col">
-<div class="comp-platform"><Smartphone size={14} class="ux-icon" /> Mobile</div>
+<div class="comp-platform"><Icon name="Smartphone" size={14} class="ux-icon" /> Mobile</div>
 <div class="vis-demo-bg" style="flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:95px;">
 <div class="flex-pad-col">
 <div class="bar-5-light"></div>
 <div class="bar-e0" style="height:5px;width:80%;"></div>
 </div>
 <div class="tab-bar-wrap">
-<div class="flex-box-good-sq"><div class="text-xl"><House size={16} class="ux-icon" /></div><div class="tab-active-lbl-green">Home</div></div>
-<div class="flex-box-good-sq"><div class="text-xl"><Search size={16} class="ux-icon" /></div><div class="text-xs-faded">Search</div></div>
-<div class="flex-box-good-sq"><div class="text-xl"><User size={16} class="ux-icon" /></div><div class="text-xs-faded">Profile</div></div>
+<div class="flex-box-good-sq"><div class="text-xl"><Icon name="House" size={16} class="ux-icon" /></div><div class="tab-active-lbl-green">Home</div></div>
+<div class="flex-box-good-sq"><div class="text-xl"><Icon name="Search" size={16} class="ux-icon" /></div><div class="text-xs-faded">Search</div></div>
+<div class="flex-box-good-sq"><div class="text-xl"><Icon name="User" size={16} class="ux-icon" /></div><div class="text-xs-faded">Profile</div></div>
 </div>
 </div>
 </div>
 <div class="divider-v"></div>
 <div class="comp-col">
-<div class="comp-platform"><Monitor size={14} class="ux-icon" /> Desktop</div>
+<div class="comp-platform"><Icon name="Monitor" size={14} class="ux-icon" /> Desktop</div>
 <div class="vis-demo-bg" style="flex:1;display:flex;overflow:hidden;min-height:95px;">
 <div class="sidebar-dark">
-<div class="text-xl"><House size={16} class="ux-icon" /></div>
-<div class="text-xl-faded"><Search size={16} class="ux-icon" /></div>
-<div class="text-xl-faded"><User size={16} class="ux-icon" /></div>
+<div class="text-xl"><Icon name="House" size={16} class="ux-icon" /></div>
+<div class="text-xl-faded"><Icon name="Search" size={16} class="ux-icon" /></div>
+<div class="text-xl-faded"><Icon name="User" size={16} class="ux-icon" /></div>
 </div>
 <div class="flex-pad-col">
 <div class="bar-5-light"></div>

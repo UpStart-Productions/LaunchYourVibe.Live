@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Check, Settings, X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -12,17 +12,17 @@ import { Check, Settings, X } from "lucide-astro";
 >
 <div class="fc-6 n08-visual">
 <div class="vis-box-bad">
-<div class="vis-label-bad"><X size={13} class="ux-icon" /> Settings as primary nav tab</div>
+<div class="vis-label-bad"><Icon name="X" size={13} class="ux-icon" /> Settings as primary nav tab</div>
 <div style="display:flex;justify-content:space-around;padding:4px 0;">
 <span class="text-sm-muted">Home</span>
 <span class="text-sm-muted">Feed</span>
-<span class="text-settings-bad"><Settings size={13} class="ux-icon" /> Settings</span>
+<span class="text-settings-bad"><Icon name="Settings" size={13} class="ux-icon" /> Settings</span>
 <span class="text-sm-muted">Profile</span>
 </div>
 <div class="text-7-bad" style="font-style:italic;text-align:center;">wastes a prime slot</div>
 </div>
 <div class="vis-box-good">
-<div class="vis-label-good"><Check size={13} class="ux-icon" /> Settings nested in Profile</div>
+<div class="vis-label-good"><Icon name="Check" size={13} class="ux-icon" /> Settings nested in Profile</div>
 <div class="text-sm-muted">Profile → Account → Settings<br/>Users always find it there.</div>
 </div>
 </div>

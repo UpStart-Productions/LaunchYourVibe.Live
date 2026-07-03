@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Monitor, Smartphone } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -12,7 +12,7 @@ import { Monitor, Smartphone } from "lucide-astro";
 >
   <div class="platform-row t01-visual">
     <div class="platform-col">
-      <span class="platform-col-label"><Smartphone size={14} class="ux-icon" /> Mobile</span>
+      <span class="platform-col-label"><Icon name="Smartphone" size={14} class="ux-icon" /> Mobile</span>
       <div class="type-swatch">
         <div class="swatch-row"><span class="swatch-size">28px</span><div class="swatch-bar" style="width:38px;opacity:0.9;"></div><span class="swatch-name">H1</span></div>
         <div class="swatch-row"><span class="swatch-size">18px</span><div class="swatch-bar" style="width:28px;opacity:0.7;"></div><span class="swatch-name">H2</span></div>
@@ -21,7 +21,7 @@ import { Monitor, Smartphone } from "lucide-astro";
       </div>
     </div>
     <div class="platform-col">
-      <span class="platform-col-label"><Monitor size={14} class="ux-icon" /> Desktop</span>
+      <span class="platform-col-label"><Icon name="Monitor" size={14} class="ux-icon" /> Desktop</span>
       <div class="type-swatch">
         <div class="swatch-row"><span class="swatch-size">40px</span><div class="swatch-bar" style="width:44px;opacity:0.9;"></div><span class="swatch-name">H1</span></div>
         <div class="swatch-row"><span class="swatch-size">28px</span><div class="swatch-bar" style="width:32px;opacity:0.7;"></div><span class="swatch-name">H2</span></div>

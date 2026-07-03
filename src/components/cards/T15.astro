@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Check, Info, TriangleAlert, X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -11,9 +11,9 @@ import { Check, Info, TriangleAlert, X } from "lucide-astro";
   rule=`<strong>Color alone fails for colorblind users.</strong> Pair every color-coded state with a second signal: an icon, label, or shape. This isn't accessibility extra credit; it's baseline UX.`
 >
 <div class="color-type-demo t15-visual">
-<div class="ct-item ct-item-success"><span class="ct-icon"><Check size={13} class="ux-icon" /></span>Success: color + icon confirm it</div>
-<div class="ct-item ct-item-error"><span class="ct-icon"><X size={13} class="ux-icon" /></span>Error: color + icon signal failure</div>
-<div class="ct-item ct-item-warn"><span class="ct-icon"><TriangleAlert size={13} class="ux-icon" /></span>Warning: color + icon shows caution</div>
-<div class="ct-item ct-item-info"><span class="ct-icon"><Info size={13} class="ux-icon" /></span>Info: color + icon for context</div>
+<div class="ct-item ct-item-success"><span class="ct-icon"><Icon name="Check" size={13} class="ux-icon" /></span>Success: color + icon confirm it</div>
+<div class="ct-item ct-item-error"><span class="ct-icon"><Icon name="X" size={13} class="ux-icon" /></span>Error: color + icon signal failure</div>
+<div class="ct-item ct-item-warn"><span class="ct-icon"><Icon name="TriangleAlert" size={13} class="ux-icon" /></span>Warning: color + icon shows caution</div>
+<div class="ct-item ct-item-info"><span class="ct-icon"><Icon name="Info" size={13} class="ux-icon" /></span>Info: color + icon for context</div>
 </div>
 </UxCard>

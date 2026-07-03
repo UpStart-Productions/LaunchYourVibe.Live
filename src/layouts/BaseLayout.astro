@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import IconSprite from "../components/icons/IconSprite.astro";
 import { SITE } from "../config/site";
 
 interface Props {
@@ -61,6 +62,7 @@ const imageURL = new URL(image, Astro.site || SITE.url);
     />
   </head>
   <body>
+    <IconSprite />
     <slot />
   </body>
 </html>

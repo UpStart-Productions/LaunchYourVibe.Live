@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { House, Map } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -11,12 +11,12 @@ import { House, Map } from "lucide-astro";
   rule=`<strong>Dead ends destroy trust.</strong> Every error screen needs at minimum: what happened (briefly), and a clear path forward. A search field is a bonus. Never leave the user with only a browser back button.`
 >
 <div class="fc-center-6 n13-visual">
-<div class="icon-xl"><Map size={28} class="ux-icon" /></div>
+<div class="icon-xl"><Icon name="Map" size={28} class="ux-icon" /></div>
 <div class="text-err-heading">Page Not Found</div>
 <div class="text-err-detail">The link may have moved or expired. Here's where you can go:</div>
 <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;">
 <div class="btn-back-purple">← Go Back</div>
-<div class="btn-home-purple"><House size={12} class="ux-icon" /> Home</div>
+<div class="btn-home-purple"><Icon name="House" size={12} class="ux-icon" /> Home</div>
 </div>
 </div>
 </UxCard>

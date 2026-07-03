@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Bell, Check } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -12,11 +12,11 @@ import { Bell, Check } from "lucide-astro";
 >
 <div class="notif-demo n11-visual">
 <div class="notif-item notif-bad">
-<span class="notif-icon"><Bell size={16} class="ux-icon" /></span>
+<span class="notif-icon"><Icon name="Bell" size={16} class="ux-icon" /></span>
 <div class="notif-text"><strong>"Can we send you notifications?"</strong>: Asked on first launch, before doing anything. User has no reason to say yes. Declined forever.</div>
 </div>
 <div class="notif-item notif-good">
-<span class="notif-icon"><Check size={13} class="ux-icon" /></span>
+<span class="notif-icon"><Icon name="Check" size={13} class="ux-icon" /></span>
 <div class="notif-text"><strong>User turns on price tracking.</strong> "Want to be notified when this drops?": Now they have a specific reason. Permission granted.</div>
 </div>
 </div>

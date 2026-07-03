@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Check, X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -12,11 +12,11 @@ import { Check, X } from "lucide-astro";
 >
 <div class="fc-6 i12-visual">
 <div class="vis-box-bad-lg">
-<div class="vis-label-bad"><X size={13} class="ux-icon" /> Desktop pattern on mobile</div>
+<div class="vis-label-bad"><Icon name="X" size={13} class="ux-icon" /> Desktop pattern on mobile</div>
 <div class="hover-bad-note">"Hover to see options": oops</div>
 </div>
 <div class="vis-box-good-lg">
-<div class="vis-label-good"><Check size={13} class="ux-icon" /> Mobile-first patterns</div>
+<div class="vis-label-good"><Icon name="Check" size={13} class="ux-icon" /> Mobile-first patterns</div>
 <div class="check-list">
 <div class="check-item"><span class="check-icon">→</span>Long press reveals context menu</div>
 <div class="check-item"><span class="check-icon">→</span>Swipe gesture shows actions</div>

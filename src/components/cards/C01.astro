@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Monitor, Smartphone } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -12,7 +12,7 @@ import { Monitor, Smartphone } from "lucide-astro";
 >
 <div class="comp-compare c01-visual">
 <div class="comp-col">
-<div class="comp-platform"><Monitor size={14} class="ux-icon" /> Desktop</div>
+<div class="comp-platform"><Icon name="Monitor" size={14} class="ux-icon" /> Desktop</div>
 <div class="modal-demo">
 <div class="modal-box">
 <div class="modal-titlebar"></div>
@@ -24,7 +24,7 @@ import { Monitor, Smartphone } from "lucide-astro";
 </div>
 <div class="divider-v"></div>
 <div class="comp-col">
-<div class="comp-platform"><Smartphone size={14} class="ux-icon" /> Mobile</div>
+<div class="comp-platform"><Icon name="Smartphone" size={14} class="ux-icon" /> Mobile</div>
 <div class="sheet-demo">
 <div class="bottom-sheet">
 <div class="sheet-handle"></div>

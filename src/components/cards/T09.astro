@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Check, X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -12,18 +12,18 @@ import { Check, X } from "lucide-astro";
 >
 <div class="fc-6 t09-visual">
 <div class="vis-box-good">
-<div class="mono-good-hd"><Check size={13} class="ux-icon" /> LEFT: body text, labels, lists</div>
+<div class="mono-good-hd"><Icon name="Check" size={13} class="ux-icon" /> LEFT: body text, labels, lists</div>
 <div class="bar-green-thin" style="height:4px;width:100%;margin-bottom:2px;"></div>
 <div class="bar-green-thin" style="height:4px;width:88%;margin-bottom:2px;"></div>
 <div class="bar-green-thin" style="height:4px;width:75%;"></div>
 </div>
 <div class="vis-box-blue">
-<div class="mono-info-hd"><Check size={13} class="ux-icon" /> CENTER: short headlines, CTAs</div>
+<div class="mono-info-hd"><Icon name="Check" size={13} class="ux-icon" /> CENTER: short headlines, CTAs</div>
 <div class="bar-blue-thin" style="height:6px;width:70%;margin:0 auto 3px;"></div>
 <div class="bar-blue-btn" style="height:12px;width:80%;margin:0 auto;"></div>
 </div>
 <div class="vis-box-bad">
-<div class="mono-bad-hd"><X size={13} class="ux-icon" /> CENTER: multi-line body copy</div>
+<div class="mono-bad-hd"><Icon name="X" size={13} class="ux-icon" /> CENTER: multi-line body copy</div>
 <div class="bar-red" style="height:4px;width:80%;margin:0 auto 2px;"></div>
 <div class="bar-red" style="height:4px;width:60%;margin:0 auto 2px;"></div>
 <div class="bar-red" style="height:4px;width:72%;margin:0 auto;"></div>

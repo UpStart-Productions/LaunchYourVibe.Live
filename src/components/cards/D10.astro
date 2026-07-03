@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { TriangleAlert } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -23,6 +23,6 @@ import { TriangleAlert } from "lucide-astro";
 </svg>
 <div class="text-xxs-center">Hover/tap → precise value</div>
 </div>
-<div class="vis-label-bad-cap"><TriangleAlert size={13} class="ux-icon" /> Tooltips don't exist on mobile without tap</div>
+<div class="vis-label-bad-cap"><Icon name="TriangleAlert" size={13} class="ux-icon" /> Tooltips don't exist on mobile without tap</div>
 </div>
 </UxCard>

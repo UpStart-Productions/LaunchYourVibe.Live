@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Check, X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -12,11 +12,11 @@ import { Check, X } from "lucide-astro";
 >
 <div class="fc-6 n04-visual">
 <div class="vis-box-bad">
-<div class="vis-label-bad"><X size={13} class="ux-icon" /> Front-loaded tutorial</div>
+<div class="vis-label-bad"><Icon name="X" size={13} class="ux-icon" /> Front-loaded tutorial</div>
 <div class="text-sm-muted-relax">8-screen walkthrough before the user has done anything they need help with.</div>
 </div>
 <div class="vis-box-good">
-<div class="vis-label-good"><Check size={13} class="ux-icon" /> Just-in-time onboarding</div>
+<div class="vis-label-good"><Icon name="Check" size={13} class="ux-icon" /> Just-in-time onboarding</div>
 <div class="text-sm-muted-relax">Tooltip appears when user first reaches a feature. Context is everything.</div>
 </div>
 </div>

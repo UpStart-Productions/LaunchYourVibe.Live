@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Check, Command, X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -12,18 +12,18 @@ import { Check, Command, X } from "lucide-astro";
 >
 <div class="fc-6 c14-visual">
 <div class="vis-box-good-lg">
-<div class="vis-label-good-lg"><Check size={13} class="ux-icon" /> Good tooltip use</div>
+<div class="vis-label-good-lg"><Icon name="Check" size={13} class="ux-icon" /> Good tooltip use</div>
 <div class="fr-c8">
-<div class="shortcut-badge"><Command size={13} class="ux-icon" />K <span class="tooltip-key-hint">Search</span></div>
-<div class="text-8-muted">Keyboard shortcut hints</div>
+<div class="shortcut-badge"><Icon name="Command" size={13} class="ux-icon" />K <span class="tooltip-key-hint">Search</span></div>
+<div class="text-sm-muted">Keyboard shortcut hints</div>
 </div>
 </div>
 <div class="vis-box-bad-lg">
-<div class="vis-label-bad"><X size={13} class="ux-icon" /> Tooltip as documentation</div>
+<div class="vis-label-bad"><Icon name="X" size={13} class="ux-icon" /> Tooltip as documentation</div>
 <div class="check-list">
-<div class="check-item"><span class="text-red"><X size={13} class="ux-icon" /></span>Required to understand the UI</div>
-<div class="check-item"><span class="text-red"><X size={13} class="ux-icon" /></span>Critical info hidden in hover</div>
-<div class="check-item"><span class="text-red"><X size={13} class="ux-icon" /></span>Only touch-accessible on long press</div>
+<div class="check-item"><span class="text-red"><Icon name="X" size={13} class="ux-icon" /></span>Required to understand the UI</div>
+<div class="check-item"><span class="text-red"><Icon name="X" size={13} class="ux-icon" /></span>Critical info hidden in hover</div>
+<div class="check-item"><span class="text-red"><Icon name="X" size={13} class="ux-icon" /></span>Only touch-accessible on long press</div>
 </div>
 </div>
 </div>

@@ -7,16 +7,6 @@ import Footer from "../components/Footer.astro";
 import SearchBar from "../components/SearchBar.astro";
 import TypewriterHeadline from "../components/TypewriterHeadline.astro";
 import { SITE } from "../config/site";
-import {
-  Type,
-  MousePointerClick,
-  LayoutGrid,
-  Compass,
-  Eye,
-  BarChart3,
-  Shield,
-  EyeOff,
-} from "lucide-astro";
 import T01 from "../components/cards/T01.astro";
 import T02 from "../components/cards/T02.astro";
 import T03 from "../components/cards/T03.astro";
@@ -137,16 +127,17 @@ import P12 from "../components/cards/P12.astro";
 import P13 from "../components/cards/P13.astro";
 import P14 from "../components/cards/P14.astro";
 import P15 from "../components/cards/P15.astro";
+import type { IconName } from "../components/icons/types";
 
-const sectionNavItems = [
-  { label: "Spacing & Typography", href: "#spacing-typography", icon: Type },
-  { label: "Interaction", href: "#interaction", icon: MousePointerClick },
-  { label: "Components", href: "#components", icon: LayoutGrid },
-  { label: "Navigation", href: "#navigation", icon: Compass },
-  { label: "Accessibility", href: "#accessibility", icon: Eye },
-  { label: "Data", href: "#data", icon: BarChart3 },
-  { label: "Security", href: "#security", icon: Shield },
-  { label: "Privacy", href: "#privacy", icon: EyeOff },
+const sectionNavItems: { label: string; href: string; icon: IconName }[] = [
+  { label: "Spacing & Typography", href: "#spacing-typography", icon: "Type" },
+  { label: "Interaction", href: "#interaction", icon: "MousePointerClick" },
+  { label: "Components", href: "#components", icon: "LayoutGrid" },
+  { label: "Navigation", href: "#navigation", icon: "Compass" },
+  { label: "Accessibility", href: "#accessibility", icon: "Eye" },
+  { label: "Data", href: "#data", icon: "BarChart3" },
+  { label: "Security", href: "#security", icon: "Shield" },
+  { label: "Privacy", href: "#privacy", icon: "EyeOff" },
 ];
 ---
 
@@ -285,18 +276,4 @@ const sectionNavItems = [
 
   <CardDeckScripts />
 </BaseLayout>
-
-<style is:global>
-  .ux-domain-label {
-    color: #8b86a0;
-  }
-
-  .card-wrap--hidden {
-    display: none !important;
-  }
-
-  .ux-domain-section--hidden {
-    display: none !important;
-  }
-</style>
 

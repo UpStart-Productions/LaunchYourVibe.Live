@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Check, X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -12,7 +12,7 @@ import { Check, X } from "lucide-astro";
 >
 <div class="fr-5 d04-visual">
 <div class="flex-box-bad">
-<div class="vis-label-bad-mb4"><X size={13} class="ux-icon" /> No context</div>
+<div class="vis-label-bad-mb4"><Icon name="X" size={13} class="ux-icon" /> No context</div>
 <svg viewbox="0 0 55 40" width="100%">
 <line stroke="#DDD" stroke-width="1" x1="8" x2="8" y1="5" y2="35"></line>
 <line stroke="#DDD" stroke-width="1" x1="8" x2="52" y1="35" y2="35"></line>
@@ -22,7 +22,7 @@ import { Check, X } from "lucide-astro";
 <div class="text-6-5-aa">Values 0–? Unknown</div>
 </div>
 <div class="flex-box-good">
-<div class="vis-label-good-mb4"><Check size={13} class="ux-icon" /> Labeled</div>
+<div class="vis-label-good-mb4"><Icon name="Check" size={13} class="ux-icon" /> Labeled</div>
 <svg viewbox="0 0 55 40" width="100%">
 <line stroke="#DDD" stroke-width="1" x1="12" x2="12" y1="5" y2="35"></line>
 <line stroke="#DDD" stroke-width="1" x1="12" x2="52" y1="35" y2="35"></line>

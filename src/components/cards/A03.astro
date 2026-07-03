@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Check, X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -13,15 +13,15 @@ import { Check, X } from "lucide-astro";
 <div class="fc-6 a03-visual">
 <div class="fr-c6">
 <div class="focus-btn-no">Button</div>
-<div class="mono-none-note">outline: none <X size={13} class="ux-icon" /></div>
+<div class="mono-none-note">outline: none <Icon name="X" size={13} class="ux-icon" /></div>
 </div>
 <div class="fr-c6">
 <div class="focus-btn-ring">Button</div>
-<div class="text-7-mono">2px solid <Check size={13} class="ux-icon" /></div>
+<div class="text-7-mono">2px solid <Icon name="Check" size={13} class="ux-icon" /></div>
 </div>
 <div class="fr-c6">
 <div class="focus-btn-fill">Button</div>
-<div class="text-7-mono">offset ring <Check size={13} class="ux-icon" /></div>
+<div class="text-7-mono">offset ring <Icon name="Check" size={13} class="ux-icon" /></div>
 </div>
 </div>
 </UxCard>

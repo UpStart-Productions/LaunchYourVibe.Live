@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Check, X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -12,12 +12,12 @@ import { Check, X } from "lucide-astro";
 >
 <div class="fr-5 a09-visual">
 <div class="flex-bad-pad">
-<div class="vis-label-bad-mb4"><X size={13} class="ux-icon" /> Placeholder label</div>
+<div class="vis-label-bad-mb4"><Icon name="X" size={13} class="ux-icon" /> Placeholder label</div>
 <div class="input-placeholder">Email address</div>
 <div class="input-placeholder-note">Disappears on type</div>
 </div>
 <div class="flex-good-pad">
-<div class="vis-label-good-mb4"><Check size={13} class="ux-icon" /> Persistent label</div>
+<div class="vis-label-good-mb4"><Icon name="Check" size={13} class="ux-icon" /> Persistent label</div>
 <div class="input-label">Email address</div>
 <div class="input-active">user@example.com</div>
 </div>

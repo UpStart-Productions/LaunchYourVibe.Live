@@ -7,6 +7,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build && node scripts/finalize-sitemap.mjs",
+    "generate:icons": "node scripts/generate-icon-sprite.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check"
@@ -15,7 +16,9 @@
     "@astrojs/sitemap": "^3.7.2",
     "@tailwindcss/vite": "^4.1.16",
     "astro": "^5.15.1",
-    "lucide-astro": "^0.548.0",
     "tailwindcss": "^4.1.16"
+  },
+  "devDependencies": {
+    "lucide-astro": "^0.548.0"
   }
 }

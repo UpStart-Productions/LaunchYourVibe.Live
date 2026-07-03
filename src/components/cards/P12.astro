@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Check, X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -12,14 +12,14 @@ import { Check, X } from "lucide-astro";
 >
 <div class="bad-good-row p12-visual">
 <div class="verdict-col">
-<span class="verdict-label label-bad"><X size={13} class="ux-icon" /> Ship with cruft</span>
+<span class="verdict-label label-bad"><Icon name="X" size={13} class="ux-icon" /> Ship with cruft</span>
 <div class="vis-box-bad" style="padding:7px;">
 <div class="text-xxs-gray">18 columns, 6 unused</div>
 <div class="text-xxs-muted-mt">Breached → all exposed</div>
 </div>
 </div>
 <div class="verdict-col">
-<span class="verdict-label label-good"><Check size={13} class="ux-icon" /> Trim pre-launch</span>
+<span class="verdict-label label-good"><Icon name="Check" size={13} class="ux-icon" /> Trim pre-launch</span>
 <div class="vis-box-good" style="padding:7px;">
 <div class="text-xxs-gray">12 columns, all used</div>
 <div class="text-xxs-muted-mt">Smaller blast radius</div>

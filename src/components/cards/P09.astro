@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Check, X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -12,12 +12,12 @@ import { Check, X } from "lucide-astro";
 >
 <div class="fc-5 p09-visual">
 <div class="vis-box-bad-sm2">
-<div class="vis-label-bad-sm"><X size={13} class="ux-icon" /> Backup exists… maybe</div>
+<div class="vis-label-bad-sm"><Icon name="X" size={13} class="ux-icon" /> Backup exists… maybe</div>
 <div class="text-sm-muted">Automated daily snapshot</div>
 <div class="text-7-muted-mt">Never tested a restore</div>
 </div>
 <div class="vis-box-good-sm2">
-<div class="vis-label-good-sm"><Check size={13} class="ux-icon" /> Verified restore</div>
+<div class="vis-label-good-sm"><Icon name="Check" size={13} class="ux-icon" /> Verified restore</div>
 <div class="text-sm-muted">Last restore test: Mar 2024</div>
 <div class="text-7-mid-mt">RTO: 2h · RPO: 24h</div>
 </div>

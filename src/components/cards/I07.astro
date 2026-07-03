@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Check, X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -14,12 +14,12 @@ import { Check, X } from "lucide-astro";
 <div class="field-wrap">
 <div class="field-label">Email address</div>
 <div class="field-input ok">sarah@company.com</div>
-<div class="field-hint hint-ok"><Check size={13} class="ux-icon" /> Looks good</div>
+<div class="field-hint hint-ok"><Icon name="Check" size={13} class="ux-icon" /> Looks good</div>
 </div>
 <div class="field-wrap">
 <div class="field-label">Password</div>
 <div class="field-input err">••••••</div>
-<div class="field-hint hint-err"><X size={13} class="ux-icon" /> Must be 8+ chars with a number</div>
+<div class="field-hint hint-err"><Icon name="X" size={13} class="ux-icon" /> Must be 8+ chars with a number</div>
 </div>
 <div class="field-wrap">
 <div class="field-label">Phone</div>

@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Pin, Trash2 } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -13,9 +13,9 @@ import { Pin, Trash2 } from "lucide-astro";
 <div class="fc-6 i14-visual">
 <div class="vis-swipe-wrap">
 <div style="display:flex;align-items:stretch;height:44px;">
-<div class="swipe-action-good"><Pin size={16} class="ux-icon" /></div>
+<div class="swipe-action-good"><Icon name="Pin" size={16} class="ux-icon" /></div>
 <div class="swipe-msg">Message from Sarah</div>
-<div class="swipe-action-bad"><Trash2 size={13} class="ux-icon" /></div>
+<div class="swipe-action-bad"><Icon name="Trash2" size={13} class="ux-icon" /></div>
 </div>
 <div class="swipe-label">← swipe left / swipe right →</div>
 </div>

@@ -1,6 +1,6 @@
 ---
 import UxCard from "../UxCard.astro";
-import { Check, X } from "lucide-astro";
+import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -19,9 +19,9 @@ import { Check, X } from "lucide-astro";
 </div>
 <div class="vis-demo-bg" style="padding:8px 9px;">
 <div class="check-list">
-<div class="check-item"><span class="text-red"><X size={13} class="ux-icon" /></span>Single level flat nav (redundant)</div>
-<div class="check-item"><span class="text-red"><X size={13} class="ux-icon" /></span>Mobile: takes precious header space</div>
-<div class="check-item"><span class="text-lg-green"><Check size={13} class="ux-icon" /></span>Desktop e-commerce, admin dashboards</div>
+<div class="check-item"><span class="text-red"><Icon name="X" size={13} class="ux-icon" /></span>Single level flat nav (redundant)</div>
+<div class="check-item"><span class="text-red"><Icon name="X" size={13} class="ux-icon" /></span>Mobile: takes precious header space</div>
+<div class="check-item"><span class="text-lg-green"><Icon name="Check" size={13} class="ux-icon" /></span>Desktop e-commerce, admin dashboards</div>
 </div>
 </div>
 </div>
