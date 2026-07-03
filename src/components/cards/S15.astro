@@ -1,0 +1,24 @@
+---
+import UxCard from "../UxCard.astro";
+import { ArrowRight } from "lucide-astro";
+---
+
+<UxCard
+  id="S-15"
+  domain="Security"
+  domainClass="s-s"
+  title=`Rotate First.<br/>Investigate Second.`
+  rule=`<strong>The moment you suspect exposure, rotate first, investigate second.</strong> Stop the bleeding before you figure out the wound. A compromised key still works until you revoke it.`
+>
+<div class="fc-6 s15-visual">
+<div class="vis-box-neutral">
+<div class="vis-label-muted-sm">Suspected key exposure</div>
+<div class="fr-c8-md" style="margin-top:6px;justify-content:center;gap:10px;">
+<div class="pill pill-red">1. Rotate key</div>
+<ArrowRight size={14} class="ux-icon" style="color:#AAA;" />
+<div class="pill pill-gray">2. Investigate</div>
+</div>
+</div>
+<div class="text-xxs-center">Old key stops working immediately</div>
+</div>
+</UxCard>

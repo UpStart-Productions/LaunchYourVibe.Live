@@ -1,0 +1,24 @@
+---
+import UxCard from "../UxCard.astro";
+import { AlertTriangle } from "lucide-astro";
+---
+
+<UxCard
+  id="S-13"
+  domain="Security"
+  domainClass="s-s"
+  title=`Old Commits<br/>Keep Secrets Forever.`
+  rule=`<strong>Before going public, run a secret scanner on your commit history.</strong> You'd be surprised what's buried in old commits — deleted files don't delete the history.`
+>
+<div class="fc-5 s13-visual">
+<div class="vis-box-neutral">
+<div class="vis-label-muted-sm">Git history</div>
+<div class="fc-3" style="margin-top:4px;">
+<div class="label-row"><span>commit abc123</span><span class="val text-red">API_KEY found</span></div>
+<div class="label-row"><span>commit def456</span><span class="val" style="color:#AAA;">clean</span></div>
+<div class="label-row"><span>commit ghi789</span><span class="val text-red">password found</span></div>
+</div>
+</div>
+<div class="fr-c6-lg" style="margin-top:5px;"><AlertTriangle size={14} class="ux-icon text-red" /> Scan before open-sourcing</div>
+</div>
+</UxCard>

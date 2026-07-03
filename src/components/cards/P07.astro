@@ -1,0 +1,29 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="P-07"
+  domain="Privacy"
+  domainClass="p-p"
+  title=`Stolen Credentials<br/>Shouldn't Last Forever.`
+  rule=`<strong>Sessions that never expire are stolen credentials that work forever.</strong> Set a reasonable timeout and enforce it. Refresh tokens rotate; idle sessions die.`
+>
+<div class="bad-good-row p07-visual">
+<div class="verdict-col">
+<span class="verdict-label label-bad"><X size={13} class="ux-icon" /> Never expires</span>
+<div class="vis-box-bad" style="padding:8px;text-align:center;">
+<div class="text-sm-bold">Session: ∞</div>
+<div class="text-xxs-muted-mt">Stolen token = permanent access</div>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-good"><Check size={13} class="ux-icon" /> Timeout enforced</span>
+<div class="vis-box-good" style="padding:8px;text-align:center;">
+<div class="text-sm-bold">Expires: 24h idle</div>
+<div class="text-xxs-muted-mt">Window closes automatically</div>
+</div>
+</div>
+</div>
+</UxCard>

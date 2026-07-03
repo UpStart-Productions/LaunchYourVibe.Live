@@ -1,0 +1,25 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="S-01"
+  domain="Security"
+  domainClass="s-s"
+  title=`Filter by User ID.<br/>Always.`
+  rule=`<strong>Every user-specific fetch must filter by the authenticated user's ID.</strong> Test it by logging in as User A and manually requesting User B's data. If you can see it, you have a problem. This isn't a platform feature you toggle on — it's a check you write and verify.`
+>
+<div class="fc-5 s01-visual">
+<div class="vis-box-bad-sm2">
+<div class="vis-label-bad-sm"><X size={13} class="ux-icon" /> No filter</div>
+<div class="code-block" style="padding:5px 7px;line-height:1.6;">SELECT * FROM notes</div>
+<div class="text-7-muted-mt">User B's data visible to User A</div>
+</div>
+<div class="vis-box-good-sm2">
+<div class="vis-label-good-sm"><Check size={13} class="ux-icon" /> Scoped to session</div>
+<div class="code-block" style="padding:5px 7px;line-height:1.6;">WHERE user_id = $session</div>
+<div class="text-7-mid-mt">Only your rows return</div>
+</div>
+</div>
+</UxCard>

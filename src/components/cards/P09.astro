@@ -1,0 +1,25 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="P-09"
+  domain="Privacy"
+  domainClass="p-p"
+  title=`A Backup You've<br/>Never Restored Is a Guess.`
+  rule=`<strong>Backups exist and are tested.</strong> Know where your backups are and verify one actually works. A backup you've never restored is a guess.`
+>
+<div class="fc-5 p09-visual">
+<div class="vis-box-bad-sm2">
+<div class="vis-label-bad-sm"><X size={13} class="ux-icon" /> Backup exists… maybe</div>
+<div class="text-sm-muted">Automated daily snapshot</div>
+<div class="text-7-muted-mt">Never tested a restore</div>
+</div>
+<div class="vis-box-good-sm2">
+<div class="vis-label-good-sm"><Check size={13} class="ux-icon" /> Verified restore</div>
+<div class="text-sm-muted">Last restore test: Mar 2024</div>
+<div class="text-7-mid-mt">RTO: 2h · RPO: 24h</div>
+</div>
+</div>
+</UxCard>

@@ -1,0 +1,22 @@
+---
+import UxCard from "../UxCard.astro";
+import { AlertTriangle } from "lucide-astro";
+---
+
+<UxCard
+  id="S-14"
+  domain="Security"
+  domainClass="s-s"
+  title=`npm audit<br/>Before Launch.`
+  rule=`<strong>Run npm audit or equivalent before launch.</strong> Known vulnerabilities in packages you didn't write are still your problem — transitive dependencies included.`
+>
+<div class="fc-5 s14-visual">
+<div class="code-block">npm audit</div>
+<div class="fc-3" style="margin-top:6px;">
+<div class="label-row"><span class="pill pill-red">critical</span><span class="val text-red">2</span></div>
+<div class="label-row"><span class="pill pill-amber">high</span><span class="val" style="color:#E65100;">5</span></div>
+<div class="label-row"><span class="pill pill-gray">moderate</span><span class="val">12</span></div>
+</div>
+<div class="text-xxs-muted-mt">Fix critical &amp; high before ship</div>
+</div>
+</UxCard>

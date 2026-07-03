@@ -1,0 +1,25 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="S-05"
+  domain="Security"
+  domainClass="s-s"
+  title=`.env in Gitignore.<br/>Rotate if Exposed.`
+  rule=`<strong>Committed secrets live in history forever even after deletion.</strong> Gitignore .env and rotate anything that ever shipped. A deleted line in today's code doesn't erase yesterday's commit.`
+>
+<div class="fc-5 s05-visual">
+<div class="vis-box-bad-sm2">
+<div class="vis-label-bad-sm"><X size={13} class="ux-icon" /> Committed to git</div>
+<div class="code-block" style="padding:5px 7px;">DATABASE_URL=postgres://...</div>
+<div class="text-7-muted-mt">Still in history after delete</div>
+</div>
+<div class="vis-box-good-sm2">
+<div class="vis-label-good-sm"><Check size={13} class="ux-icon" /> Env vars only</div>
+<div class="code-block" style="padding:5px 7px;">.gitignore → .env</div>
+<div class="text-7-mid-mt">Rotate keys if ever committed</div>
+</div>
+</div>
+</UxCard>

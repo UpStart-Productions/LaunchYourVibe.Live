@@ -1,0 +1,29 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="S-03"
+  domain="Security"
+  domainClass="s-s"
+  title=`Hiding a Button<br/>Is Not Security.`
+  rule=`<strong>Every protected action checks the session on the server before returning data.</strong> UI-only access control is theater — a crafted request bypasses it in seconds. Hiding a button is not access control.`
+>
+<div class="bad-good-row s03-visual">
+<div class="verdict-col">
+<span class="verdict-label label-bad"><X size={13} class="ux-icon" /> UI only</span>
+<div class="vis-box-bad" style="padding:8px;text-align:center;">
+<div class="text-sm-faded" style="text-decoration:line-through;">Admin Panel</div>
+<div class="text-xxs-muted-mt">Button hidden in React</div>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-good"><Check size={13} class="ux-icon" /> Server check</span>
+<div class="vis-box-good" style="padding:8px;text-align:center;">
+<div class="text-sm-bold">403 Forbidden</div>
+<div class="text-xxs-muted-mt">Session verified on API</div>
+</div>
+</div>
+</div>
+</UxCard>

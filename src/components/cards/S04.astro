@@ -1,0 +1,20 @@
+---
+import UxCard from "../UxCard.astro";
+import { X } from "lucide-astro";
+---
+
+<UxCard
+  id="S-04"
+  domain="Security"
+  domainClass="s-s"
+  title=`Client Code Is<br/>Public Code.`
+  rule=`<strong>Anything shipped to the client is public.</strong> API keys, service role keys, admin flags — none of it belongs in frontend code. If it's in your bundle, assume everyone can read it.`
+>
+<div class="fc-5 s04-visual">
+<div class="vis-box-bad">
+<div class="vis-label-bad"><X size={13} class="ux-icon" /> Exposed in bundle</div>
+<div class="code-block">const API_KEY = "sk_live_...";<br/>const isAdmin = true;</div>
+</div>
+<div class="vis-label-bad-cap">View Source · DevTools · Network tab = all public</div>
+</div>
+</UxCard>

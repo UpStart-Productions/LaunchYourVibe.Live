@@ -1,0 +1,25 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="S-07"
+  domain="Security"
+  domainClass="s-s"
+  title=`localStorage =<br/>Readable by Any Script.`
+  rule=`<strong>JWTs stored in localStorage are readable by any script on the page.</strong> httpOnly cookies are not. One XSS vulnerability with localStorage tokens = full account takeover.`
+>
+<div class="fc-5 s07-visual">
+<div class="vis-box-bad-sm2">
+<div class="vis-label-bad-sm"><X size={13} class="ux-icon" /> localStorage</div>
+<div class="code-block" style="padding:5px 7px;">localStorage.setItem("jwt", token)</div>
+<div class="text-7-muted-mt">Any script can read it</div>
+</div>
+<div class="vis-box-good-sm2">
+<div class="vis-label-good-sm"><Check size={13} class="ux-icon" /> httpOnly cookie</div>
+<div class="code-block" style="padding:5px 7px;">Set-Cookie: token=…; HttpOnly</div>
+<div class="text-7-mid-mt">JavaScript cannot access</div>
+</div>
+</div>
+</UxCard>

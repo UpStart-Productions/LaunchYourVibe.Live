@@ -1,0 +1,32 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="S-02"
+  domain="Security"
+  domainClass="s-s"
+  title=`Use Supabase, Clerk,<br/>or Auth0.`
+  rule=`<strong>Rolling your own session management is where breaches are born.</strong> Use Supabase Auth, Clerk, or Auth0. They handle tokens, refresh, MFA, and OAuth so you don't have to — and they stay patched when new vulnerabilities emerge.`
+>
+<div class="fc-5 s02-visual">
+<div class="vis-box-bad-sm2">
+<div class="vis-label-bad-sm"><X size={13} class="ux-icon" /> DIY auth stack</div>
+<div class="check-list check-list-sm">
+<div class="check-item"><span class="check-icon">→</span>Custom session store</div>
+<div class="check-item"><span class="check-icon">→</span>Hand-rolled password reset</div>
+<div class="check-item"><span class="check-icon">→</span>You maintain the patches</div>
+</div>
+</div>
+<div class="vis-box-good-sm2">
+<div class="vis-label-good-sm"><Check size={13} class="ux-icon" /> Managed provider</div>
+<div class="fr-c4-mb3">
+<span class="pill pill-green">Supabase</span>
+<span class="pill pill-green">Clerk</span>
+<span class="pill pill-green">Auth0</span>
+</div>
+<div class="text-7-mid-mt">OAuth, MFA, refresh — handled</div>
+</div>
+</div>
+</UxCard>

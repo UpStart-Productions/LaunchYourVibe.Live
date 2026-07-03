@@ -1,0 +1,30 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="P-11"
+  domain="Privacy"
+  domainClass="p-p"
+  title=`No DROP or ALTER<br/>for Your App User.`
+  rule=`<strong>Least privilege on database users.</strong> Your app's database user shouldn't have DROP or ALTER permissions. Give it only what it needs to function — SELECT, INSERT, UPDATE, DELETE on specific tables.`
+>
+<div class="fc-5 p11-visual">
+<div class="vis-box-bad-sm2">
+<div class="vis-label-bad-sm"><X size={13} class="ux-icon" /> Superuser app role</div>
+<div class="check-list check-list-sm">
+<div class="check-item"><span class="check-icon">→</span>DROP TABLE</div>
+<div class="check-item"><span class="check-icon">→</span>ALTER SCHEMA</div>
+<div class="check-item"><span class="check-icon">→</span>GRANT ALL</div>
+</div>
+</div>
+<div class="vis-box-good-sm2">
+<div class="vis-label-good-sm"><Check size={13} class="ux-icon" /> Scoped app role</div>
+<div class="check-list check-list-sm">
+<div class="check-item"><span class="check-icon">→</span>SELECT, INSERT, UPDATE</div>
+<div class="check-item"><span class="check-icon">→</span>on app.* only</div>
+</div>
+</div>
+</div>
+</UxCard>

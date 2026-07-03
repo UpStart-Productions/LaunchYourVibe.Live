@@ -1,0 +1,25 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="S-09"
+  domain="Security"
+  domainClass="s-s"
+  title=`Never Trust<br/>the Client.`
+  rule=`<strong>Everything reaching the database is checked for type, length, and allowed values.</strong> Client-side validation is UX convenience, not security — it can be bypassed with a single curl command.`
+>
+<div class="fc-5 s09-visual">
+<div class="vis-box-bad-sm2">
+<div class="vis-label-bad-sm"><X size={13} class="ux-icon" /> Client only</div>
+<div class="code-block" style="padding:5px 7px;">if (email.includes("@")) ✓</div>
+<div class="text-7-muted-mt">Bypassed via API directly</div>
+</div>
+<div class="vis-box-good-sm2">
+<div class="vis-label-good-sm"><Check size={13} class="ux-icon" /> Server validates</div>
+<div class="code-block" style="padding:5px 7px;">schema.parse(body) → 400</div>
+<div class="text-7-mid-mt">Type, length, allowed values</div>
+</div>
+</div>
+</UxCard>

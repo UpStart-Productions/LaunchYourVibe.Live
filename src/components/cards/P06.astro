@@ -1,0 +1,25 @@
+---
+import UxCard from "../UxCard.astro";
+import { AlertTriangle } from "lucide-astro";
+---
+
+<UxCard
+  id="P-06"
+  domain="Privacy"
+  domainClass="p-p"
+  title=`Know What You've<br/>Invited In.`
+  rule=`<strong>Third-party scripts see everything on your page.</strong> Every analytics tag, chat widget, and ad pixel has access to your DOM and potentially your users' data. Know what you've invited in.`
+>
+<div class="fc-5 p06-visual">
+<div class="vis-box-neutral">
+<div class="vis-label-muted-sm">Third-party scripts</div>
+<div class="fr-c4-mb3" style="margin-top:5px;">
+<span class="pill pill-amber">GA4</span>
+<span class="pill pill-amber">Intercom</span>
+<span class="pill pill-amber">Hotjar</span>
+</div>
+<div class="fr-c6-lg"><AlertTriangle size={14} class="ux-icon" style="color:#E65100;" /> Full DOM access</div>
+</div>
+<div class="text-xxs-muted-mt">Audit tags quarterly · remove unused</div>
+</div>
+</UxCard>

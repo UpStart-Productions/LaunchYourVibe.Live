@@ -214,6 +214,8 @@
 .d-a { background: #8A5D00; }
 .a-a { background: #8A5D00; }
 .d-d { background: #B81800; }
+.s-s { background: #0F4C5C; }
+.p-p { background: #3D5A80; }
 
 /* ======= VISUAL PRIMITIVES ======= */
 
@@ -2037,6 +2039,8 @@
 .ux-domain-swatch.d-n { background: #7428B4; }
 .ux-domain-swatch.a-a { background: #8A5D00; }
 .ux-domain-swatch.d-d { background: #B81800; }
+.ux-domain-swatch.s-s { background: #0F4C5C; }
+.ux-domain-swatch.p-p { background: #3D5A80; }
 
 /* Neutral bars */
 .card-visual .bar-ddd { background: #DDD; border-radius: 2px; }

@@ -1,0 +1,25 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="P-04"
+  domain="Privacy"
+  domainClass="p-p"
+  title=`Know Where Every<br/>Piece Lives.`
+  rule=`<strong>Users can delete their data — you need to know where it all is first.</strong> Know where every piece of user data lives before someone asks you to remove it. "I'm not sure" is not an answer.`
+>
+<div class="fc-5 p04-visual">
+<div class="vis-box-neutral">
+<div class="vis-label-muted-sm">User data map</div>
+<div class="fc-3" style="margin-top:4px;">
+<div class="label-row"><span>PostgreSQL</span><span class="val text-blue">users, posts</span></div>
+<div class="label-row"><span>S3 bucket</span><span class="val text-blue">avatars/</span></div>
+<div class="label-row"><span>Stripe</span><span class="val text-blue">billing</span></div>
+<div class="label-row"><span>Mailchimp</span><span class="val text-blue">email list</span></div>
+</div>
+</div>
+<div class="vis-label-good-sm"><Check size={13} class="ux-icon" /> Delete request → purge all four</div>
+</div>
+</UxCard>

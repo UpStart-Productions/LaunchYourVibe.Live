@@ -1,0 +1,29 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="S-11"
+  domain="Security"
+  domainClass="s-s"
+  title=`Including Staging.<br/>No Exceptions.`
+  rule=`<strong>HTTPS everywhere, always — no exceptions, including staging.</strong> Let's Encrypt makes this free. There is no excuse — credentials and tokens travel in plaintext without it.`
+>
+<div class="bad-good-row s11-visual">
+<div class="verdict-col">
+<span class="verdict-label label-bad"><X size={13} class="ux-icon" /> HTTP</span>
+<div class="vis-box-bad" style="padding:8px;text-align:center;">
+<div class="text-sm-bold text-red">http://staging.app</div>
+<div class="text-xxs-muted-mt">Credentials in plaintext</div>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-good"><Check size={13} class="ux-icon" /> HTTPS</span>
+<div class="vis-box-good" style="padding:8px;text-align:center;">
+<div class="text-sm-bold text-lg-green">https://staging.app</div>
+<div class="text-xxs-muted-mt">Encrypted in transit</div>
+</div>
+</div>
+</div>
+</UxCard>

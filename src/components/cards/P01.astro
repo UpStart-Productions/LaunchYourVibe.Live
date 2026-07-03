@@ -1,0 +1,32 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="P-01"
+  domain="Privacy"
+  domainClass="p-p"
+  title=`Every Field Needs<br/>a Reason.`
+  rule=`<strong>Data you never collected can't leak.</strong> Every field in your schema should have a documented reason to exist. If you can't explain why you need it, don't collect it.`
+>
+<div class="fc-5 p01-visual">
+<div class="vis-box-bad-sm2">
+<div class="vis-label-bad-sm"><X size={13} class="ux-icon" /> Kitchen sink schema</div>
+<div class="check-list check-list-sm">
+<div class="check-item"><span class="check-icon">→</span>birthday</div>
+<div class="check-item"><span class="check-icon">→</span>middle_name</div>
+<div class="check-item"><span class="check-icon">→</span>favorite_color</div>
+</div>
+<div class="text-7-muted-mt">No documented purpose</div>
+</div>
+<div class="vis-box-good-sm2">
+<div class="vis-label-good-sm"><Check size={13} class="ux-icon" /> Minimum viable</div>
+<div class="check-list check-list-sm">
+<div class="check-item"><span class="check-icon">→</span>email — login</div>
+<div class="check-item"><span class="check-icon">→</span>name — display</div>
+</div>
+<div class="text-7-mid-mt">Each field documented</div>
+</div>
+</div>
+</UxCard>

@@ -1,0 +1,25 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="P-03"
+  domain="Privacy"
+  domainClass="p-p"
+  title=`Pre-Checked<br/>Isn't Consent.`
+  rule=`<strong>Email requires explicit opt-in.</strong> Pre-checked boxes aren't consent. CAN-SPAM and GDPR both have teeth and neither cares that you're small.`
+>
+<div class="fc-5 p03-visual">
+<div class="vis-box-bad-sm2">
+<div class="vis-label-bad-sm"><X size={13} class="ux-icon" /> Pre-checked</div>
+<div class="fr-c8-md"><span style="font-size:14px;">☑</span> Send me marketing emails</div>
+<div class="text-7-muted-mt">Opt-out ≠ opt-in</div>
+</div>
+<div class="vis-box-good-sm2">
+<div class="vis-label-good-sm"><Check size={13} class="ux-icon" /> Explicit opt-in</div>
+<div class="fr-c8-md"><span style="font-size:14px;">☐</span> Yes, send me updates</div>
+<div class="text-7-mid-mt">User must actively choose</div>
+</div>
+</div>
+</UxCard>

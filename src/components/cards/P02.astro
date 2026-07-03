@@ -1,0 +1,27 @@
+---
+import UxCard from "../UxCard.astro";
+import { Check, X } from "lucide-astro";
+---
+
+<UxCard
+  id="P-02"
+  domain="Privacy"
+  domainClass="p-p"
+  title=`Policy = What You<br/>Actually Collect.`
+  rule=`<strong>Your privacy policy must match the code, not your intentions.</strong> It describes what you actually collect, not what you intended to. A lying policy is legally worse than none.`
+>
+<div class="bad-good-row p02-visual">
+<div class="verdict-col">
+<span class="verdict-label label-bad"><X size={13} class="ux-icon" /> Policy says</span>
+<div class="vis-box-bad" style="padding:8px;text-align:center;">
+<div class="text-sm-bold">"We don't track location"</div>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-good"><Check size={13} class="ux-icon" /> Code does</span>
+<div class="vis-box-good" style="padding:8px;text-align:center;">
+<div class="code-block" style="padding:4px 6px;font-size:10px;">geo.getCurrentPosition()</div>
+</div>
+</div>
+</div>
+</UxCard>

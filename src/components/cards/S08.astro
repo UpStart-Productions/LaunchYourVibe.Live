@@ -1,0 +1,27 @@
+---
+import UxCard from "../UxCard.astro";
+import { Lock } from "lucide-astro";
+---
+
+<UxCard
+  id="S-08"
+  domain="Security"
+  domainClass="s-s"
+  title=`Lock Out After<br/>5–10 Failures.`
+  rule=`<strong>Unlimited login attempts are a brute force welcome mat.</strong> Throttle or lock after 5–10 failures. Add exponential backoff and alert on suspicious patterns.`
+>
+<div class="fc-6 s08-visual">
+<div class="vis-box-neutral">
+<div class="vis-label-muted-sm">Login attempts</div>
+<div class="fr-5" style="gap:3px;margin-top:4px;">
+<div class="flex-box-bad-xs"><span class="text-red" style="font-size:10px;">✗</span></div>
+<div class="flex-box-bad-xs"><span class="text-red" style="font-size:10px;">✗</span></div>
+<div class="flex-box-bad-xs"><span class="text-red" style="font-size:10px;">✗</span></div>
+<div class="flex-box-bad-xs"><span class="text-red" style="font-size:10px;">✗</span></div>
+<div class="flex-box-bad-xs"><span class="text-red" style="font-size:10px;">✗</span></div>
+<div class="flex-box-good-sq" style="display:flex;align-items:center;justify-content:center;"><Lock size={12} class="ux-icon" /></div>
+</div>
+</div>
+<div class="text-xxs-center">Attempt 6 → account locked 15 min</div>
+</div>
+</UxCard>

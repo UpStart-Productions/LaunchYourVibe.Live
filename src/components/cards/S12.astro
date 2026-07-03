@@ -1,0 +1,20 @@
+---
+import UxCard from "../UxCard.astro";
+---
+
+<UxCard
+  id="S-12"
+  domain="Security"
+  domainClass="s-s"
+  title=`Search for key,<br/>secret, token.`
+  rule=`<strong>Search your codebase for key, secret, token, password before every deploy.</strong> One command, five minutes, no surprises. Make it part of your ship checklist.`
+>
+<div class="fc-5 s12-visual">
+<div class="code-block">grep -ri "secret\|token\|password\|api_key" .</div>
+<div class="check-list check-list-sm" style="margin-top:6px;">
+<div class="check-item"><span class="check-icon">→</span>Run before every deploy</div>
+<div class="check-item"><span class="check-icon">→</span>Check .env.example too</div>
+<div class="check-item"><span class="check-icon">→</span>Review matches, don't ignore</div>
+</div>
+</div>
+</UxCard>

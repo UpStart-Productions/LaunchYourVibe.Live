@@ -14,6 +14,8 @@ import {
   Compass,
   Eye,
   BarChart3,
+  Shield,
+  EyeOff,
 } from "lucide-astro";
 import T01 from "../components/cards/T01.astro";
 import T02 from "../components/cards/T02.astro";
@@ -105,6 +107,36 @@ import D12 from "../components/cards/D12.astro";
 import D13 from "../components/cards/D13.astro";
 import D14 from "../components/cards/D14.astro";
 import D15 from "../components/cards/D15.astro";
+import S01 from "../components/cards/S01.astro";
+import S02 from "../components/cards/S02.astro";
+import S03 from "../components/cards/S03.astro";
+import S04 from "../components/cards/S04.astro";
+import S05 from "../components/cards/S05.astro";
+import S06 from "../components/cards/S06.astro";
+import S07 from "../components/cards/S07.astro";
+import S08 from "../components/cards/S08.astro";
+import S09 from "../components/cards/S09.astro";
+import S10 from "../components/cards/S10.astro";
+import S11 from "../components/cards/S11.astro";
+import S12 from "../components/cards/S12.astro";
+import S13 from "../components/cards/S13.astro";
+import S14 from "../components/cards/S14.astro";
+import S15 from "../components/cards/S15.astro";
+import P01 from "../components/cards/P01.astro";
+import P02 from "../components/cards/P02.astro";
+import P03 from "../components/cards/P03.astro";
+import P04 from "../components/cards/P04.astro";
+import P05 from "../components/cards/P05.astro";
+import P06 from "../components/cards/P06.astro";
+import P07 from "../components/cards/P07.astro";
+import P08 from "../components/cards/P08.astro";
+import P09 from "../components/cards/P09.astro";
+import P10 from "../components/cards/P10.astro";
+import P11 from "../components/cards/P11.astro";
+import P12 from "../components/cards/P12.astro";
+import P13 from "../components/cards/P13.astro";
+import P14 from "../components/cards/P14.astro";
+import P15 from "../components/cards/P15.astro";
 
 const sectionNavItems = [
   { label: "Spacing & Typography", href: "#spacing-typography", icon: Type },
@@ -113,12 +145,14 @@ const sectionNavItems = [
   { label: "Navigation", href: "#navigation", icon: Compass },
   { label: "Accessibility", href: "#accessibility", icon: Eye },
   { label: "Data", href: "#data", icon: BarChart3 },
+  { label: "Security", href: "#security", icon: Shield },
+  { label: "Privacy", href: "#privacy", icon: EyeOff },
 ];
 ---
 
 <BaseLayout
-  title={`${SITE.name} — 90 reference cards for vibe coders`}
-  description="Browse 90 UX reference cards across 6 domains. Built for non-developer vibe coders who want to ship good, accessible, secure software."
+  title={`${SITE.name} — 120 reference cards for vibe coders`}
+  description="Browse 120 reference cards across 8 domains. Built for non-developer vibe coders who want to ship good, accessible, secure software."
 >
   <Header />
 
@@ -217,6 +251,30 @@ const sectionNavItems = [
             <D01 /><D02 /><D03 /><D04 /><D05 />
             <D06 /><D07 /><D08 /><D09 /><D10 />
             <D11 /><D12 /><D13 /><D14 /><D15 />
+          </div>
+        </div>
+
+        <div id="security" class="ux-domain-section scroll-mt-[148px] md:scroll-mt-[156px]">
+          <div class="ux-domain-heading">
+            <div class="ux-domain-swatch s-s"></div>
+            <span class="ux-domain-label">Security</span>
+          </div>
+          <div class="ux-card-grid">
+            <S01 /><S02 /><S03 /><S04 /><S05 />
+            <S06 /><S07 /><S08 /><S09 /><S10 />
+            <S11 /><S12 /><S13 /><S14 /><S15 />
+          </div>
+        </div>
+
+        <div id="privacy" class="ux-domain-section scroll-mt-[148px] md:scroll-mt-[156px]">
+          <div class="ux-domain-heading">
+            <div class="ux-domain-swatch p-p"></div>
+            <span class="ux-domain-label">Privacy</span>
+          </div>
+          <div class="ux-card-grid">
+            <P01 /><P02 /><P03 /><P04 /><P05 />
+            <P06 /><P07 /><P08 /><P09 /><P10 />
+            <P11 /><P12 /><P13 /><P14 /><P15 />
           </div>
         </div>
       </div>

@@ -1,0 +1,23 @@
+---
+import UxCard from "../UxCard.astro";
+import { AlertTriangle } from "lucide-astro";
+---
+
+<UxCard
+  id="P-10"
+  domain="Privacy"
+  domainClass="p-p"
+  title=`Treat Every Repo<br/>As Public Tomorrow.`
+  rule=`<strong>Private repos aren't security.</strong> Treat every repo as if it could go public tomorrow. Private today doesn't mean private forever — misconfigured permissions, acquired companies, and leaked tokens happen.`
+>
+<div class="fc-5 p10-visual">
+<div class="vis-box-neutral">
+<div class="fr-c8-md" style="justify-content:center;gap:8px;">
+<span class="pill pill-purple">🔒 Private repo</span>
+<span style="color:#AAA;">→</span>
+<span class="pill pill-red">Public tomorrow?</span>
+</div>
+<div class="fr-c6-lg" style="margin-top:6px;justify-content:center;"><AlertTriangle size={14} class="ux-icon" style="color:#E65100;" /> No secrets in source code</div>
+</div>
+</div>
+</UxCard>
