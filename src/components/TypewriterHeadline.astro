@@ -2,7 +2,7 @@
 const words = ["accessible", "secure", "usable", "beautiful"];
 ---
 
-<h1 class="whitespace-nowrap text-center text-3xl font-semibold text-white md:text-left md:text-4xl lg:text-5xl">
+<h1 class="hero-headline w-full whitespace-nowrap text-center font-semibold text-white md:text-left">
   Launch your{" "}
   <span
     id="hero-typewriter"
@@ -13,6 +13,21 @@ const words = ["accessible", "secure", "usable", "beautiful"];
 </h1>
 
 <style>
+  .hero-headline {
+    font-size: clamp(1.05rem, 3.75vw + 0.5rem, 1.875rem);
+  }
+
+  @media (min-width: 768px) {
+    .hero-headline {
+      font-size: 2.25rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-headline {
+      font-size: 3rem;
+    }
+  }
   .typewriter-word::after {
     content: "|";
     margin-left: 1px;
