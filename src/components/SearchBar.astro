@@ -296,6 +296,103 @@ const { categories } = Astro.props;
     });
 
     input.addEventListener("search", applySearch);
+
+    initSearchRaise(root as HTMLElement);
+  }
+
+  function initSearchRaise(panel: HTMLElement) {
+    if (panel.dataset.raiseInit === "true") return;
+    panel.dataset.raiseInit = "true";
+
+    const header = document.querySelector<HTMLElement>("[data-site-header]");
+    if (!header) return;
+
+    let lastScrollY = window.scrollY;
+    let panelStart = 0;
+    let spacer: HTMLDivElement | null = null;
+
+    const sentinel = document.createElement("div");
+    sentinel.setAttribute("aria-hidden", "true");
+    sentinel.style.height = "1px";
+    panel.parentElement?.insertBefore(sentinel, panel);
+
+    function measurePanelStart() {
+      if (document.documentElement.classList.contains("is-search-raised")) return;
+      panelStart = sentinel.getBoundingClientRect().top + window.scrollY;
+    }
+
+    function stuckThreshold() {
+      return panelStart - header.offsetHeight;
+    }
+
+    function clearRaisedLayout() {
+      panel.style.top = "";
+    }
+
+    function layoutRaisedSearch() {
+      const top = Math.max(0, (header.offsetHeight - panel.offsetHeight) / 2);
+      panel.style.top = `${top}px`;
+    }
+
+    function setRaised(raised: boolean) {
+      const active = document.documentElement.classList.contains("is-search-raised");
+      if (raised === active) return;
+
+      document.documentElement.classList.toggle("is-search-raised", raised);
+
+      if (raised) {
+        layoutRaisedSearch();
+        spacer = document.createElement("div");
+        spacer.setAttribute("aria-hidden", "true");
+        spacer.style.height = `${panel.offsetHeight}px`;
+        panel.parentElement?.insertBefore(spacer, panel);
+        return;
+      }
+
+      clearRaisedLayout();
+      spacer?.remove();
+      spacer = null;
+      measurePanelStart();
+    }
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        const scrollY = window.scrollY;
+        const threshold = stuckThreshold();
+
+        if (panelStart <= 0) {
+          lastScrollY = scrollY;
+          return;
+        }
+
+        if (scrollY < threshold) {
+          setRaised(false);
+        } else if (scrollY > lastScrollY) {
+          setRaised(true);
+          if (document.documentElement.classList.contains("is-search-raised")) {
+            layoutRaisedSearch();
+          }
+        }
+
+        lastScrollY = scrollY;
+      },
+      { passive: true },
+    );
+
+    requestAnimationFrame(measurePanelStart);
+    window.addEventListener("load", measurePanelStart, { once: true });
+
+    window.addEventListener(
+      "resize",
+      () => {
+        measurePanelStart();
+        if (document.documentElement.classList.contains("is-search-raised")) {
+          layoutRaisedSearch();
+        }
+      },
+      { passive: true },
+    );
   }
 
   initSearchBar();

@@ -63,3 +63,12 @@ svg.lucide {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+html.is-search-raised .site-search-panel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 55;
+  padding-top: 0;
+  padding-bottom: 0;
+}

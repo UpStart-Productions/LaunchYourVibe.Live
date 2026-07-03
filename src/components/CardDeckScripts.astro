@@ -98,46 +98,4 @@
     );
   })();
 
-  /** T-01 intro flip: show users cards are clickable to reveal the rule on back. */
-  (function initT01FlipDemo() {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    const card = document.querySelector<HTMLElement>('[data-card-id="T-01"]');
-    if (!card) return;
-
-    const cardEl = card;
-
-    const FLIP_MS = 550;
-    const HOLD_MS = 3000;
-    const START_DELAY = 900;
-    const timers: ReturnType<typeof setTimeout>[] = [];
-    let cancelled = false;
-
-    function later(fn: () => void, ms: number) {
-      timers.push(setTimeout(fn, ms));
-    }
-
-    function cancel() {
-      cancelled = true;
-      timers.forEach(clearTimeout);
-      timers.length = 0;
-    }
-
-    function onUserClick() {
-      cancel();
-      cardEl.removeEventListener("click", onUserClick);
-    }
-
-    cardEl.addEventListener("click", onUserClick);
-
-    later(() => {
-      if (cancelled) return;
-      cardEl.classList.add("flipped");
-      later(() => {
-        if (cancelled) return;
-        cardEl.classList.remove("flipped");
-        cardEl.removeEventListener("click", onUserClick);
-      }, FLIP_MS + HOLD_MS);
-    }, START_DELAY);
-  })();
 </script>
