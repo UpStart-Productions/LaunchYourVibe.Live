@@ -325,6 +325,45 @@ const { categories } = Astro.props;
       return panelStart - header.offsetHeight;
     }
 
+    function prefersReducedMotion() {
+      return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    }
+
+    function animatePanelMove(applyState: () => void) {
+      if (prefersReducedMotion()) {
+        applyState();
+        return;
+      }
+
+      const first = panel.getBoundingClientRect();
+      applyState();
+      const last = panel.getBoundingClientRect();
+      const deltaX = first.left - last.left;
+      const deltaY = first.top - last.top;
+
+      if (Math.abs(deltaX) < 0.5 && Math.abs(deltaY) < 0.5) return;
+
+      panel.style.transition = "none";
+      panel.style.transform = `translate3d(${deltaX}px, ${deltaY}px, 0)`;
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          panel.style.transition = "transform 0.28s cubic-bezier(0.4, 0, 0.2, 1)";
+          panel.style.transform = "";
+        });
+      });
+
+      panel.addEventListener(
+        "transitionend",
+        (event) => {
+          if (event.propertyName !== "transform") return;
+          panel.style.transition = "";
+          panel.style.transform = "";
+        },
+        { once: true },
+      );
+    }
+
     function clearRaisedLayout() {
       panel.style.top = "";
     }
@@ -338,21 +377,23 @@ const { categories } = Astro.props;
       const active = document.documentElement.classList.contains("is-search-raised");
       if (raised === active) return;
 
-      document.documentElement.classList.toggle("is-search-raised", raised);
+      animatePanelMove(() => {
+        document.documentElement.classList.toggle("is-search-raised", raised);
 
-      if (raised) {
-        layoutRaisedSearch();
-        spacer = document.createElement("div");
-        spacer.setAttribute("aria-hidden", "true");
-        spacer.style.height = `${panel.offsetHeight}px`;
-        panel.parentElement?.insertBefore(spacer, panel);
-        return;
-      }
+        if (raised) {
+          layoutRaisedSearch();
+          spacer = document.createElement("div");
+          spacer.setAttribute("aria-hidden", "true");
+          spacer.style.height = `${panel.offsetHeight}px`;
+          panel.parentElement?.insertBefore(spacer, panel);
+          return;
+        }
 
-      clearRaisedLayout();
-      spacer?.remove();
-      spacer = null;
-      measurePanelStart();
+        clearRaisedLayout();
+        spacer?.remove();
+        spacer = null;
+        measurePanelStart();
+      });
     }
 
     window.addEventListener(

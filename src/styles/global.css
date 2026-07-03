@@ -72,3 +72,9 @@ html.is-search-raised .site-search-panel {
   padding-top: 0;
   padding-bottom: 0;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .site-search-panel {
+    transition: none !important;
+  }
+}
