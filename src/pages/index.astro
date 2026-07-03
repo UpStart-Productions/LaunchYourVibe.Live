@@ -1,6 +1,7 @@
 ---
 import "../styles/ux-deck.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import CardDeckScripts from "../components/CardDeckScripts.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import SearchBar from "../components/SearchBar.astro";
@@ -134,8 +135,8 @@ const sectionNavItems = [
             <div class="text-center md:text-left">
               <TypewriterHeadline />
               <p class="mt-3 max-w-2xl text-base leading-relaxed text-muted-cosmic md:text-lg">
-                90 reference cards for vibe coders who can ship with AI but want the
-                vocabulary to make it feel right. Click any card to flip.
+                AI doesn't catch everything. Reference cards for vibe coders who want to ship
+                secure, accessible apps with great UX. Click a card to flip for more info.
               </p>
             </div>
           </div>
@@ -223,6 +224,8 @@ const sectionNavItems = [
   </main>
 
   <Footer />
+
+  <CardDeckScripts />
 </BaseLayout>
 
 <style is:global>
@@ -239,45 +242,3 @@ const sectionNavItems = [
   }
 </style>
 
-<script>
-  /** T-01 intro flip: show users cards are clickable to reveal the rule on back. */
-  (function initT01FlipDemo() {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    const card = document.querySelector('[data-card-id="T-01"]');
-    if (!card) return;
-
-    const FLIP_MS = 550;
-    const HOLD_MS = 3000;
-    const START_DELAY = 900;
-    const timers: ReturnType<typeof setTimeout>[] = [];
-    let cancelled = false;
-
-    function later(fn: () => void, ms: number) {
-      timers.push(setTimeout(fn, ms));
-    }
-
-    function cancel() {
-      cancelled = true;
-      timers.forEach(clearTimeout);
-      timers.length = 0;
-    }
-
-    function onUserClick() {
-      cancel();
-      card.removeEventListener("click", onUserClick);
-    }
-
-    card.addEventListener("click", onUserClick);
-
-    later(() => {
-      if (cancelled) return;
-      card.classList.add("flipped");
-      later(() => {
-        if (cancelled) return;
-        card.classList.remove("flipped");
-        card.removeEventListener("click", onUserClick);
-      }, FLIP_MS + HOLD_MS);
-    }, START_DELAY);
-  })();
-</script>

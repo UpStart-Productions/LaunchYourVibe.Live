@@ -1,13 +1,21 @@
 ---
+import { Link2 } from "lucide-astro";
+import { cardPermalink } from "../config/cards";
+import { SITE } from "../config/site";
+
 interface Props {
   id: string;          // e.g. "T-01"
   domain: string;      // e.g. "Spacing & Typography"
   domainClass: string; // e.g. "d-t"
   title: string;
   rule: string;
+  showPermalink?: boolean;
 }
 
-const { id, domain, domainClass, title, rule } = Astro.props;
+const { id, domain, domainClass, title, rule, showPermalink = true } = Astro.props;
+
+const siteOrigin = Astro.site ?? Astro.url;
+const permalink = cardPermalink(id, siteOrigin);
 
 const sectionByDomain: Record<string, string> = {
   "Spacing & Typography": "spacing-typography",
@@ -30,7 +38,6 @@ const sectionId = sectionByDomain[domain] ?? "";
   data-card-id={id}
   data-section={sectionId}
   data-search={searchText}
-  onclick="this.classList.toggle('flipped')"
 >
   <div class="card-inner">
     <div class="card-front">
@@ -42,6 +49,22 @@ const sectionId = sectionByDomain[domain] ?? "";
       <div class="card-visual">
         <slot />
       </div>
+      {
+        showPermalink && (
+          <div class="card-front-footer">
+            <span class="card-copy-feedback" aria-live="polite">Card Link Copied</span>
+            <button
+              type="button"
+              class="card-copy-link"
+              data-no-flip
+              data-permalink={permalink}
+              aria-label="Copy link to this card"
+            >
+              <Link2 size={14} class="card-copy-link-icon ux-icon" />
+            </button>
+          </div>
+        )
+      }
     </div>
     <div class="card-back">
       <div class={`back-header ${domainClass}`}>
@@ -50,8 +73,17 @@ const sectionId = sectionByDomain[domain] ?? "";
       </div>
       <div class="back-rule" set:html={rule} />
       <div class="back-footer">
-        <span class="back-footer-brand">LaunchYourVibe · UpStart Productions</span>
-        <span class="back-footer-url">launchyourvibe.live</span>
+        <span class="back-footer-brand">{SITE.name}</span>
+        <a
+          href={SITE.upstartUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="back-footer-logo-link"
+          data-no-flip
+          aria-label="UpStart Productions"
+        >
+          <img src="/images/upstart-logo.svg" alt="" class="back-footer-logo" />
+        </a>
       </div>
     </div>
   </div>

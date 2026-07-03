@@ -1,0 +1,66 @@
+---
+import "../../styles/ux-deck.css";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CardDeckScripts from "../../components/CardDeckScripts.astro";
+import { CARD_BY_SLUG, CARDS } from "../../config/cards";
+import { SITE } from "../../config/site";
+
+export function getStaticPaths() {
+  return CARDS.map((card) => ({ params: { id: card.slug } }));
+}
+
+const { id } = Astro.params;
+const card = CARD_BY_SLUG[id!];
+
+const CardComponent = card.component;
+const pageTitle = `${card.id} — ${SITE.name}`;
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={`UX reference card ${card.id} from ${SITE.name}. ${SITE.tagline}`}
+>
+  <main class="card-single-page">
+    <div class="card-single-stage">
+      <CardComponent />
+    </div>
+    <a href="/" class="card-single-back">View all cards</a>
+  </main>
+
+  <CardDeckScripts />
+</BaseLayout>
+
+<style>
+  .card-single-page {
+    display: flex;
+    min-height: 100dvh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem 3rem;
+  }
+
+  .card-single-stage {
+    display: flex;
+    justify-content: center;
+  }
+
+  .card-single-page .card-front-footer {
+    display: none;
+  }
+
+  .card-single-back {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .card-single-back:hover {
+    color: var(--color-text);
+  }
+</style>

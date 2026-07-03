@@ -1,0 +1,143 @@
+<script>
+  type AbortBag = Window & {
+    __cardFlipAbort?: AbortController;
+    __cardCopyAbort?: AbortController;
+  };
+
+  /** Card visuals: hover on desktop, in-viewport on touch (decoupled from flip). */
+  (function initCardVisualAnimations() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const cards = document.querySelectorAll<HTMLElement>(".card-wrap");
+    if (!cards.length) return;
+
+    const useScrollTrigger = !window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    const FULLY_VISIBLE = 0.98;
+    const MOSTLY_GONE = 0.1;
+    const THRESHOLDS = [0, 0.1, 0.25, 0.5, 0.75, 0.9, 0.95, 0.98, 1];
+
+    if (useScrollTrigger) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            const el = entry.target as HTMLElement;
+            if (entry.intersectionRatio >= FULLY_VISIBLE) {
+              el.classList.add("is-animated");
+            } else if (!entry.isIntersecting || entry.intersectionRatio <= MOSTLY_GONE) {
+              el.classList.remove("is-animated");
+            }
+          }
+        },
+        { threshold: THRESHOLDS }
+      );
+      cards.forEach((card) => observer.observe(card));
+    } else {
+      cards.forEach((card) => {
+        card.addEventListener("mouseenter", () => card.classList.add("is-animated"));
+        card.addEventListener("mouseleave", () => card.classList.remove("is-animated"));
+      });
+    }
+  })();
+
+  /** Flip cards on click; skip interactive controls marked data-no-flip. */
+  (function initCardFlip() {
+    const win = window as AbortBag;
+    win.__cardFlipAbort?.abort();
+    win.__cardFlipAbort = new AbortController();
+
+    document.addEventListener(
+      "click",
+      (event) => {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+        if (target.closest("[data-no-flip]")) return;
+
+        const card = target.closest<HTMLElement>(".card-wrap");
+        if (!card) return;
+
+        card.classList.toggle("flipped");
+      },
+      { signal: win.__cardFlipAbort.signal }
+    );
+  })();
+
+  /** Copy permalink for a card without flipping it. */
+  (function initCardCopyLinks() {
+    const win = window as AbortBag;
+    win.__cardCopyAbort?.abort();
+    win.__cardCopyAbort = new AbortController();
+
+    document.addEventListener(
+      "click",
+      async (event) => {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+
+        const btn = target.closest<HTMLButtonElement>(".card-copy-link");
+        if (!btn) return;
+
+        event.stopPropagation();
+
+        const footer = btn.closest(".card-front-footer");
+        const url = btn.dataset.permalink;
+        if (!url) return;
+
+        try {
+          await navigator.clipboard.writeText(url);
+          footer?.classList.add("card-front-footer--copied");
+          btn.setAttribute("aria-label", "Card link copied");
+          window.setTimeout(() => {
+            footer?.classList.remove("card-front-footer--copied");
+            btn.setAttribute("aria-label", "Copy link to this card");
+          }, 2000);
+        } catch {
+          window.prompt("Copy this link:", url);
+        }
+      },
+      { signal: win.__cardCopyAbort.signal }
+    );
+  })();
+
+  /** T-01 intro flip: show users cards are clickable to reveal the rule on back. */
+  (function initT01FlipDemo() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const card = document.querySelector<HTMLElement>('[data-card-id="T-01"]');
+    if (!card) return;
+
+    const cardEl = card;
+
+    const FLIP_MS = 550;
+    const HOLD_MS = 3000;
+    const START_DELAY = 900;
+    const timers: ReturnType<typeof setTimeout>[] = [];
+    let cancelled = false;
+
+    function later(fn: () => void, ms: number) {
+      timers.push(setTimeout(fn, ms));
+    }
+
+    function cancel() {
+      cancelled = true;
+      timers.forEach(clearTimeout);
+      timers.length = 0;
+    }
+
+    function onUserClick() {
+      cancel();
+      cardEl.removeEventListener("click", onUserClick);
+    }
+
+    cardEl.addEventListener("click", onUserClick);
+
+    later(() => {
+      if (cancelled) return;
+      cardEl.classList.add("flipped");
+      later(() => {
+        if (cancelled) return;
+        cardEl.classList.remove("flipped");
+        cardEl.removeEventListener("click", onUserClick);
+      }, FLIP_MS + HOLD_MS);
+    }, START_DELAY);
+  })();
+</script>
