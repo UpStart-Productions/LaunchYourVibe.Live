@@ -7,6 +7,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build && node scripts/finalize-sitemap.mjs",
+    "generate:guardrails": "node scripts/build-guardrails-kit.mjs",
     "generate:icons": "node scripts/generate-icon-sprite.mjs",
     "preview": "astro preview",
     "astro": "astro",

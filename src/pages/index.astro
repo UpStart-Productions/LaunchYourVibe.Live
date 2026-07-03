@@ -6,6 +6,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import SearchBar from "../components/SearchBar.astro";
 import TypewriterHeadline from "../components/TypewriterHeadline.astro";
+import GuardrailsDownload from "../components/GuardrailsDownload.astro";
 import { SITE } from "../config/site";
 import T01 from "../components/cards/T01.astro";
 import T02 from "../components/cards/T02.astro";
@@ -164,6 +165,9 @@ const sectionNavItems: { label: string; href: string; icon: IconName }[] = [
               AI doesn't catch everything. Reference cards for vibe coders who want to ship
               secure, accessible apps with great UX. Click a card to flip for more info.
             </p>
+            <div class="mx-auto w-[90%] max-w-2xl text-center md:mx-0 md:w-auto md:text-left">
+              <GuardrailsDownload />
+            </div>
           </div>
         </div>
       </div>

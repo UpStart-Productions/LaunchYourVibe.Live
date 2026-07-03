@@ -1,0 +1,551 @@
+---
+import Icon from "./icons/Icon.astro";
+import { getGuardrailsManifest } from "../config/guardrails";
+
+const manifest = getGuardrailsManifest();
+const downloadHref = manifest.downloadPath;
+---
+
+<div class="guardrails-dl" data-guardrails-root>
+  <div class="guardrails-dl__hero-slot" data-guardrails-hero-slot>
+    <div class="guardrails-dl__hero-sentinel" data-guardrails-hero-sentinel aria-hidden="true"></div>
+    <button type="button" class="guardrails-dl__trigger" data-guardrails-open aria-haspopup="dialog">
+      <Icon name="Download" size={18} class="guardrails-dl__icon" aria-hidden="true" />
+      <span class="guardrails-dl__label">Download Guardrails Kit</span>
+    </button>
+  </div>
+
+  <dialog class="guardrails-dl__dialog" data-guardrails-dialog aria-labelledby="guardrails-dl-title">
+    <div class="guardrails-dl__panel">
+      <button
+        type="button"
+        class="guardrails-dl__close"
+        data-guardrails-close
+        aria-label="Close"
+      >
+        <Icon name="X" size={20} />
+      </button>
+
+      <div class="guardrails-dl__panel-inner">
+        <p class="guardrails-dl__eyebrow">Free download · v{manifest.version}</p>
+        <h2 id="guardrails-dl-title" class="guardrails-dl__title">
+          Use this deck while you vibe code
+        </h2>
+        <p class="guardrails-dl__lead">
+          The cards teach the patterns. This kit helps your AI remember them when you're building.
+        </p>
+
+        <ul class="guardrails-dl__list">
+          <li>
+            <strong>Starter rules</strong> — {manifest.starterRuleCount} always-on Cursor rules for
+            the stuff AI forgets first
+          </li>
+          <li>
+            <strong>Domain packs</strong> — optional rules for UX, accessibility, security, and
+            privacy
+          </li>
+          <li>
+            <strong>Ship-check skill</strong> — run a full review before you ship a feature
+          </li>
+          <li>
+            <strong>Cheat sheet</strong> — all {manifest.cardCount} cards in one searchable doc
+          </li>
+        </ul>
+
+        <div class="guardrails-dl__actions">
+          <a href={downloadHref} class="guardrails-dl__download" download>
+            <Icon name="Download" size={18} aria-hidden="true" />
+            Download ZIP
+          </a>
+          <button type="button" class="guardrails-dl__dismiss" data-guardrails-close>
+            Maybe later
+          </button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+</div>
+
+<style>
+  .guardrails-dl__hero-slot {
+    position: relative;
+    display: inline-block;
+  }
+
+  .guardrails-dl__hero-sentinel {
+    display: block;
+    width: min(100%, 15rem);
+    height: 2.75rem;
+    margin-top: 0.25rem;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  .guardrails-dl__hero-slot > .guardrails-dl__trigger:not(.guardrails-dl__trigger--docked) {
+    position: absolute;
+    top: 0.25rem;
+    left: 0;
+    margin-top: 0;
+  }
+
+  .guardrails-dl__trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+    padding: 0.7rem 1.25rem;
+    border: none;
+    border-radius: 9999px;
+    background: #f9702a;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.2;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow:
+      0 3px 0 #c9561f,
+      0 8px 20px rgba(249, 112, 42, 0.35);
+    transition:
+      transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.15s ease,
+      background-color 0.15s ease,
+      padding 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+      border-radius 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+      width 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+      gap 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .guardrails-dl__trigger:hover {
+    background: #ff7d38;
+    box-shadow:
+      0 3px 0 #c9561f,
+      0 10px 24px rgba(249, 112, 42, 0.45);
+  }
+
+  .guardrails-dl__trigger:active {
+    transform: translateY(2px);
+    box-shadow:
+      0 1px 0 #c9561f,
+      0 4px 12px rgba(249, 112, 42, 0.3);
+  }
+
+  .guardrails-dl__trigger:focus-visible {
+    outline: 2px solid #ffc648;
+    outline-offset: 3px;
+  }
+
+  .guardrails-dl__trigger--docked {
+    margin-top: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    gap: 0;
+    border-radius: 9999px;
+    flex-shrink: 0;
+    box-shadow:
+      0 2px 0 #c9561f,
+      0 4px 12px rgba(249, 112, 42, 0.35);
+  }
+
+  .guardrails-dl__trigger--docked .guardrails-dl__icon :global(svg) {
+    width: 16px;
+    height: 16px;
+  }
+
+  .guardrails-dl__trigger--docked:hover {
+    box-shadow:
+      0 2px 0 #c9561f,
+      0 6px 16px rgba(249, 112, 42, 0.45);
+  }
+
+  .guardrails-dl__trigger--docked:active {
+    box-shadow:
+      0 1px 0 #c9561f,
+      0 3px 8px rgba(249, 112, 42, 0.3);
+  }
+
+  .guardrails-dl__label {
+    display: inline-block;
+    max-width: 12rem;
+    overflow: hidden;
+    transition:
+      max-width 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.2s ease;
+  }
+
+  .guardrails-dl__trigger--docked .guardrails-dl__label {
+    max-width: 0;
+    opacity: 0;
+  }
+
+  .guardrails-dl__icon :global(svg) {
+    stroke-width: 2.25;
+    flex-shrink: 0;
+  }
+
+  :global(.guardrails-dl-dock-wrap) {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    align-self: center;
+    padding: 0 0 0 0.625rem;
+  }
+
+  :global(.guardrails-dl-dock-wrap.is-active) {
+    display: flex;
+  }
+
+  :global(.search-bar-shell .guardrails-dl__trigger--docked) {
+    position: static;
+    margin-top: 0;
+    margin-right: 20px;
+  }
+
+  .guardrails-dl__dialog {
+    width: min(100% - 2rem, 28rem);
+    max-height: calc(100vh - 2rem);
+    margin: auto;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--color-text);
+    overflow: visible;
+  }
+
+  .guardrails-dl__dialog::backdrop {
+    background: rgba(8, 6, 18, 0.72);
+    backdrop-filter: blur(4px);
+  }
+
+  .guardrails-dl__panel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    border: 1px solid var(--color-cosmic-border);
+    background: linear-gradient(180deg, #1f1a32 0%, var(--color-cosmic-light) 100%);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+  }
+
+  .guardrails-dl__panel-inner {
+    padding: 1.5rem 1.5rem 1.25rem;
+    text-align: left;
+  }
+
+  .guardrails-dl__close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border: none;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  .guardrails-dl__close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-text);
+  }
+
+  .guardrails-dl__close:focus-visible {
+    outline: 2px solid #f9702a;
+    outline-offset: 2px;
+  }
+
+  .guardrails-dl__eyebrow {
+    margin: 0 0 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #ffc648;
+  }
+
+  .guardrails-dl__title {
+    margin: 0 0 0.75rem;
+    padding-right: 1.5rem;
+    font-size: 1.375rem;
+    line-height: 1.25;
+    color: #fff;
+  }
+
+  .guardrails-dl__lead {
+    margin: 0 0 1rem;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--color-text-muted);
+  }
+
+  .guardrails-dl__list {
+    margin: 0 0 1.25rem;
+    padding-left: 1.125rem;
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--color-text);
+    text-align: left;
+    list-style-position: outside;
+  }
+
+  .guardrails-dl__list li + li {
+    margin-top: 0.5rem;
+  }
+
+  .guardrails-dl__list strong {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .guardrails-dl__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1rem;
+  }
+
+  .guardrails-dl__download {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.125rem;
+    border-radius: 9999px;
+    background: #f9702a;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow:
+      0 3px 0 #c9561f,
+      0 6px 16px rgba(249, 112, 42, 0.3);
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.15s ease,
+      background-color 0.15s ease;
+  }
+
+  .guardrails-dl__download:hover {
+    background: #ff7d38;
+    color: #fff;
+  }
+
+  .guardrails-dl__download:active {
+    transform: translateY(2px);
+    box-shadow:
+      0 1px 0 #c9561f,
+      0 3px 10px rgba(249, 112, 42, 0.25);
+  }
+
+  .guardrails-dl__download:focus-visible {
+    outline: 2px solid #ffc648;
+    outline-offset: 3px;
+  }
+
+  .guardrails-dl__dismiss {
+    padding: 0.5rem 0.75rem;
+    border: none;
+    background: transparent;
+    color: var(--color-text-muted);
+    font-family: inherit;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: color 0.15s ease;
+  }
+
+  .guardrails-dl__dismiss:hover {
+    color: var(--color-text);
+  }
+
+  .guardrails-dl__dismiss:focus-visible {
+    outline: 2px solid #f9702a;
+    outline-offset: 2px;
+    border-radius: 0.25rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .guardrails-dl__trigger,
+    .guardrails-dl__label {
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  const DOCK_MOVE_MS = 280;
+
+  function prefersReducedMotion() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
+  function flipMoveTrigger(
+    trigger: HTMLButtonElement,
+    toParent: HTMLElement,
+    docked: boolean,
+  ) {
+    const first = trigger.getBoundingClientRect();
+
+    if (docked) {
+      trigger.classList.add("guardrails-dl__trigger--docked");
+      trigger.setAttribute("aria-label", "Download Guardrails Kit");
+    } else {
+      trigger.classList.remove("guardrails-dl__trigger--docked");
+      trigger.removeAttribute("aria-label");
+    }
+
+    toParent.appendChild(trigger);
+
+    const last = trigger.getBoundingClientRect();
+    const deltaX = first.left - last.left;
+    const deltaY = first.top - last.top;
+    const scaleX = first.width / Math.max(last.width, 1);
+    const scaleY = first.height / Math.max(last.height, 1);
+
+    if (prefersReducedMotion() || (Math.abs(deltaX) < 0.5 && Math.abs(deltaY) < 0.5)) {
+      trigger.style.transform = "";
+      trigger.style.transition = "";
+      return;
+    }
+
+    trigger.style.transition = "none";
+    trigger.style.transform = `translate3d(${deltaX}px, ${deltaY}px, 0) scale(${scaleX}, ${scaleY})`;
+    trigger.style.transformOrigin = "top left";
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        trigger.style.transition = `transform ${DOCK_MOVE_MS}ms cubic-bezier(0.4, 0, 0.2, 1)`;
+        trigger.style.transform = "";
+      });
+    });
+
+    trigger.addEventListener(
+      "transitionend",
+      (event) => {
+        if (event.propertyName !== "transform") return;
+        trigger.style.transition = "";
+        trigger.style.transform = "";
+        trigger.style.transformOrigin = "";
+      },
+      { once: true },
+    );
+  }
+
+  function initGuardrailsDownload(root: HTMLElement) {
+    if (root.dataset.guardrailsInit === "true") return;
+    root.dataset.guardrailsInit = "true";
+
+    const dialog = root.querySelector<HTMLDialogElement>("[data-guardrails-dialog]");
+    const trigger = root.querySelector<HTMLButtonElement>("[data-guardrails-open]");
+    const heroSlot = root.querySelector<HTMLElement>("[data-guardrails-hero-slot]");
+    const heroSentinel = root.querySelector<HTMLElement>("[data-guardrails-hero-sentinel]");
+    const dockSlot = document.querySelector<HTMLElement>("[data-guardrails-dock-slot]");
+
+    if (!dialog || !trigger || !heroSlot || !heroSentinel || !dockSlot) return;
+
+    const openBtn = trigger;
+    const dockTarget = dockSlot;
+    const heroTarget = heroSlot;
+
+    let isDocked = false;
+    let heroInView = true;
+    let isAnimating = false;
+
+    const closeDialog = () => {
+      if (dialog.open) dialog.close();
+    };
+
+    openBtn.addEventListener("click", () => {
+      if (typeof dialog.showModal === "function") {
+        dialog.showModal();
+      }
+    });
+
+    root.querySelectorAll("[data-guardrails-close]").forEach((el) => {
+      el.addEventListener("click", closeDialog);
+    });
+
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) closeDialog();
+    });
+
+    dialog.addEventListener("cancel", (event) => {
+      event.preventDefault();
+      closeDialog();
+    });
+
+    function setDockUi(active: boolean) {
+      dockTarget.classList.toggle("is-active", active);
+    }
+
+    async function applyDockState(shouldDock: boolean) {
+      if (shouldDock === isDocked || isAnimating) return;
+
+      isAnimating = true;
+      const toParent = shouldDock ? dockTarget : heroTarget;
+
+      if (shouldDock) {
+        setDockUi(true);
+      }
+
+      flipMoveTrigger(openBtn, toParent, shouldDock);
+
+      await new Promise<void>((resolve) => {
+        if (prefersReducedMotion()) {
+          resolve();
+          return;
+        }
+
+        window.setTimeout(resolve, DOCK_MOVE_MS);
+      });
+
+      if (!shouldDock) {
+        setDockUi(false);
+      }
+
+      isDocked = shouldDock;
+      isAnimating = false;
+
+      updateDockState();
+    }
+
+    function updateDockState() {
+      // Dock as soon as the hero button scrolls away — don't wait for search raise.
+      const shouldDock = !heroInView;
+      if (shouldDock !== isDocked && !isAnimating) {
+        void applyDockState(shouldDock);
+      }
+    }
+
+    const heroObserver = new IntersectionObserver(
+      (entries) => {
+        heroInView = entries.some((entry) => entry.isIntersecting);
+        updateDockState();
+      },
+      { threshold: 0, rootMargin: "0px" },
+    );
+
+    heroObserver.observe(heroSentinel);
+  }
+
+  function bootGuardrailsDownload() {
+    document.querySelectorAll("[data-guardrails-root]").forEach((root) => {
+      if (root instanceof HTMLElement) initGuardrailsDownload(root);
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bootGuardrailsDownload, { once: true });
+  } else {
+    bootGuardrailsDownload();
+  }
+
+  document.addEventListener("astro:page-load", bootGuardrailsDownload);
+</script>

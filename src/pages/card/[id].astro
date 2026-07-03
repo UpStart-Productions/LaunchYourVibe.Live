@@ -23,7 +23,6 @@ const pageDescription = cardPageDescription(card, SITE.name);
     <div class="card-single-stage">
       <CardComponent />
     </div>
-    <a href="/" class="card-single-back">View all cards</a>
   </main>
 
   <CardDeckScripts />
@@ -43,23 +42,5 @@ const pageDescription = cardPageDescription(card, SITE.name);
   .card-single-stage {
     display: flex;
     justify-content: center;
-  }
-
-  .card-single-page .card-front-footer {
-    display: none;
-  }
-
-  .card-single-back {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-text-muted);
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-
-  .card-single-back:hover {
-    color: var(--color-text);
   }
 </style>

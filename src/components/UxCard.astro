@@ -53,29 +53,35 @@ const sectionId = sectionByDomain[domain] ?? "";
       </div>
       {
         showPermalink && (
-          <div class="card-front-footer">
-            <span class="card-copy-feedback" aria-live="polite">Card Link Copied</span>
-            <button
-              type="button"
-              class="card-copy-link"
-              data-no-flip
-              data-permalink={permalink}
-              aria-label="Copy link to this card"
-            >
-              <Icon name="Link2" size={14} class="card-copy-link-icon ux-icon" />
-            </button>
-          </div>
+          <>
+            <div class="card-front-footer card-front-footer--copy">
+              <span class="card-copy-feedback" aria-live="polite">Card Link Copied</span>
+              <button
+                type="button"
+                class="card-copy-link"
+                data-no-flip
+                data-permalink={permalink}
+                aria-label="Copy link to this card"
+              >
+                <Icon name="Link2" size={16} class="card-copy-link-icon ux-icon" />
+              </button>
+            </div>
+            <div class="card-front-footer card-front-footer--view-all">
+              <a href="/" class="card-view-all-link" data-no-flip>
+                <Icon name="LayoutGrid" size={16} class="card-view-all-icon ux-icon" aria-hidden="true" />
+                <span>View All Cards</span>
+              </a>
+            </div>
+          </>
         )
       }
     </div>
     <div class="card-back">
       <div class={`back-header ${domainClass}`}>
-        <span class="back-brand">LaunchYourVibe</span>
         <span class="back-num">{id}</span>
       </div>
       <div class="back-rule" set:html={rule} />
       <div class="back-footer">
-        <span class="back-footer-brand">{SITE.name}</span>
         <a
           href={SITE.upstartUrl}
           target="_blank"

@@ -1,5 +1,8 @@
 # build output
 dist/
+
+# unpacked guardrails kit workspace (zip + manifest are committed)
+downloads/launchyourvibe-guardrails/
 # generated types
 .astro/
 

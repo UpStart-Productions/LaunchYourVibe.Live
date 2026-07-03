@@ -33,6 +33,8 @@ const { categories } = Astro.props;
         />
       </label>
 
+      <div class="guardrails-dl-dock-wrap" data-guardrails-dock-slot></div>
+
       <div class="search-divider" aria-hidden="true"></div>
 
       <div class="category-menu" data-category-menu>
@@ -379,6 +381,9 @@ const { categories } = Astro.props;
 
       animatePanelMove(() => {
         document.documentElement.classList.toggle("is-search-raised", raised);
+        document.dispatchEvent(
+          new CustomEvent("search-raise-change", { detail: { raised } }),
+        );
 
         if (raised) {
           layoutRaisedSearch();
