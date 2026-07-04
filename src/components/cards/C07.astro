@@ -11,12 +11,15 @@ import Icon from "../icons/Icon.astro";
   rule=`<strong>The FAB is the most prominent tap target on screen.</strong> It implies "this is the thing you do most." If you can't name that one action, the FAB isn't the right pattern.`
 >
 <div class="fc-center-6 c07-visual">
+<div class="verdict-col">
+<span class="verdict-label label-good"><Icon name="Check" size={13} class="ux-icon" /> One action, unmistakably primary</span>
 <div class="vis-demo-good" style="width:100%;display:flex;align-items:center;gap:8px;">
 <div class="fab-good">+</div>
-<div class="text-fab-good"><strong><Icon name="Check" size={13} class="ux-icon" /> One action,</strong> unmistakably primary</div>
 </div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-bad"><Icon name="X" size={13} class="ux-icon" /> FAB Abuse</span>
 <div class="vis-demo-bad" style="width:100%;display:flex;flex-direction:column;gap:4px;">
-<div class="vis-label-bad-cap"><Icon name="X" size={13} class="ux-icon" /> FAB Abuse</div>
 <div style="display:flex;gap:5px;justify-content:center;">
 <div class="avatar-pink">+</div>
 <div class="avatar-pink"><Icon name="Pencil" size={13} class="ux-icon" /></div>
@@ -24,6 +27,7 @@ import Icon from "../icons/Icon.astro";
 <div class="avatar-pink"><Icon name="Bell" size={16} class="ux-icon" /></div>
 </div>
 <div class="text-7-bad" style="text-align:center;">now nothing is primary</div>
+</div>
 </div>
 </div>
 </UxCard>

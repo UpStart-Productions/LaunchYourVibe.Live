@@ -10,27 +10,20 @@ import UxCard from "../UxCard.astro";
   rule=`<strong>UI placed in the notch or behind the home indicator isn't just ugly: it's unusable.</strong> Use CSS env() safe-area variables so your layout always respects the device's hardware edges.`
 >
 <div class="t14-visual">
-<div style="display:flex;justify-content:center;">
+<div class="t14-layout">
+<div class="t14-env-label text-blue">env(safe-area-inset-top)</div>
 <div class="phone-mockup">
-<!-- notch -->
 <div class="phone-notch"></div>
-<!-- safe zone indicator top -->
 <div class="phone-safe-line"></div>
-<!-- content area -->
 <div class="phone-content">
 <div class="bar-ddd" style="height:5px;width:90%;"></div>
 <div class="bar-ddd" style="height:5px;width:75%;"></div>
 <div class="bar-ddd" style="height:5px;width:85%;"></div>
 </div>
-<!-- safe zone indicator bottom -->
 <div class="phone-safe-line-btm"></div>
-<!-- home indicator -->
 <div class="phone-home"></div>
 </div>
-</div>
-<div style="display:flex;justify-content:center;gap:12px;margin-top:6px;">
-<div class="text-blue">env(safe-area-<br/>inset-top)</div>
-<div class="text-blue">env(safe-area-<br/>inset-bottom)</div>
+<div class="t14-env-label text-blue">env(safe-area-inset-bottom)</div>
 </div>
 </div>
 </UxCard>

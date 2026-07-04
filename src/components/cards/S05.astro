@@ -11,15 +11,19 @@ import Icon from "../icons/Icon.astro";
   rule=`<strong>Committed secrets live in history forever even after deletion.</strong> Gitignore .env and rotate anything that ever shipped. A deleted line in today's code doesn't erase yesterday's commit.`
 >
 <div class="fc-5 s05-visual">
+<div class="verdict-col">
+<span class="verdict-label label-good"><Icon name="Check" size={13} class="ux-icon" /> Env vars only</span>
+<div class="vis-box-good-sm2">
+<div class="code-block" style="padding:5px 7px;">.gitignore → .env</div>
+<div class="text-7-mid-mt">Rotate keys if ever committed</div>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-bad"><Icon name="X" size={13} class="ux-icon" /> Committed to git</span>
 <div class="vis-box-bad-sm2">
-<div class="vis-label-bad-sm"><Icon name="X" size={13} class="ux-icon" /> Committed to git</div>
 <div class="code-block" style="padding:5px 7px;">DATABASE_URL=postgres://...</div>
 <div class="text-7-muted-mt">Still in history after delete</div>
 </div>
-<div class="vis-box-good-sm2">
-<div class="vis-label-good-sm"><Icon name="Check" size={13} class="ux-icon" /> Env vars only</div>
-<div class="code-block" style="padding:5px 7px;">.gitignore → .env</div>
-<div class="text-7-mid-mt">Rotate keys if ever committed</div>
 </div>
 </div>
 </UxCard>

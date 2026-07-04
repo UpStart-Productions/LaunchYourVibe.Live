@@ -104,7 +104,44 @@ import UxCard from "../UxCard.astro";
 </UxCard>
 ```
 
-2. **Add card-specific CSS** to `src/styles/ux-deck.css` if the visual needs custom animation (follow existing `t01-visual`, `card-wrap.is-animated` patterns).
+2. **Add card-specific CSS** to `src/styles/ux-deck.css` if the visual needs custom animation (follow existing `t01-visual`, `card-wrap.is-animated` patterns). Use the deck typography tokens (`--deck-text-*`, `--deck-font-*`) for any new type — do not add raw `font-size` or `font-family` values.
+
+### Deck typography tokens
+
+All card-face type is defined once at the top of `src/styles/ux-deck.css`:
+
+| Token | Size | Typical use |
+|-------|------|-------------|
+| `--deck-font-sans` | Inter | Card titles, demo body |
+| `--deck-font-mono` | IBM Plex Mono | Labels, code, annotations |
+| `--deck-text-2xs` | 10px | Copy feedback (footer only) |
+| `--deck-text-xs` | 12px | Verdict labels, section caps (WCAG minimum) |
+| `--deck-text-sm` | 13px | Default demo + mono body |
+| `--deck-text-md` | 14px | Inputs, emphasis body |
+| `--deck-text-lg` | 15px | Demo headings |
+| `--deck-text-xl` | 16px | Large demo type |
+| `--deck-text-2xl` | 17px | Error headings |
+| `--deck-text-3xl` | 18px | Card face title |
+| `--deck-text-display` | 20px | Hero demo type |
+| `--deck-text-hero` | 24px | KPI numbers, large icons |
+| `--deck-text-icon` | 28px | Icon glyphs |
+
+Shared mono label styles live in the `mono typography bases` section; color and spacing stay on per-class rules.
+
+### Deck color tokens
+
+Text, status (good/bad/info), domain accents, backgrounds, and borders each have a `--deck-color-*` or `--deck-bg-*` / `--deck-border-*` token at the top of `ux-deck.css`. Common ones:
+
+| Token | Role |
+|-------|------|
+| `--deck-color-text` / `--deck-color-heading` | Body and titles |
+| `--deck-color-secondary` / `--deck-color-label` | Muted demo copy (AA-safe) |
+| `--deck-color-good` / `--deck-color-bad` / `--deck-color-info` | Semantic labels |
+| `--deck-color-good-strong` / `--deck-color-bad-strong` | Text on tinted panels |
+| `--deck-bg-good` / `--deck-bg-bad` | Good/bad demo panels |
+| `--deck-color-type` / `--deck-color-interaction` / … | Domain accent colors |
+
+Do not add raw hex to card utilities; extend the token list if a new color is needed.
 
 3. **Register on the homepage** — import the component in `src/pages/index.astro` and place it in the appropriate domain grid.
 

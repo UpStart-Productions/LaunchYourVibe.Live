@@ -11,16 +11,20 @@ import Icon from "../icons/Icon.astro";
   rule=`<strong>Back is the most-used navigation action.</strong> When it teleports users somewhere unexpected, they lose their mental map of the app. Maintain a proper back stack: always. Test deep links specifically.`
 >
 <div class="fc-6 n03-visual">
-<div class="vis-box-bad">
-<div class="vis-label-bad"><Icon name="X" size={13} class="ux-icon" /> Unexpected back behavior</div>
-<div class="text-sm-muted-relax">Cart → Checkout → Back → <span class="text-red-bold">Home?</span><br/>Notification → Article → Back → <span class="text-red-bold">Nowhere?</span></div>
-</div>
+<div class="verdict-col">
+<span class="verdict-label label-good"><Icon name="Check" size={13} class="ux-icon" /> Back respects history</span>
 <div class="vis-box-good">
-<div class="vis-label-good"><Icon name="Check" size={13} class="ux-icon" /> Back respects history</div>
 <div class="check-list">
 <div class="check-item"><span class="check-icon">→</span>Back = previous screen in stack</div>
 <div class="check-item"><span class="check-icon">→</span>Deep links show Back to source</div>
 <div class="check-item"><span class="check-icon">→</span>Modals use close (<Icon name="X" size={13} class="ux-icon" />), not back</div>
+</div>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-bad"><Icon name="X" size={13} class="ux-icon" /> Unexpected back behavior</span>
+<div class="vis-box-bad">
+<div class="text-sm-muted-relax">Cart → Checkout → Back → <span class="text-red-bold">Home?</span><br/>Notification → Article → Back → <span class="text-red-bold">Nowhere?</span></div>
 </div>
 </div>
 </div>

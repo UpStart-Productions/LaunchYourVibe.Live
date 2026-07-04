@@ -11,15 +11,19 @@ import Icon from "../icons/Icon.astro";
   rule=`<strong>Backups exist and are tested.</strong> Know where your backups are and verify one actually works. A backup you've never restored is a guess.`
 >
 <div class="fc-5 p09-visual">
+<div class="verdict-col">
+<span class="verdict-label label-good"><Icon name="Check" size={13} class="ux-icon" /> Verified restore</span>
+<div class="vis-box-good-sm2">
+<div class="text-sm-muted">Last restore test: Mar 2024</div>
+<div class="text-7-mid-mt">RTO: 2h · RPO: 24h</div>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-bad"><Icon name="X" size={13} class="ux-icon" /> Backup exists… maybe</span>
 <div class="vis-box-bad-sm2">
-<div class="vis-label-bad-sm"><Icon name="X" size={13} class="ux-icon" /> Backup exists… maybe</div>
 <div class="text-sm-muted">Automated daily snapshot</div>
 <div class="text-7-muted-mt">Never tested a restore</div>
 </div>
-<div class="vis-box-good-sm2">
-<div class="vis-label-good-sm"><Icon name="Check" size={13} class="ux-icon" /> Verified restore</div>
-<div class="text-sm-muted">Last restore test: Mar 2024</div>
-<div class="text-7-mid-mt">RTO: 2h · RPO: 24h</div>
 </div>
 </div>
 </UxCard>

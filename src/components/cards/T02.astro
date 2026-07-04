@@ -6,15 +6,63 @@ import UxCard from "../UxCard.astro";
   id="T-02"
   domain="Spacing & Typography"
   domainClass="d-t"
-  title=`The 8pt Grid:<br/>Your Spacing Foundation`
-  rule=`<strong>Arbitrary spacing makes screens feel unsteady.</strong> When everything snaps to the grid, the spacing becomes invisible, which is the goal.`
+  title=`The 8pt Grid:<br/>Spacing in rem`
+  rule=`<strong>Arbitrary spacing makes screens feel unsteady.</strong> Snap component gaps and padding to rem (0.25rem steps on an 8pt grid). For page-level breathing room, use vw in clamp() so gutters grow with the viewport.`
 >
-<div class="space-scale t02-visual">
-  <div class="space-row"><div class="space-box" style="width:4px;opacity:0.25;"></div><span class="space-label">4px</span><span class="space-name">Micro: icon gaps, badge offsets</span></div>
-  <div class="space-row"><div class="space-box" style="width:8px;opacity:0.4;"></div><span class="space-label">8px</span><span class="space-name">Tight: within components</span></div>
-  <div class="space-row"><div class="space-box" style="width:16px;opacity:0.55;"></div><span class="space-label">16px</span><span class="space-name">Default: padding, row gaps</span></div>
-  <div class="space-row"><div class="space-box" style="width:24px;opacity:0.7;"></div><span class="space-label">24px</span><span class="space-name">Comfortable: section gaps</span></div>
-  <div class="space-row"><div class="space-box" style="width:32px;opacity:0.85;"></div><span class="space-label">32px</span><span class="space-name">Loose: page sections</span></div>
-  <div class="space-row"><div class="space-box" style="width:48px;opacity:1;"></div><span class="space-label">48px</span><span class="space-name">Open: major layout gaps</span></div>
-</div>
+  <div class="space-scale t02-visual">
+    <div class="space-step">
+      <div class="space-step-label"><strong>0.25rem</strong> icon gaps, badge offsets</div>
+      <div class="space-gap-row" style="--space-gap: 0.25rem">
+        <span class="space-gap-box"></span>
+        <span class="space-gap-box"></span>
+        <span class="space-gap-box"></span>
+        <span class="space-gap-box"></span>
+      </div>
+    </div>
+    <div class="space-step">
+      <div class="space-step-label"><strong>0.5rem</strong> within components</div>
+      <div class="space-gap-row" style="--space-gap: 0.5rem">
+        <span class="space-gap-box"></span>
+        <span class="space-gap-box"></span>
+        <span class="space-gap-box"></span>
+        <span class="space-gap-box"></span>
+      </div>
+    </div>
+    <div class="space-step">
+      <div class="space-step-label"><strong>1rem</strong> padding, row gaps</div>
+      <div class="space-gap-row" style="--space-gap: 1rem">
+        <span class="space-gap-box"></span>
+        <span class="space-gap-box"></span>
+        <span class="space-gap-box"></span>
+        <span class="space-gap-box"></span>
+      </div>
+    </div>
+    <div class="space-step">
+      <div class="space-step-label"><strong>1.5rem</strong> section gaps</div>
+      <div class="space-gap-row" style="--space-gap: 1.5rem">
+        <span class="space-gap-box"></span>
+        <span class="space-gap-box"></span>
+        <span class="space-gap-box"></span>
+        <span class="space-gap-box"></span>
+      </div>
+    </div>
+    <div class="space-step">
+      <div class="space-step-label"><strong>2rem</strong> page sections</div>
+      <div class="space-gap-row" style="--space-gap: 2rem">
+        <span class="space-gap-box"></span>
+        <span class="space-gap-box"></span>
+        <span class="space-gap-box"></span>
+        <span class="space-gap-box"></span>
+      </div>
+    </div>
+    <div class="space-step">
+      <div class="space-step-label"><strong>3rem</strong> major layout gaps</div>
+      <div class="space-gap-row" style="--space-gap: 3rem">
+        <span class="space-gap-box"></span>
+        <span class="space-gap-box"></span>
+        <span class="space-gap-box"></span>
+        <span class="space-gap-box"></span>
+      </div>
+    </div>
+  </div>
 </UxCard>

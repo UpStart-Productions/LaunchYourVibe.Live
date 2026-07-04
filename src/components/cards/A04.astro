@@ -11,19 +11,23 @@ import Icon from "../icons/Icon.astro";
   rule=`<strong>Icon buttons are invisible to screen readers without labels.</strong> Add <code>aria-label</code> to every icon-only button. Use <code>aria-labelledby</code> when a visible label exists nearby. The label should describe the action, not the icon.`
 >
 <div class="fc-5 a04-visual">
+<div class="verdict-col">
+<span class="verdict-label label-good">Screen reader hears: "Delete item"</span>
+<div class="vis-box-good-sm">
+<div class="fr-5">
+<div class="icon-sq-green">×</div>
+<div class="mono-aria">aria-label="Delete item"</div>
+</div>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-bad">Screen reader hears: "Button"</span>
 <div class="vis-box-bad-sm">
-<div class="vis-label-bad-sm">Screen reader hears: "Button"</div>
 <div class="fr-5">
 <div class="icon-btn">×</div>
 <div class="icon-btn"><Icon name="Pencil" size={13} class="ux-icon" /></div>
 <div class="icon-btn">⋯</div>
 </div>
-</div>
-<div class="vis-box-good-sm">
-<div class="vis-label-good-sm">Screen reader hears: "Delete item"</div>
-<div class="fr-5">
-<div class="icon-sq-green">×</div>
-<div class="mono-aria">aria-label="Delete item"</div>
 </div>
 </div>
 </div>

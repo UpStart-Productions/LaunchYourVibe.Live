@@ -11,13 +11,17 @@ import Icon from "../icons/Icon.astro";
   rule=`<strong>Confirms interrupt flow. Undo restores agency.</strong> Let users act immediately, then give them a short window to reverse it. They feel more in control, not less.`
 >
 <div class="fc-7 i09-visual">
+<div class="verdict-col">
+<span class="verdict-label label-good"><Icon name="Check" size={13} class="ux-icon" /> Act, then offer undo</span>
+<div class="vis-demo-good" style="padding:8px;display:flex;flex-direction:column;gap:4px;">
+<div class="toast-undo"><span>Message deleted ·</span><span class="text-undo-action">Undo (5s)</span></div>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-bad"><Icon name="X" size={13} class="ux-icon" /> Interrupt with confirm</span>
 <div class="vis-demo-bad" style="padding:8px;display:flex;flex-direction:column;gap:4px;">
-<div class="vis-label-bad-cap"><Icon name="X" size={13} class="ux-icon" /> Interrupt with confirm</div>
 <div class="confirm-bad-box">Delete this message?<br/><span class="text-confirm-bad">[Cancel] [Delete]</span></div>
 </div>
-<div class="vis-demo-good" style="padding:8px;display:flex;flex-direction:column;gap:4px;">
-<div class="mono-undo-good"><Icon name="Check" size={13} class="ux-icon" /> Act, then offer undo</div>
-<div class="toast-undo"><span>Message deleted ·</span><span class="text-undo-action">Undo (5s)</span></div>
 </div>
 </div>
 </UxCard>

@@ -11,19 +11,23 @@ import Icon from "../icons/Icon.astro";
   rule=`<strong>If users need a tooltip to use a feature, the feature needs better labeling.</strong> Tooltips are bonus context for experienced users: not a substitute for clear UI copy. And they don't exist on touch screens.`
 >
 <div class="fc-6 c14-visual">
+<div class="verdict-col">
+<span class="verdict-label label-good"><Icon name="Check" size={13} class="ux-icon" /> Good tooltip use</span>
 <div class="vis-box-good-lg">
-<div class="vis-label-good-lg"><Icon name="Check" size={13} class="ux-icon" /> Good tooltip use</div>
 <div class="fr-c8">
 <div class="shortcut-badge"><Icon name="Command" size={13} class="ux-icon" />K <span class="tooltip-key-hint">Search</span></div>
 <div class="text-sm-muted">Keyboard shortcut hints</div>
 </div>
 </div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-bad"><Icon name="X" size={13} class="ux-icon" /> Tooltip as documentation</span>
 <div class="vis-box-bad-lg">
-<div class="vis-label-bad"><Icon name="X" size={13} class="ux-icon" /> Tooltip as documentation</div>
 <div class="check-list">
 <div class="check-item"><span class="text-red"><Icon name="X" size={13} class="ux-icon" /></span>Required to understand the UI</div>
 <div class="check-item"><span class="text-red"><Icon name="X" size={13} class="ux-icon" /></span>Critical info hidden in hover</div>
 <div class="check-item"><span class="text-red"><Icon name="X" size={13} class="ux-icon" /></span>Only touch-accessible on long press</div>
+</div>
 </div>
 </div>
 </div>

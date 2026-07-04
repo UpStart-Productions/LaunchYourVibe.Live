@@ -1,0 +1,23 @@
+---
+description: LaunchYourVibe card and site copy style
+alwaysApply: true
+---
+
+## Copy style
+
+When writing or editing card back text, guardrails, cheatsheet entries, or other LaunchYourVibe user-facing copy:
+
+- **No em dashes.** Use a period, colon, or semicolon instead.
+- **No filler openers** ("The gap is real", "Here's the thing", etc.). Lead with the insight.
+- **Strong first sentence** on card backs, then supporting detail (see existing cards in `src/components/cards/`).
+
+Card source of truth is `src/components/cards/*.astro`. Regenerate guardrails with `npm run generate:guardrails` after card copy changes.
+
+## Card visual layout
+
+- **Stack comparisons:** Side-by-side panels (platform pairs, bad/good columns, two-column lists) render vertically on the card face.
+- **Correct first:** Right/wrong demos show the good pattern on top, wrong pattern below.
+- **Labels on top:** Good/bad tags use `verdict-label` above the panel, not inside it (T-03 pattern). Wrap each pair in `verdict-col`.
+- **Contrast:** Card demo text meets WCAG AA (4.5:1 body on light panels). Use `--deck-color-secondary` / `--deck-color-label` for secondary text, not low-contrast greys. Tinted panels inherit `--deck-color-good-strong` (good) or `--deck-color-bad-strong` (bad).
+- **Typography:** Use `--deck-text-*` and `--deck-font-*` tokens in `ux-deck.css`. Do not add raw `font-size`/`font-family` to card utilities. Minimum readable size on card faces is `--deck-text-xs` (12px); reserve `--deck-text-2xs` for transient footer feedback only.
+- **Colors:** Use `--deck-color-*`, `--deck-bg-*`, and `--deck-border-*` tokens. Do not add raw hex to card utilities.

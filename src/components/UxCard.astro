@@ -78,6 +78,7 @@ const sectionId = sectionByDomain[domain] ?? "";
     </div>
     <div class="card-back">
       <div class={`back-header ${domainClass}`}>
+        <span class="back-brand">{SITE.name.toUpperCase()}</span>
         <span class="back-num">{id}</span>
       </div>
       <div class="back-rule" set:html={rule} />

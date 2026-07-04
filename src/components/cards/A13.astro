@@ -11,13 +11,17 @@ import Icon from "../icons/Icon.astro";
   rule=`<strong>Screen readers follow the DOM: not what's visible on screen.</strong> Using CSS <code>order</code>, <code>float</code>, or absolute positioning to rearrange visuals without reordering HTML creates a disjointed reading experience for keyboard and screen reader users.`
 >
 <div class="fr-5 a13-visual">
+<div class="verdict-col">
+<span class="verdict-label label-good"><Icon name="Check" size={13} class="ux-icon" /> Logical DOM</span>
+<div class="flex-box-good">
+<div class="mono-dom-good">DOM: Header<br/>DOM: Main<br/>DOM: Footer<br/><br/>Matches visual order</div>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-bad"><Icon name="X" size={13} class="ux-icon" /> CSS-reordered</span>
 <div class="flex-box-bad">
-<div class="vis-label-bad-mb4"><Icon name="X" size={13} class="ux-icon" /> CSS-reordered</div>
 <div class="mono-dom-bad">DOM: Footer<br/>DOM: Main<br/>DOM: Header<br/><br/>CSS order: 3 1 2</div>
 </div>
-<div class="flex-box-good">
-<div class="vis-label-good-mb4"><Icon name="Check" size={13} class="ux-icon" /> Logical DOM</div>
-<div class="mono-dom-good">DOM: Header<br/>DOM: Main<br/>DOM: Footer<br/><br/>Matches visual order</div>
 </div>
 </div>
 </UxCard>

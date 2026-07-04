@@ -1,9 +1,9 @@
 {
-  "version": "1.0.1",
-  "contentHash": "d6f69d04f07bdab036398d6a4d6e7c95feac5ccc2dd0d76e9445e532d46ee2d8",
-  "builtAt": "2026-07-03T23:10:13.155Z",
-  "zipFileName": "launchyourvibe-guardrails-v1.0.1.zip",
-  "cardCount": 120,
+  "version": "1.0.3",
+  "contentHash": "6615ead163dd509d9e5387983bd146b19cda7826c69b2f0aa11be3d7f64fbf83",
+  "builtAt": "2026-07-04T21:46:11.967Z",
+  "zipFileName": "launchyourvibe-guardrails-v1.0.3.zip",
+  "cardCount": 119,
   "starterRuleCount": 28,
-  "downloadPath": "/downloads/launchyourvibe-guardrails-v1.0.1.zip"
+  "downloadPath": "/downloads/launchyourvibe-guardrails-v1.0.3.zip"
 }

@@ -7,13 +7,13 @@ import UxCard from "../UxCard.astro";
   domain="Spacing & Typography"
   domainClass="d-t"
   title=`Line Height by<br/>Text Role`
-  rule=`<strong>Tight headings look intentional. Tight body text looks like a bug.</strong> Body needs room to breathe; headings are short enough that tight spacing reads as designed.`
+  rule=`<strong>Tight headings look intentional. Tight body text looks like a bug.</strong> Body line-height starts at 1.5 (WCAG). Button height comes from padding, not cramping line-height to 1.0.`
 >
 <div class="fc-6 t05-visual">
-<div class="label-row"><span>Headings</span><span class="val text-blue">1.1–1.2</span></div>
-<div class="label-row"><span>Subheadings</span><span class="val text-blue">1.2–1.3</span></div>
-<div class="label-row"><span>Body text</span><span class="val text-blue">1.5–1.7</span></div>
-<div class="label-row"><span>Captions / labels</span><span class="val text-blue">1.3–1.4</span></div>
-<div class="label-row"><span>UI button text</span><span class="val text-blue">1.0–1.1</span></div>
+<div class="label-row" style="--lh: 1.15"><span>Headings</span><span class="val text-blue">1.1–1.3</span></div>
+<div class="label-row" style="--lh: 1.28"><span>Subheadings</span><span class="val text-blue">1.25–1.4</span></div>
+<div class="label-row" style="--lh: 1.6"><span>Body text</span><span class="val text-blue">1.5–1.6</span></div>
+<div class="label-row" style="--lh: 1.45"><span>Captions</span><span class="val text-blue">1.35–1.5</span></div>
+<div class="label-row" style="--lh: 1.25"><span>Buttons</span><span class="val text-blue">pad + lh ≥1.2</span></div>
 </div>
 </UxCard>

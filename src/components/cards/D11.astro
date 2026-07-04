@@ -11,8 +11,24 @@ import Icon from "../icons/Icon.astro";
   rule=`<strong>Truncating a bar chart's y-axis turns minor differences into apparent crises.</strong> Bar height encodes quantity: cutting the baseline misrepresents proportions. Line charts can use non-zero baselines to show variance; bar charts cannot. If differences are small, consider a line chart instead.`
 >
 <div class="fr-5 d11-visual">
+<div class="verdict-col">
+<span class="verdict-label label-good"><Icon name="Check" size={13} class="ux-icon" /> Zero baseline</span>
+<div class="flex-box-good-sq">
+<svg viewbox="0 0 55 35" width="100%">
+<line stroke="#EEE" stroke-width="1" x1="8" x2="8" y1="5" y2="30"></line>
+<line stroke="#EEE" stroke-width="1" x1="8" x2="52" y1="30" y2="30"></line>
+<text fill="#999" font-size="3" text-anchor="end" x="6" y="8">102</text>
+<text fill="#999" font-size="3" text-anchor="end" x="6" y="30">0</text>
+<rect fill="#4CAF50" height="3" width="8" x="12" y="27"></rect>
+<rect fill="#4CAF50" height="5" width="8" x="24" y="25"></rect>
+<rect fill="#4CAF50" height="4" width="8" x="36" y="26"></rect>
+<text fill="#999" font-size="3" text-anchor="middle" x="36" y="34">Honest scale</text>
+</svg>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-bad"><Icon name="X" size={13} class="ux-icon" /> Truncated y-axis</span>
 <div class="flex-box-bad-sq">
-<div class="vis-label-bad-sm"><Icon name="X" size={13} class="ux-icon" /> Truncated y-axis</div>
 <svg viewbox="0 0 55 35" width="100%">
 <line stroke="#EEE" stroke-width="1" x1="8" x2="8" y1="5" y2="30"></line>
 <line stroke="#EEE" stroke-width="1" x1="8" x2="52" y1="30" y2="30"></line>
@@ -24,18 +40,6 @@ import Icon from "../icons/Icon.astro";
 <text fill="#999" font-size="3" text-anchor="middle" x="36" y="34">Looks dramatic</text>
 </svg>
 </div>
-<div class="flex-box-good-sq">
-<div class="vis-label-good-sm"><Icon name="Check" size={13} class="ux-icon" /> Zero baseline</div>
-<svg viewbox="0 0 55 35" width="100%">
-<line stroke="#EEE" stroke-width="1" x1="8" x2="8" y1="5" y2="30"></line>
-<line stroke="#EEE" stroke-width="1" x1="8" x2="52" y1="30" y2="30"></line>
-<text fill="#999" font-size="3" text-anchor="end" x="6" y="8">102</text>
-<text fill="#999" font-size="3" text-anchor="end" x="6" y="30">0</text>
-<rect fill="#4CAF50" height="3" width="8" x="12" y="27"></rect>
-<rect fill="#4CAF50" height="5" width="8" x="24" y="25"></rect>
-<rect fill="#4CAF50" height="4" width="8" x="36" y="26"></rect>
-<text fill="#999" font-size="3" text-anchor="middle" x="36" y="34">Honest scale</text>
-</svg>
 </div>
 </div>
 </UxCard>

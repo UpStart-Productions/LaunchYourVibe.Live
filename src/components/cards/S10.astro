@@ -11,15 +11,19 @@ import Icon from "../icons/Icon.astro";
   rule=`<strong>User-generated content rendered directly to the DOM is an XSS vector.</strong> Escape or sanitize everything that came from a user before it touches the page.`
 >
 <div class="fc-5 s10-visual">
+<div class="verdict-col">
+<span class="verdict-label label-good"><Icon name="Check" size={13} class="ux-icon" /> Escaped output</span>
+<div class="vis-box-good-sm2">
+<div class="code-block" style="padding:5px 7px;">&amp;lt;script&amp;gt;…</div>
+<div class="text-7-mid-mt">Rendered as text, not code</div>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-bad"><Icon name="X" size={13} class="ux-icon" /> innerHTML</span>
 <div class="vis-box-bad-sm2">
-<div class="vis-label-bad-sm"><Icon name="X" size={13} class="ux-icon" /> innerHTML</div>
 <div class="code-block" style="padding:5px 7px;">el.innerHTML = userInput</div>
 <div class="text-red-bold" style="font-size:11px;margin-top:4px;">&lt;script&gt;steal()&lt;/script&gt;</div>
 </div>
-<div class="vis-box-good-sm2">
-<div class="vis-label-good-sm"><Icon name="Check" size={13} class="ux-icon" /> Escaped output</div>
-<div class="code-block" style="padding:5px 7px;">&amp;lt;script&amp;gt;…</div>
-<div class="text-7-mid-mt">Rendered as text, not code</div>
 </div>
 </div>
 </UxCard>

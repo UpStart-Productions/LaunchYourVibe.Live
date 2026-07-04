@@ -7,27 +7,27 @@ import Icon from "../icons/Icon.astro";
   id="T-01"
   domain="Spacing & Typography"
   domainClass="d-t"
-  title="Type Scale:<br>Mobile ≠ Desktop"
-  rule="<strong>The gap is real.</strong> Mobile H1s feel enormous on desktop. Don't just scale down: rethink the whole stack per context."
+  title=`Fluid Type:<br/>rem + clamp()`
+  rule=`<strong>Px breakpoints snap; user settings get ignored.</strong> Set type in rem and scale smoothly with clamp(): a minimum rem, a viewport-relative middle term, and a maximum rem. One formula replaces separate mobile and desktop charts.`
 >
-  <div class="platform-row t01-visual">
-    <div class="platform-col">
-      <span class="platform-col-label"><Icon name="Smartphone" size={14} class="ux-icon" /> Mobile</span>
-      <div class="type-swatch">
-        <div class="swatch-row"><span class="swatch-size">28px</span><div class="swatch-bar" style="width:38px;opacity:0.9;"></div><span class="swatch-name">H1</span></div>
-        <div class="swatch-row"><span class="swatch-size">18px</span><div class="swatch-bar" style="width:28px;opacity:0.7;"></div><span class="swatch-name">H2</span></div>
-        <div class="swatch-row"><span class="swatch-size">15px</span><div class="swatch-bar" style="width:20px;opacity:0.55;"></div><span class="swatch-name">Body</span></div>
-        <div class="swatch-row"><span class="swatch-size">12px</span><div class="swatch-bar" style="width:14px;opacity:0.35;"></div><span class="swatch-name">Caption</span></div>
-      </div>
+  <div class="fc-5 t01-visual">
+    <div class="vis-box-row">
+      <div class="text-md-heading"><Icon name="Smartphone" size={14} class="ux-icon" /> Narrow</div>
+      <div class="divider-h"></div>
+      <div class="text-md-heading-blue">1.5rem</div>
     </div>
-    <div class="platform-col">
-      <span class="platform-col-label"><Icon name="Monitor" size={14} class="ux-icon" /> Desktop</span>
-      <div class="type-swatch">
-        <div class="swatch-row"><span class="swatch-size">40px</span><div class="swatch-bar" style="width:44px;opacity:0.9;"></div><span class="swatch-name">H1</span></div>
-        <div class="swatch-row"><span class="swatch-size">28px</span><div class="swatch-bar" style="width:32px;opacity:0.7;"></div><span class="swatch-name">H2</span></div>
-        <div class="swatch-row"><span class="swatch-size">16px</span><div class="swatch-bar" style="width:22px;opacity:0.55;"></div><span class="swatch-name">Body</span></div>
-        <div class="swatch-row"><span class="swatch-size">13px</span><div class="swatch-bar" style="width:14px;opacity:0.35;"></div><span class="swatch-name">Caption</span></div>
-      </div>
+    <div class="vis-box-row">
+      <div class="text-md-heading"><Icon name="Laptop" size={14} class="ux-icon" /> Mid</div>
+      <div class="divider-h"></div>
+      <div class="text-md-heading-blue">~2rem</div>
+    </div>
+    <div class="vis-box-row">
+      <div class="text-md-heading"><Icon name="Monitor" size={14} class="ux-icon" /> Wide</div>
+      <div class="divider-h"></div>
+      <div class="text-md-heading-blue">3rem</div>
+    </div>
+    <div class="vis-box-blue-sm">
+      <div class="mono-clamp">clamp(1.5rem, 1rem + 2.5vw, 3rem)</div>
     </div>
   </div>
 </UxCard>

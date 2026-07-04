@@ -11,19 +11,23 @@ import Icon from "../icons/Icon.astro";
   rule=`<strong>Least privilege on database users.</strong> Your app's database user shouldn't have DROP or ALTER permissions. Give it only what it needs to function — SELECT, INSERT, UPDATE, DELETE on specific tables.`
 >
 <div class="fc-5 p11-visual">
+<div class="verdict-col">
+<span class="verdict-label label-good"><Icon name="Check" size={13} class="ux-icon" /> Scoped app role</span>
+<div class="vis-box-good-sm2">
+<div class="check-list check-list-sm">
+<div class="check-item"><span class="check-icon">→</span>SELECT, INSERT, UPDATE</div>
+<div class="check-item"><span class="check-icon">→</span>on app.* only</div>
+</div>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-bad"><Icon name="X" size={13} class="ux-icon" /> Superuser app role</span>
 <div class="vis-box-bad-sm2">
-<div class="vis-label-bad-sm"><Icon name="X" size={13} class="ux-icon" /> Superuser app role</div>
 <div class="check-list check-list-sm">
 <div class="check-item"><span class="check-icon">→</span>DROP TABLE</div>
 <div class="check-item"><span class="check-icon">→</span>ALTER SCHEMA</div>
 <div class="check-item"><span class="check-icon">→</span>GRANT ALL</div>
 </div>
-</div>
-<div class="vis-box-good-sm2">
-<div class="vis-label-good-sm"><Icon name="Check" size={13} class="ux-icon" /> Scoped app role</div>
-<div class="check-list check-list-sm">
-<div class="check-item"><span class="check-icon">→</span>SELECT, INSERT, UPDATE</div>
-<div class="check-item"><span class="check-icon">→</span>on app.* only</div>
 </div>
 </div>
 </div>

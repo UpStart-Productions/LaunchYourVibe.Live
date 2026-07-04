@@ -11,15 +11,19 @@ import Icon from "../icons/Icon.astro";
   rule=`<strong>Email requires explicit opt-in.</strong> Pre-checked boxes aren't consent. CAN-SPAM and GDPR both have teeth and neither cares that you're small.`
 >
 <div class="fc-5 p03-visual">
+<div class="verdict-col">
+<span class="verdict-label label-good"><Icon name="Check" size={13} class="ux-icon" /> Explicit opt-in</span>
+<div class="vis-box-good-sm2">
+<div class="fr-c8-md"><span style="font-size:14px;">☐</span> Yes, send me updates</div>
+<div class="text-7-mid-mt">User must actively choose</div>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-bad"><Icon name="X" size={13} class="ux-icon" /> Pre-checked</span>
 <div class="vis-box-bad-sm2">
-<div class="vis-label-bad-sm"><Icon name="X" size={13} class="ux-icon" /> Pre-checked</div>
 <div class="fr-c8-md"><span style="font-size:14px;">☑</span> Send me marketing emails</div>
 <div class="text-7-muted-mt">Opt-out ≠ opt-in</div>
 </div>
-<div class="vis-box-good-sm2">
-<div class="vis-label-good-sm"><Icon name="Check" size={13} class="ux-icon" /> Explicit opt-in</div>
-<div class="fr-c8-md"><span style="font-size:14px;">☐</span> Yes, send me updates</div>
-<div class="text-7-mid-mt">User must actively choose</div>
 </div>
 </div>
 </UxCard>

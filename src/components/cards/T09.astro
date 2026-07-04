@@ -11,22 +11,28 @@ import Icon from "../icons/Icon.astro";
   rule=`<strong>Centered multi-line text is the hallmark of amateur design.</strong> The ragged left edge forces the eye to hunt for the start of each new line. Left-align everything longer than a headline.`
 >
 <div class="fc-6 t09-visual">
+<div class="verdict-col">
+<span class="verdict-label label-good"><Icon name="Check" size={13} class="ux-icon" /> LEFT: body text, labels, lists</span>
 <div class="vis-box-good">
-<div class="mono-good-hd"><Icon name="Check" size={13} class="ux-icon" /> LEFT: body text, labels, lists</div>
 <div class="bar-green-thin" style="height:4px;width:100%;margin-bottom:2px;"></div>
 <div class="bar-green-thin" style="height:4px;width:88%;margin-bottom:2px;"></div>
 <div class="bar-green-thin" style="height:4px;width:75%;"></div>
 </div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-info"><Icon name="Check" size={13} class="ux-icon" /> CENTER: short headlines, CTAs</span>
 <div class="vis-box-blue">
-<div class="mono-info-hd"><Icon name="Check" size={13} class="ux-icon" /> CENTER: short headlines, CTAs</div>
 <div class="bar-blue-thin" style="height:6px;width:70%;margin:0 auto 3px;"></div>
 <div class="bar-blue-btn" style="height:12px;width:80%;margin:0 auto;"></div>
 </div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-bad"><Icon name="X" size={13} class="ux-icon" /> CENTER: multi-line body copy</span>
 <div class="vis-box-bad">
-<div class="mono-bad-hd"><Icon name="X" size={13} class="ux-icon" /> CENTER: multi-line body copy</div>
 <div class="bar-red" style="height:4px;width:80%;margin:0 auto 2px;"></div>
 <div class="bar-red" style="height:4px;width:60%;margin:0 auto 2px;"></div>
 <div class="bar-red" style="height:4px;width:72%;margin:0 auto;"></div>
+</div>
 </div>
 </div>
 </UxCard>

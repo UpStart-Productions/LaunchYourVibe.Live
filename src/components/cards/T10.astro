@@ -7,23 +7,30 @@ import Icon from "../icons/Icon.astro";
   id="T-10"
   domain="Spacing & Typography"
   domainClass="d-t"
-  title=`Two Typefaces.<br/>That's the Budget.`
-  rule=`<strong>Each typeface carries a personality: mixing them creates noise.</strong> Two typefaces in clear roles feel like a system. Three or more feel like you couldn't decide.`
+  title=`Two Font Families.<br/>That's the Budget.`
+  rule=`<strong>Example font families in clear roles feel like a system.</strong> Bold and regular are the same family, not a second one. Mixing families without roles creates noise. Three or more feel like you couldn't decide.`
 >
 <div class="fc-6 t10-visual">
+<div class="verdict-col">
+<span class="verdict-label label-good"><Icon name="Check" size={13} class="ux-icon" /> Clear roles</span>
 <div class="vis-good-bg">
-<div class="mono-good-hd-mb"><Icon name="Check" size={13} class="ux-icon" /> TWO FACES, ONE JOB EACH</div>
-<div class="typo-h1">Serif or Sans: headlines</div>
-<div class="mono-ui-lbl">Mono or different weight: UI labels, code</div>
+<div class="t10-stack">
+<div class="t10-heading">Headings in Serif Family</div>
+<div class="t10-body">Body in sans serif family</div>
+<div class="t10-code">Code in monospace</div>
 </div>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-bad"><Icon name="X" size={13} class="ux-icon" /> FONT COLLECTION</span>
 <div class="vis-bad-bg">
-<div class="mono-bad-hd-mb"><Icon name="X" size={13} class="ux-icon" /> FONT COLLECTION</div>
 <div style="display:flex;gap:4px;flex-wrap:wrap;">
 <span class="pill pill-red">Georgia</span>
 <span class="pill pill-red">Futura</span>
 <span class="pill pill-red">Garamond</span>
 <span class="pill pill-red">Helvetica</span>
 <span class="pill pill-red">Courier</span>
+</div>
 </div>
 </div>
 </div>

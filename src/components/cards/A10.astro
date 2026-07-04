@@ -11,15 +11,19 @@ import Icon from "../icons/Icon.astro";
   rule=`<strong>Screen readers don't infer visual proximity.</strong> Use <code>aria-describedby</code> to link the error message to its input, and <code>role="alert"</code> so it's announced immediately when it appears. <code>aria-invalid="true"</code> also signals the field state.`
 >
 <div class="fc-5 a10-visual">
+<div class="verdict-col">
+<span class="verdict-label label-good"><Icon name="Check" size={13} class="ux-icon" /> aria-describedby linked</span>
+<div class="vis-box-good-sm">
+<div class="mono-aria-code">&lt;input aria-describedby="err1"&gt;<br/>&lt;span id="err1" role="alert"&gt;</div>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-bad"><Icon name="X" size={13} class="ux-icon" /> Visually associated only</span>
 <div class="vis-box-bad-sm">
-<div class="vis-label-bad-sm"><Icon name="X" size={13} class="ux-icon" /> Visually associated only</div>
 <div class="text-8-semibold">Email</div>
 <div class="input-err">badmail</div>
 <div class="text-err-msg">Invalid email address</div>
 </div>
-<div class="vis-box-good-sm">
-<div class="vis-label-good-sm"><Icon name="Check" size={13} class="ux-icon" /> aria-describedby linked</div>
-<div class="mono-aria-code">&lt;input aria-describedby="err1"&gt;<br/>&lt;span id="err1" role="alert"&gt;</div>
 </div>
 </div>
 </UxCard>

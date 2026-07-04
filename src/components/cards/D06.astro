@@ -11,21 +11,25 @@ import Icon from "../icons/Icon.astro";
   rule=`<strong>Never rely on red vs. green to distinguish data series.</strong> Use palettes designed for colorblind users (IBM Carbon, ColorBrewer, Tableau colorblind). Pair color differences with shape, texture, or direct labeling so the chart works without color at all.`
 >
 <div class="fc-5 d06-visual">
-<div class="vis-box-bad-sm">
-<div class="vis-label-bad-sm"><Icon name="X" size={13} class="ux-icon" /> Red/green only</div>
-<div class="fr-3">
-<div class="pal-bar pal-green"></div>
-<div class="pal-bar pal-red"></div>
-<div class="text-7-aa-indent">Indistinct to 8% of users</div>
-</div>
-</div>
+<div class="verdict-col">
+<span class="verdict-label label-good"><Icon name="Check" size={13} class="ux-icon" /> Colorblind-safe</span>
 <div class="vis-box-good-sm">
-<div class="vis-label-good-sm"><Icon name="Check" size={13} class="ux-icon" /> Colorblind-safe</div>
 <div class="fr-3">
 <div class="pal-bar pal-blue"></div>
 <div class="pal-bar pal-orange"></div>
 <div class="pal-bar pal-gold"></div>
 <div class="pal-bar pal-teal"></div>
+</div>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-bad"><Icon name="X" size={13} class="ux-icon" /> Red/green only</span>
+<div class="vis-box-bad-sm">
+<div class="fr-3">
+<div class="pal-bar pal-green"></div>
+<div class="pal-bar pal-red"></div>
+<div class="text-7-aa-indent">Indistinct to 8% of users</div>
+</div>
 </div>
 </div>
 <div class="text-xxs-muted">Also vary shape + pattern for print</div>

@@ -12,21 +12,25 @@ import Icon from "../icons/Icon.astro";
 >
 <div class="fc-5 a06-visual">
 <div class="fr-5">
-<div class="flex-bad-center">
-<div class="fr-c4-mb3">
-<div class="dot-green-sm"></div>
-<div class="dot-red-sm"></div>
-<div class="dot-orange-sm"></div>
-</div>
-<div class="mono-color-bad">Color only <Icon name="X" size={13} class="ux-icon" /></div>
-</div>
+<div class="verdict-col">
+<span class="verdict-label label-good">Color + icon <Icon name="Check" size={13} class="ux-icon" /></span>
 <div class="flex-good-center">
 <div class="fr-c4-mb3">
 <div class="sq-green"><Icon name="Check" size={13} class="ux-icon" /></div>
 <div class="sq-red"><Icon name="X" size={13} class="ux-icon" /></div>
 <div class="sq-orange">!</div>
 </div>
-<div class="mono-color-good">Color + icon <Icon name="Check" size={13} class="ux-icon" /></div>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-bad">Color only <Icon name="X" size={13} class="ux-icon" /></span>
+<div class="flex-bad-center">
+<div class="fr-c4-mb3">
+<div class="dot-green-sm"></div>
+<div class="dot-red-sm"></div>
+<div class="dot-orange-sm"></div>
+</div>
+</div>
 </div>
 </div>
 <div class="text-xxs-muted">1 in 12 men have color vision deficiency</div>

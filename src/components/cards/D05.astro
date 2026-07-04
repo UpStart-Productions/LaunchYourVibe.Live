@@ -11,22 +11,26 @@ import Icon from "../icons/Icon.astro";
   rule=`<strong>When one chart gets more than 4–5 series, everything competes.</strong> Small multiples repeat the same chart structure for each category, letting users see patterns across dimensions at a glance. Same scale, same axes: shape differences become immediately readable.`
 >
 <div class="fr-5 d05-visual">
+<div class="verdict-col">
+<span class="verdict-label label-good"><Icon name="Check" size={13} class="ux-icon" /> Small multiples</span>
+<div class="vis-demo-good" style="flex:2;padding:6px;border-radius:5px;">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;">
+<svg viewbox="0 0 28 18" width="100%"><polyline fill="none" points="2,15 8,8 14,10 20,4 26,6" stroke="#B81800" stroke-width="1.5"></polyline></svg>
+<svg viewbox="0 0 28 18" width="100%"><polyline fill="none" points="2,12 8,10 14,5 20,9 26,3" stroke="#B81800" stroke-width="1.5"></polyline></svg>
+<svg viewbox="0 0 28 18" width="100%"><polyline fill="none" points="2,10 8,14 14,8 20,12 26,9" stroke="#B81800" stroke-width="1.5"></polyline></svg>
+<svg viewbox="0 0 28 18" width="100%"><polyline fill="none" points="2,16 8,9 14,14 20,6 26,11" stroke="#B81800" stroke-width="1.5"></polyline></svg>
+</div>
+</div>
+</div>
+<div class="verdict-col">
+<span class="verdict-label label-bad"><Icon name="X" size={13} class="ux-icon" /> Overloaded</span>
 <div class="flex-box-bad-sq">
-<div class="vis-label-bad-sm"><Icon name="X" size={13} class="ux-icon" /> Overloaded</div>
 <svg viewbox="0 0 55 35" width="100%">
 <polyline fill="none" points="5,30 18,15 30,20 42,8 52,12" stroke="#E57373" stroke-width="1.5"></polyline>
 <polyline fill="none" points="5,25 18,22 30,10 42,18 52,5" stroke="#1565C0" stroke-width="1.5"></polyline>
 <polyline fill="none" points="5,20 18,28 30,15 42,25 52,18" stroke="#2E7D32" stroke-width="1.5"></polyline>
 <polyline fill="none" points="5,32 18,18 30,28 42,12 52,22" stroke="#F9A825" stroke-width="1.5"></polyline>
 </svg>
-</div>
-<div class="vis-demo-good" style="flex:2;padding:6px;border-radius:5px;">
-<div class="vis-label-good-sm"><Icon name="Check" size={13} class="ux-icon" /> Small multiples</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;">
-<svg viewbox="0 0 28 18" width="100%"><polyline fill="none" points="2,15 8,8 14,10 20,4 26,6" stroke="#B81800" stroke-width="1.5"></polyline></svg>
-<svg viewbox="0 0 28 18" width="100%"><polyline fill="none" points="2,12 8,10 14,5 20,9 26,3" stroke="#B81800" stroke-width="1.5"></polyline></svg>
-<svg viewbox="0 0 28 18" width="100%"><polyline fill="none" points="2,10 8,14 14,8 20,12 26,9" stroke="#B81800" stroke-width="1.5"></polyline></svg>
-<svg viewbox="0 0 28 18" width="100%"><polyline fill="none" points="2,16 8,9 14,14 20,6 26,11" stroke="#B81800" stroke-width="1.5"></polyline></svg>
 </div>
 </div>
 </div>
