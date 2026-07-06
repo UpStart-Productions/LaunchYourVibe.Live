@@ -15,9 +15,9 @@ import Icon from "../icons/Icon.astro";
 <span class="verdict-label label-good"><Icon name="Check" size={13} class="ux-icon" /> Optimistic</span>
 <div class="vis-box-good">
 <div class="fc-3">
-<div class="text-sm-muted">UI updates instantly <Icon name="Check" size={13} class="ux-icon" /></div>
-<div class="text-sm-muted">Server syncs in background</div>
-<div class="text-sm-muted">Rollback only if server fails</div>
+<div class="check-item"><span class="text-icon-good"><Icon name="Check" size={13} class="ux-icon" /></span>UI updates instantly</div>
+<div class="check-item"><span class="text-icon-good"><Icon name="Check" size={13} class="ux-icon" /></span>Server syncs in background</div>
+<div class="check-item"><span class="text-icon-good"><Icon name="Check" size={13} class="ux-icon" /></span>Rollback only if server fails</div>
 </div>
 </div>
 </div>
@@ -25,7 +25,7 @@ import Icon from "../icons/Icon.astro";
 <span class="verdict-label label-bad"><Icon name="X" size={13} class="ux-icon" /> Pessimistic</span>
 <div class="vis-demo-bad" style="padding:7px 9px;">
 <div class="text-wait">
-<div class="spinner-bad"></div>
+<div class="spinner-bad i08-spinner"></div>
                   User waits for server confirmation
                 </div>
 </div>

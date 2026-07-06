@@ -39,6 +39,58 @@
     }
   })();
 
+  /** I-03: sync progress % label to bar width during hover / in-viewport animation. */
+  (function initI03ProgressCounter() {
+    const cards = document.querySelectorAll<HTMLElement>('[data-card-id="I-03"]');
+    if (!cards.length) return;
+
+    for (const card of cards) {
+      const fill = card.querySelector<HTMLElement>(".i03-progress-fill");
+      const track = fill?.parentElement;
+      const pctEl = card.querySelector<HTMLElement>(".i03-pct");
+      if (!fill || !track || !pctEl) continue;
+
+      let raf = 0;
+
+      const setPct = (value: number) => {
+        pctEl.textContent = `${value}%`;
+      };
+
+      const isActive = () =>
+        card.classList.contains("is-animated") || card.matches(":hover");
+
+      const tick = () => {
+        const trackWidth = track.clientWidth;
+        const pct =
+          trackWidth > 0 ? Math.round((fill.clientWidth / trackWidth) * 100) : 0;
+        setPct(pct);
+        if (isActive()) {
+          raf = requestAnimationFrame(tick);
+        }
+      };
+
+      const start = () => {
+        cancelAnimationFrame(raf);
+        setPct(0);
+        raf = requestAnimationFrame(tick);
+      };
+
+      const stop = () => {
+        cancelAnimationFrame(raf);
+        setPct(0);
+      };
+
+      card.addEventListener("mouseenter", start);
+      card.addEventListener("mouseleave", stop);
+
+      const observer = new MutationObserver(() => {
+        if (card.classList.contains("is-animated")) start();
+        else if (!card.matches(":hover")) stop();
+      });
+      observer.observe(card, { attributes: true, attributeFilter: ["class"] });
+    }
+  })();
+
   /** Flip cards on click; skip interactive controls marked data-no-flip. */
   (function initCardFlip() {
     const win = window as AbortBag;

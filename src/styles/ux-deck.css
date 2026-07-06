@@ -457,11 +457,12 @@
 .swatch-name { font-size: var(--deck-text-xs); color: var(--deck-color-label); font-weight: 500; }
 
 /* Card visual animations disabled — see ux-deck-animations.css to re-enable.
-   CardDeckScripts still adds/removes .is-animated on enter/exit. */
-[class$="-visual"],
-[class$="-visual"] *,
-.card-wrap.is-animated [class$="-visual"],
-.card-wrap.is-animated [class$="-visual"] * {
+   CardDeckScripts still adds/removes .is-animated on enter/exit.
+   Exclude .card-visual (wrapper) and per-card *-visual demos so hover animations can run. */
+[class$="-visual"]:not(.card-visual):not(.i03-visual):not(.i05-visual):not(.i08-visual),
+[class$="-visual"]:not(.card-visual):not(.i03-visual):not(.i05-visual):not(.i08-visual) *,
+.card-wrap.is-animated [class$="-visual"]:not(.card-visual):not(.i03-visual):not(.i05-visual):not(.i08-visual),
+.card-wrap.is-animated [class$="-visual"]:not(.card-visual):not(.i03-visual):not(.i05-visual):not(.i08-visual) * {
   transition: none !important;
   animation: none !important;
   transform: none !important;
@@ -668,6 +669,7 @@
   .vis-box-good-sm2,
   .vis-box-good-lg,
   .vis-demo-good,
+  .error-demo-good,
   .tab-good-wrap,
   .flex-box-good,
   .flex-box-good-sq,
@@ -680,6 +682,7 @@
   .vis-box-bad-sm2,
   .vis-box-bad-lg,
   .vis-demo-bad,
+  .error-demo-bad,
   .tab-bad-wrap,
   .flex-box-bad,
   .flex-box-bad-sq,
@@ -1137,6 +1140,37 @@
 
 /* ---- Success screen (I05) ---- */
 .card-visual .success-icon-wrap { width: 44px; height: 44px; background: var(--deck-bg-good); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: var(--deck-text-hero); }
+.card-visual .i05-check-draw {
+  width: 14px;
+  height: 14px;
+  display: block;
+  flex-shrink: 0;
+  transition: width 0.45s cubic-bezier(0.34, 1.2, 0.64, 1), height 0.45s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+.card-visual .i05-check-draw path {
+  fill: none;
+  stroke: var(--deck-color-good-strong);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  transition: stroke-dashoffset 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-visual .i05-success-circle {
+  opacity: 0;
+  transform: scale(0.35);
+  transition:
+    opacity 0.35s ease,
+    transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.card-visual .i05-receipt-btn {
+  opacity: 0;
+  transform: scale(0.85) translateY(5px);
+  transition:
+    opacity 0.35s ease,
+    transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
 .card-visual .text-success-heading { font-size: var(--deck-text-xl); font-weight: 700; color: var(--deck-color-good-strong); text-align: center; }
 .card-visual .text-success-body    { font-size: var(--deck-text-md); color: var(--deck-fill-contrast-aaa); text-align: center; line-height: 1.5; }
 .card-visual .btn-receipt          { background: var(--deck-bg-good); border-radius: 5px; padding: 5px 14px; font-size: var(--deck-text-md); font-weight: 600; color: var(--deck-color-good-strong); margin-top: 2px; }
@@ -1151,6 +1185,7 @@
 
 /* ---- Optimistic UI (I08) ---- */
 .card-visual .spinner-bad  { width: 14px; height: 14px; border: 2px solid var(--deck-fill-disabled); border-top: 2px solid var(--deck-color-bad); border-radius: 50%; flex-shrink: 0; }
+.card-visual .i08-spinner  { width: 28px; height: 28px; border-width: 3px; }
 .card-visual .text-wait    { font-size: var(--deck-text-md); color: var(--deck-fill-contrast-aaa); display: flex; align-items: center; gap: 6px; }
 
 /* ---- Undo pattern (I09) ---- */
@@ -1290,6 +1325,8 @@
 .card-visual .skeleton-light { height: 5px; background: var(--deck-border-soft); border-radius: 3px; }
 .card-visual .mono-spin-lbl  { color: var(--deck-color-label); }
 .card-visual .spinner-ring   { width: 12px; height: 12px; border: 2px solid var(--deck-fill-disabled); border-top: 2px solid var(--deck-color-interaction); border-radius: 50%; flex-shrink: 0; }
+.card-visual .i03-spinner    { width: 24px; height: 24px; border-width: 3px; }
+.card-visual .i03-progress-fill { width: 0; }
 
 /* ---- I11 progress demo ---- */
 .card-visual .progress-track-i11 { background: var(--deck-fill-disabled); border-radius: 20px; height: 7px; overflow: hidden; margin-bottom: 3px; }
@@ -1432,4 +1469,90 @@
 
 .ux-domain-section--hidden {
   display: none !important;
+}
+
+/* I-03 only: progress fill, pct count-up, spinner spin on hover / in-viewport */
+@keyframes i03-progress-grow {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes i03-spinner-spin {
+  to { transform: rotate(360deg); }
+}
+.card-wrap:hover .i03-visual .i03-progress-fill,
+.card-wrap.is-animated .i03-visual .i03-progress-fill {
+  animation: i03-progress-grow 2.5s ease-out forwards;
+}
+.card-wrap:hover .i03-visual .i03-spinner,
+.card-wrap.is-animated .i03-visual .i03-spinner {
+  animation: i03-spinner-spin 0.8s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-wrap:hover .i03-visual .i03-progress-fill,
+  .card-wrap.is-animated .i03-visual .i03-progress-fill,
+  .card-wrap:hover .i03-visual .i03-spinner,
+  .card-wrap.is-animated .i03-visual .i03-spinner {
+    animation: none;
+  }
+  .card-wrap:hover .i03-visual .i03-progress-fill,
+  .card-wrap.is-animated .i03-visual .i03-progress-fill {
+    width: 100%;
+  }
+}
+
+/* I-05 only: success circle pop, check draw, receipt button pop on hover / in-viewport */
+.card-wrap:hover .i05-visual .i05-success-circle,
+.card-wrap.is-animated .i05-visual .i05-success-circle {
+  opacity: 1;
+  transform: scale(1);
+}
+.card-wrap:hover .i05-visual .i05-check-draw,
+.card-wrap.is-animated .i05-visual .i05-check-draw {
+  width: 24px;
+  height: 24px;
+  transition-delay: 0.2s;
+}
+.card-wrap:hover .i05-visual .i05-check-draw path,
+.card-wrap.is-animated .i05-visual .i05-check-draw path {
+  stroke-dashoffset: 0;
+  transition-delay: 0.28s;
+}
+.card-wrap:hover .i05-visual .i05-receipt-btn,
+.card-wrap.is-animated .i05-visual .i05-receipt-btn {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition-delay: 0.62s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-wrap:hover .i05-visual .i05-success-circle,
+  .card-wrap.is-animated .i05-visual .i05-success-circle,
+  .card-wrap:hover .i05-visual .i05-receipt-btn,
+  .card-wrap.is-animated .i05-visual .i05-receipt-btn {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .card-wrap:hover .i05-visual .i05-check-draw,
+  .card-wrap.is-animated .i05-visual .i05-check-draw {
+    width: 24px;
+    height: 24px;
+    transition: none;
+  }
+  .card-wrap:hover .i05-visual .i05-check-draw path,
+  .card-wrap.is-animated .i05-visual .i05-check-draw path {
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+}
+
+/* I-08 only: pessimistic spinner spin on hover / in-viewport */
+.card-wrap:hover .i08-visual .i08-spinner,
+.card-wrap.is-animated .i08-visual .i08-spinner {
+  animation: i03-spinner-spin 0.8s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-wrap:hover .i08-visual .i08-spinner,
+  .card-wrap.is-animated .i08-visual .i08-spinner {
+    animation: none;
+  }
 }

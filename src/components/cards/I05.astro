@@ -1,6 +1,5 @@
 ---
 import UxCard from "../UxCard.astro";
-import Icon from "../icons/Icon.astro";
 ---
 
 <UxCard
@@ -11,9 +10,13 @@ import Icon from "../icons/Icon.astro";
   rule=`<strong>Silence after a successful action breeds doubt.</strong> Confirm what happened, to whom, and what comes next. The user's mental model needs closure.`
 >
 <div class="fc-center-6 i05-visual">
-<div class="success-icon-wrap"><Icon name="Check" size={13} class="ux-icon" /></div>
+<div class="success-icon-wrap i05-success-circle">
+<svg class="i05-check-draw" viewBox="0 0 24 24" aria-hidden="true">
+<path pathLength="24" d="M20 6 9 17l-5-5" />
+</svg>
+</div>
 <div class="text-success-heading">Payment Sent</div>
 <div class="text-success-body">$240.00 to Sarah Johnson<br/>arrives in 1–2 business days</div>
-<div class="btn-receipt">View Receipt →</div>
+<div class="btn-receipt i05-receipt-btn">View Receipt →</div>
 </div>
 </UxCard>
